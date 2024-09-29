@@ -40,6 +40,11 @@ header h1 {
     transition: opacity 1s ease-in-out;
 }
 
+.profile a {
+  outline: none;
+  -webkit-tap-highlight-color: transparent;
+}
+
 .fade-out {
     opacity: 0; 
 }
