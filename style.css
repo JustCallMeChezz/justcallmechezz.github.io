@@ -60,6 +60,27 @@ header h1 {
     line-height: 1.5em;
 }
 
+.name {
+font-size: 2rem;
+cursor: pointer;
+transition: all 0.6s ease;
+}
+
+.name.fade-out {
+opacity: 0;
+transform: scale(1.2);
+}
+
+.name.fade-in {
+opacity: 1;
+transform: scale(1);
+}
+
+.profile a, .name {
+  outline: none;
+  -webkit-tap-highlight-color: transparent;
+}
+
 .details {
     margin-top: 20px;
 }
