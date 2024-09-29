@@ -18,7 +18,7 @@
         <section class="profile">
             <a href="https://youtu.be/dQw4w9WgXcQ">
             <img id="pfps" src="pfp1.jpg" alt="pfps"></a>
-            <h2>✮sᥣᥱᥱρყcнεzz🧀</h2>
+            <h2><span class="name" id="name">✮sᥣᥱᥱρყcнεzz🧀</span></h2>
             <p>Hello! I'm Lily or also known as Chezz 🧀, a programmer, animator and also youtuber. still learning in programming... My fav programming language is Javascript, C/C++ and Python. i cant wait to be a skilled dev one day!</p>
         </section>
         <section class="details">
@@ -121,6 +121,26 @@ setTimeout(() => this.classList.remove('vibrate'), 300);
   if (navigator.vibrate) {
     navigator.vibrate(200); 
   }
+});
+</script>
+</script>
+<script>
+document.getElementById('name').addEventListener('click', function() {
+const nameElement = document.getElementById('name');
+const currentName = nameElement.textContent;
+const newName = currentName === '✮sᥣᥱᥱρყcнεzz🧀' ? '𝓛𝓲𝓵𝔂 𝓛𝓲𝔂𝓪𝓷𝓪 𖹭' : '✮sᥣᥱᥱρყcнεzz🧀';
+
+nameElement.classList.add('fade-out');
+
+setTimeout(() => {
+nameElement.textContent = newName;
+nameElement.classList.remove('fade-out');
+nameElement.classList.add('fade-in');
+}, 600);
+
+setTimeout(() => {
+nameElement.classList.remove('fade-in');
+}, 1200);
 });
 </script>
 
