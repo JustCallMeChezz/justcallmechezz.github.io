@@ -108,19 +108,19 @@
 <script>
       document.querySelector('.profile img').addEventListener('click', function() {
 this.classList.add('vibrate');
-setTimeout(() => this.classList.remove('vibrate'), 300); // stops the vibration after 0.3s
+setTimeout(() => this.classList.remove('vibrate'), 300); 
 });
 </script>
 <script>
       document.querySelector('.social-media').addEventListener('click', function() {
 this.classList.add('vibrate');
-setTimeout(() => this.classList.remove('vibrate'), 300); // stops the vibration after 0.3s
+setTimeout(() => this.classList.remove('vibrate'), 300); 
 });
 </script>
 <script>
   document.querySelector('.profile img').addEventListener('click', function() {
   if (navigator.vibrate) {
-    navigator.vibrate(200); // Vibrates for 200 milliseconds
+    navigator.vibrate(200); 
   }
 });
 </script>
