@@ -159,6 +159,11 @@ transform: scale(1);
     text-align: center;
 }
 
+.details3 a {
+  outline: none;
+  -webkit-tap-highlight-color: transparent;
+}
+
 .details3 h3 {
     font-size: 1.5em;
     color: #b07255;
@@ -198,11 +203,6 @@ transform: scale(1);
     height: 150px;
     object-fit: cover;
     border: 4px solid #fbc8af;
-}
-
-.social a {
-  outline: none;
-  -webkit-tap-highlight-color: transparent;
 }
 
 .social-media h2 {
