@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Me - ✮sᥣᥱᥱρყcнεzz🧀</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="manifest" href="/site.webmanifest">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>About Me</h1>
+        </header>
+        <section class="profile">
+            <a href="#idk">
+            <img id="pfps" src="pfp1.jpg" alt="pfps"></a>
+            <h2><span class="name" id="name">✮sᥣᥱᥱρყcнεzz🧀</span></h2>
+            <p>Hello! I'm Lily or also known as Chezz 🧀, a programmer, animator and also youtuber. still learning in programming... My fav programming language is Javascript, C/C++ and Python. i cant wait to be a skilled dev one day!</p>
+        </section>
+        <section class="details">
+            <h3>𐔌   .  ⋮ Some info  .ᐟ  ֹ   ₊ ꒱</h3>
+            <ul>
+                <li>Name: Lily Liyana | Chezz</li>
+                <li>Age: Shh... its secretss...</li>
+                <li>Gender: Girl/female</li>
+                <li>Nationality: Malaysian</li>
+                <li>I like cheese!</li>
+            </ul>
+            </section>
+            <section class="details2">
+            <h3>𐔌   .  ⋮ Interest  .ᐟ  ֹ   ₊ ꒱</h3>
+            <ul>
+                <li>Web Development</li>
+                <li>Ui designing</li>
+                <li>Artificial Intelligence</li>
+                <li>Open Source Contribution</li>
+                <li>Animating/editing</li>
+            </ul>
+            </section>
+            <section class="details3">
+  <h3 id="social-section-title">ଘ‧₊˚⊹꒰．My social media!．꒱₊˚꒦꒷</h3>
+  <ul>
+    <div class="social-media" id="icons-container">
+      <p>
+        <a href="https://youtube.com/@chezzy_lily"><img src="youtube.png" alt="yt" style="width: 40px; height: 40px;"></a>
+        <a href="https://www.tiktok.com/@sleepychezz"><img src="tiktok.png" alt="tt" style="width: 40px; height: 40px;"></a>
+        <a href="https://discord.gg/CSc32EpttY"><img src="discord.png" alt="dsc" style="width: 40px; height: 40px;"></a>
+        <a href="https://github.com/JustCallMeChezz"><img src="github.png" alt="git" style="width: 40px; height: 40px;"></a>
+        <a href="https://instagram.com/chezzy_lily"><img src="instagram.png" alt="ig" style="width: 40px; height: 40px;"></a>
+      </p>
+    </div>
+  </ul>
+</section>
+<div class="rain">
+
+  <div class="falling-cheese">
+    <img src="cheese.png" alt="Falling Cheese"> 
+  </div>
+
+  <div class="falling-flower">
+    <img src="flowerss.png" alt="Falling Flower"> 
+      </div>
+
+  <div class="falling-heart">
+    <img src="heart.png" alt="Falling Heart"> 
+    </div>
+    
+    <div class="falling-luvv">
+    <img src="luvv.png" alt="Falling Luvv"> 
+      </div>
+      
+      <div class="falling-bow">
+    <img src="bow1.png" alt="Falling Bow"> 
+      </div>
+    
+     <div class="falling-cheese2">
+    <img src="cheese.png" alt="Falling Cheese"> 
+  </div>
+
+  <div class="falling-flower2">
+    <img src="flowerss2.png" alt="Falling Flower">
+      </div>
+
+  <div class="falling-heart2">
+    <img src="heart.png" alt="Falling Heart"> 
+    
+    <div class="falling-luvv2">
+    <img src="luvv.png" alt="Falling Luvv"> 
+      </div>
+      
+      <div class="falling-bow2">
+    <img src="bow2.png" alt="Falling Bow"> 
+      </div>
+      </div>
+      
+      <div class="sleepyy">
+    <a>(⸝⸝ᴗ﹏ᴗ⸝⸝) ᶻ 𝗓 𐰁</a>
+    </div>
+    
+    <script src="pfps.js"></script>
+    <script>
+      document.querySelector('.profile img').addEventListener('click', function() {
+this.classList.add('vibrate');
+setTimeout(() => this.classList.remove('vibrate'), 300); // stops the vibration after 0.3s
+});
+</script>
+<script>
+      document.querySelector('.social-media').addEventListener('click', function() {
+this.classList.add('vibrate');
+setTimeout(() => this.classList.remove('vibrate'), 300); // stops the vibration after 0.3s
+});
+</script>
+<script>
+  document.querySelector('.profile img').addEventListener('click', function() {
+  if (navigator.vibrate) {
+    navigator.vibrate(200); // Vibrates for 200 milliseconds
+  }
+});
+</script>
+<script>document.getElementById('name').addEventListener('click', function() {
+const nameElement = document.getElementById('name');
+const currentName = nameElement.textContent;
+const newName = currentName === '✮sᥣᥱᥱρყcнεzz🧀' ? '𝓛𝓲𝓵𝔂 𝓛𝓲𝔂𝓪𝓷𝓪 𖹭' : '✮sᥣᥱᥱρყcнεzz🧀';
+
+nameElement.classList.add('fade-out');
+
+setTimeout(() => {
+nameElement.textContent = newName;
+nameElement.classList.remove('fade-out');
+nameElement.classList.add('fade-in');
+}, 600);
+
+setTimeout(() => {
+nameElement.classList.remove('fade-in');
+}, 1200);
+});
+</script>
+<script>
+document.getElementById('social-section-title').addEventListener('click', function () {
+  const titleElement = document.getElementById('social-section-title');
+  const iconsContainer = document.getElementById('icons-container');
+  const isSocialMedia = titleElement.textContent.includes('social media');
+
+  // Apply fade-out animation
+  iconsContainer.classList.add('fade-out');
+
+  setTimeout(() => {
+    // Change content after fade-out completes
+    titleElement.textContent = isSocialMedia ? 'ଘ‧₊˚⊹꒰．My games!．꒱₊˚꒦꒷' : 'ଘ‧₊˚⊹꒰．My social media!．꒱₊˚꒦꒷';
+    iconsContainer.innerHTML = isSocialMedia ? getGamesIcons() : getSocialMediaIcons();
+
+    // Remove fade-out and apply fade-in
+    iconsContainer.classList.remove('fade-out');
+    iconsContainer.classList.add('fade-in');
+  }, 500); // Match this duration with your CSS transition timing
+});
+
+function getSocialMediaIcons() {
+  return `
+    <p>
+      <a href="https://youtube.com/<@1000609766369927349>y_lily"><img src="youtube.png" alt="yt" style="width: 40px; height: 40px;"></a>
+      <a href="https://www.tiktok.com/@sleepychezz"><img src="tiktok.png" alt="tt" style="width: 40px; height: 40px;"></a>
+      <a href="https://discord.gg/CSc32EpttY"><img src="discord.png" alt="dsc" style="width: 40px; height: 40px;"></a>
+      <a href="https://github.com/JustCallMeChezz"><img src="github.png" alt="git" style="width: 40px; height: 40px;"></a>
+      <a href="https://instagram.com/chezzy_lily"><img src="instagram.png" alt="ig" style="width: 40px; height: 40px;"></a>
+    </p>
+  `;
+}
+
+function getGamesIcons() {
+  return `
+    <p>
+  <a id="roblox-icon" href="#roblox"><img src="roblox.png" alt="Roblox" style="width: 40px; height: 40px;"></a>
+  <a id="minecraft-icon" href="https://launch.minecraft.net/profile/Chezzy%20Lily"><img src="minecraft.png" alt="Minecraft" style="width: 40px; height: 40px;"></a>
+  <a id="mobile-legends-icon" href="#ml"><img src="mlbb.png" alt="Mobile Legends" style="width: 40px; height: 40px;"></a>
+</p>
+  `;
+}
+</script>
+
+  </div>
+</div>
+    </div>
+</body>
+</html>
