@@ -521,6 +521,8 @@ pointer-events: auto;
 cursor: pointer;
 animation: chezz-fall linear infinite;
 transition: transform var(--transition-duration) ease-in-out;
+outline: none;
+  -webkit-tap-highlight-color: transparent;
 }
 
 .chezz-fall-container {
@@ -534,7 +536,7 @@ overflow: hidden;
 }
 
 .magic-transform {
-animation: magicChange var(--transition-duration) ease-out;
+/*idk*/
 }
 
 @keyframes chezz-fall {
@@ -543,8 +545,7 @@ animation: magicChange var(--transition-duration) ease-out;
 }
 
 @keyframes magicChange {
-0% { transform: scale(1); opacity: 1; }
-100% { transform: scale(1.5) rotate(180deg); opacity: 0; }
+/*idk*/
 }
 
 .clickable-word {
