@@ -12,10 +12,6 @@
 <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
 <link rel="manifest" href="/site.webmanifest">
 </head>
-    <div id="music-container">
-    <div id="music"></div>
-</div>
-<script src="https://www.youtube.com/iframe_api"></script>
 <body class="leBlurIn">
    <div class="chezz-fall-container"></div>
     <div class="container">
@@ -259,40 +255,6 @@ startWord.addEventListener('click', () => {
 });
 });
 </script>
-    <script>
-let music;
-
-function onYouTubeIframeAPIReady() {
-    music = new YT.Player('music', {
-        height: '0',
-        width: '0',
-        videoId: 'DSWYAclv2I8',
-        events: {
-            'onReady': onPlayerReady,
-            'onStateChange': onPlayerStateChange
-        },
-        playerVars: {
-            'autoplay': 1,
-            'controls': 0,
-            'showinfo': 0,
-            'modestbranding': 1,
-            'loop': 1,
-            'playlist': 'DSWYAclv2I8,iyZ8u8jOZ8g',
-            'iv_load_policy': 3
-        }
-    });
-}
-
-function onPlayerReady(event) {
-    event.target.playVideo();
-}
-
-function onPlayerStateChange(event) {
-    if (event.data == YT.PlayerState.ENDED) {
-        music.playVideo();
-    }
-}
-    </script>
 
   </div>
 </div>
