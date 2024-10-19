@@ -4,6 +4,7 @@ body {
     color: #4a3626;
     margin: 0;
     padding: 0;
+    user-select: none;
 }
 
 .website-name {
