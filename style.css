@@ -18,6 +18,14 @@ body {
     border-radius: 16px;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
     border: 1px solid #e5d0ba;
+    transition: filter 5s ease-out, text-shadow 5s ease;
+}
+
+.container:focus {
+outline: none;
+}
+.container:active {
+text-shadow: 0 0 10px #ffbea9, 0 0 20px #ffbea9, 0 0 30px #ffbea9, 0 0 40px #ffbea9;
 }
 
 body.leBlurIn {
