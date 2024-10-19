@@ -18,7 +18,7 @@ body {
     border-radius: 16px;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
     border: 1px solid #e5d0ba;
-    transition: filter 5s ease-out, text-shadow 5s ease;
+    transition: filter 5s ease-in-out, text-shadow 5s ease;
 }
 
 .container:focus {
