@@ -19,6 +19,7 @@ body {
     border-radius: 16px;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
     border: 1px solid #e5d0ba;
+    overflow: hidden;
 }
 
 .blush {
