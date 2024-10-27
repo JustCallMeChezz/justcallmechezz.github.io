@@ -557,6 +557,7 @@ width: 100vw;
 height: 100vh;
 pointer-events: none; 
 overflow: hidden;
+z-index: 1000;
 }
 
 .magic-transform {
