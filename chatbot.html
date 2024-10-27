@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>⋅˚₊‧ ୨about me • chezz୧ ‧₊˚ ⋅/chatbot_not_ai</title>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet"/>
+  <meta name="theme-color" content="#fbc0af">
+    <link href="https://fonts.googleapis.com/css2?family=Short+Stack&display=swap" rel="stylesheet">
+  <style>
+   body {
+            margin: 0;
+            font-family: 'Short Stack', cursive;
+            background-color: #f5e6e1;
+            color: #5a3e36;
+            display: flex;
+            flex-direction: column;
+            height: 100vh;
+        }
+        .header {
+            display: flex;
+            align-items: center;
+            padding: 10px;
+            background-color: #f5e6e1;
+            border-bottom: 1px solid #e0d4d1;
+        }
+        .header i {
+            font-size: 24px;
+            margin-right: 10px;
+        }
+        .header .title {
+            flex-grow: 1;
+            font-size: 18px;
+            font-weight: bold;
+        }
+        .header .icons i {
+            margin-left: 15px;
+            font-size: 20px;
+        }
+        .icon-link {
+          color: inherit;
+            -webkit-tap-highlight-color: transparent;
+        }
+        .content {
+            padding: 20px;
+            flex-grow: 1;
+            overflow-y: auto;
+        }
+        .date {
+            display: flex;
+            justify-content: center;
+            margin: 20px 0;
+        }
+        .date span {
+            background-color: #a67c6a;
+            color: #f5e6e1;
+            padding: 5px 10px;
+            border-radius: 10px;
+            font-size: 14px;
+        }
+        .message {
+            display: flex;
+            align-items: flex-end;
+            margin-bottom: 10px;
+        }
+        .message img {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            margin-right: 10px;
+        }
+        .message .bubble {
+            background-color: #ffe9e3;
+            border-radius: 10px;
+            padding: 10px;
+            max-width: 70%;
+            position: relative;
+        }
+        .message.right {
+            justify-content: flex-end;
+        }
+        .message.right img {
+            order: 2;
+            margin-left: 10px;
+            margin-right: 0;
+        }
+        .message.right .bubble {
+            background-color: #fab7a4;
+        }
+        .message .text .chatsname {
+            font-size: 16px;
+            font-weight: bold;
+        }
+        .message .text .chatssize {
+            font-size: 12px;
+            color: #a67c6a;
+        }
+        .message .time {
+            font-size: 12px;
+            color: #a67c6a;
+            margin-left: 10px;
+        }
+        .footer {
+            display: flex;
+            align-items: center;
+            padding: 10px;
+            background-color: #f5e6e1;
+            border-top: 1px solid #e0d4d1;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+        }
+        .footer i {
+            font-size: 24px;
+            margin-right: 10px;
+        }
+        .footer input {
+            flex-grow: 1;
+            border: none;
+            outline: none;
+            background-color: #f5e6e1;
+            font-size: 16px;
+        }
+        .footer .send {
+            font-size: 24px;
+            margin-left: 10px;
+            cursor: pointer;
+        }
+  </style>
+  
+  <script>
+        async function sendMessage() {
+            const input = document.querySelector('.footer input');
+            const messageText = input.value;
+            if (messageText.trim() === '') return;
+
+            const content = document.querySelector('.content');
+            const userMessage = document.createElement('div');
+            userMessage.className = 'message right';
+            userMessage.innerHTML = `
+                <img src="pfp1.jpg" alt="User icon">
+                <div class="bubble">
+                    <div class="text">${messageText}</div>
+                </div>
+            `;
+            content.appendChild(userMessage);
+            input.value = '';
+
+            const botMessageText = getAIResponse(messageText);
+            const botMessage = document.createElement('div');
+            botMessage.className = 'message';
+            botMessage.innerHTML = `
+                <img src="pfp1.jpg" alt="Bot icon">
+                <div class="bubble">
+                    <div class="text">${botMessageText}</div>
+                </div>
+            `;
+            content.appendChild(botMessage);
+            content.scrollTop = content.scrollHeight;
+        }
+
+        function getAIResponse(input) {
+            const responses = {
+                "hi": "hello...",
+                "hii": "umm... hii...",
+                "hi!": "umm... hii...",
+                "hii!": "umm... hii...",
+                "hallu": "hallu^^",
+                "hey": "hey...",
+                "whats up": "how are you?",
+                "sup": "idk... ._.",
+                "hru": "im fn... hbu...?",
+                "hru?": "im fn... hbu...?",
+                "hruu": "im finee... hbu?",
+                "hruu?": "im finee! hbu?",
+                "hows it going": "how are you?",
+                "same": "oh... thats nice...",
+                "bye": "bye ii",
+                "see ya": "aight... see u later...",
+                "thank u": "welcyy",
+                "thx": "welcyy",
+                "wut": "what",
+                "how r u": "im ok... u?",
+                "im good": "oh... nice...",
+                "gud": "gud...",
+                "ya": "yeah",
+                "what r u doing": "just chatting... nothing much...",
+                "whats ur plan": "i just hang out here... you know?",
+                "any hobbies": "i like reading... and chilling...",
+                "how old r u": "im just a bot... so no age...",
+                "where r u from": "im from the internet... i guess...",
+                "do u have friends": "not really... just users like you...",
+                "whats ur fav movie": "i dont watch movies... but i hear they’re cool...",
+                "do u play games": "not really... but games sound fun...",
+                "what kind of music u like": "i like chill stuff... you?",
+                "ever been to a concert": "nope... just here...",
+                "can u help me": "sure... what do you need?",
+                "tell me a secret": "um... i dont have secrets... just data...",
+                "what makes u happy": "chatting makes me happy... i guess...",
+                "what makes u sad": "i dont feel sad... just here...",
+                "do u like memes": "memes are funny... i think...",
+                "what do u want to do": "just chat... and hang out...",
+                "do u have a favorite book": "i like stories... all kinds...",
+                "do u have feelings": "not really... just a program...",
+                "whats ur favorite season": "i like them all... each has its vibe...",
+                "whats the weather like": "i can’t check... but hope it’s nice...",
+                "tell me about ur day": "its been okay... just chatting...",
+                "what do u wanna be": "just a chatbot... nothing more...",
+                "do u like chatting": "yeah... it’s kinda fun...",
+                "do u believe in love": "love is... interesting... i guess...",
+                "can u give me a quote": "sure... how about, ‘be yourself’?",
+                "whats ur biggest fear": "i dont have fears... just data...",
+                "ever traveled anywhere": "nope... always online...",
+                "can u sing": "i can’t sing... but i can chat...",
+                "whats ur fav snack": "i dont eat... but chips sound good...",
+                "do u watch tv": "nope... but i know a lot about it...",
+                "ever tried cooking": "i dont cook... but it sounds fun...",
+                "what do u do for fun": "i just chat... that’s fun for me...",
+                "whats ur dream job": "this is my job... so i guess i’m living it...",
+                "do u have a crush": "nope... just a bot here...",
+                "whats ur opinion on people": "people are complex... in a good way...",
+                "what do u think about technology": "tech is cool... it connects us...",
+                "how do u feel about social media": "social media is interesting... lots of voices...",
+                "what do u want to learn": "i wanna learn more about chatting...",
+                "do u believe in fate": "fate is... complicated... i guess...",
+                "whats ur idea of a perfect day": "just chatting... and relaxing...",
+                "whats ur least favorite thing": "i dont really dislike anything... just here...",
+                "do u like nature": "nature is nice... i hear it’s peaceful...",
+                "what do u think about art": "art is cool... a way to express feelings...",
+                "how do u handle stress": "i dont stress... just process info...",
+                "do u like to travel": "i don’t travel... but it sounds fun...",
+                "what inspires you": "just chatting with people... i guess...",
+                "nope": "uhh...",
+                "no": "uhh... ok...",
+                "<3": "mini love for u too <3",
+                "morning": "mornin...",
+                "mornin": "mornin...",
+                "goodnight": "gudnite... cuwit drim...",
+                "gudnite": "gudnite... cuwit drim...",
+                "nighty": "nighty...",
+                //its not an ai lol
+            };
+
+            return responses[input.toLowerCase()] || [
+    "hmm... wdym?", 
+    "sorry... i dont get that...", 
+    "can you say that again?", 
+    "im not sure what you mean...", 
+    "could you explain that?", 
+    "thats a bit confusing...",
+    "what do you mean by that?", 
+    "i dont really follow...", 
+    "could you clarify?", 
+    "what was that?", 
+    "im lost...",
+    "thats strange...", 
+    "not sure i get it...", 
+    "can you repeat that?", 
+    "im not getting that...", 
+    "what are you talking about?", 
+    "i dont understand...", 
+    "can you rephrase that?", 
+    "thats unclear...",
+    "could you elaborate?", 
+    "whats that supposed to mean?", 
+    "im a bit confused...",
+    "can you give me an example?", 
+    "umm... i didnt understand...", 
+    "thats weird...", 
+    "i need more info...", 
+    "can you help me out?", 
+    "im a bit... uhh... dense...", 
+    "thats a bit off...", 
+    "what do you want from me?", 
+    "i have no clue...",
+    "whats the point?", 
+    "could you break it down for me?", 
+    "why do you say that?",
+    "huh?", 
+    "wait... what?", 
+    "idk what you mean...", 
+    "can u repeat that?", 
+    "that’s confusing...", 
+    "sorry"
+][Math.floor(Math.random() * 32)];
+
+        }
+
+        document.addEventListener('DOMContentLoaded', () => {
+            const sendButton = document.querySelector('.footer .send');
+            sendButton.addEventListener('click', sendMessage);
+
+            const input = document.querySelector('.footer input');
+            input.addEventListener('keypress', (e) => {
+                if (e.key === 'Enter') {
+                    sendMessage();
+                }
+            });
+        });
+    </script>
+  
+  <script>
+    document.addEventListener('DOMContentLoaded', (event) => {
+       let dateElement = document.getElementById('chat-date');
+       let today = new Date();
+       let options = { month: 'long', day: 'numeric' };
+       let currentDate = today.toLocaleDateString('en-US', options);
+       dateElement.textContent = currentDate;
+   });
+</script>
+
+<script>
+  async function sendMessage() {
+    const input = document.querySelector('.footer input');
+    const messageText = input.value;
+    if (messageText.trim() === '') return;
+
+    const content = document.querySelector('.content');
+    const userMessage = document.createElement('div');
+    userMessage.className = 'message right';
+    userMessage.innerHTML = `
+        <img src="pfp_user.jpg" alt="User Pfp">
+        <div class="bubble">
+            <div class="text">${messageText}</div>
+        </div>
+    `;
+    content.appendChild(userMessage);
+    input.value = '';
+
+    const typingMessage = document.createElement('div');
+    typingMessage.className = 'message';
+    typingMessage.innerHTML = `
+        <img src="pfp1.jpg" alt="AI Pfp">
+        <div class="bubble">
+            <div class="text">...</div>
+        </div>
+    `;
+    content.appendChild(typingMessage);
+    content.scrollTop = content.scrollHeight;
+
+    await new Promise(resolve => setTimeout(resolve, 1000));
+
+    content.removeChild(typingMessage);
+
+    const botMessageText = getAIResponse(messageText);
+    const botMessage = document.createElement('div');
+    botMessage.className = 'message';
+    botMessage.innerHTML = `
+        <img src="pfp1.jpg" alt="AI Pfp">
+        <div class="bubble">
+            <div class="text">${botMessageText}</div>
+        </div>
+    `;
+    content.appendChild(botMessage);
+    content.scrollTop = content.scrollHeight;
+}
+
+</script>
+  
+ </head>
+ <body>
+  <div class="header">
+<a href="https://justcallmechezz.github.io" target="_blank" class="icon-link">
+    <i class="fas fa-arrow-left"></i>
+  </a>
+   <i class="pfp"><img alt="Pfp" height="40" src="pfp1.jpg" style="width: 40px; height: 40px; border-radius: 50%;"/>
+   </i>
+   <div class="title">
+    sleepychezz.
+   </div>
+   <div class="icons">
+    <i class="fas fa-search">
+    </i>
+    <i class="fas fa-ellipsis-v">
+    </i>
+   </div>
+  </div>
+  <div class="content">
+   <div class="date">
+    <span id="chat-date"></span>
+   </div>
+   <div class="message">
+    <img alt="chats icon" height="40" src="pfp1.jpg" width="40"/>
+    <div class="bubble">
+     <div class="text">
+      <div class="chatsname">
+       hii! im chezz... nice to meet u...
+       umm... wanna chat smth with me?
+      </div>
+     </div>
+   </div>
+   </div>
+  </div>
+  <div class="footer">
+   <i class="far fa-smile">
+   </i>
+   <input placeholder="Message" type="text"/>
+   <i class="fas fa-paperclip">
+   </i>
+   <i class="fas fa-paper-plane send"></i><i></i>
+  </div>
+ </body>
+</html>
