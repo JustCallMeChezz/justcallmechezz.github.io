@@ -1,3 +1,7 @@
+html {
+  scroll-behavior: smooth;
+}
+
 body {
     font-family: 'Short Stack', cursive;
     background-color: #f2ebe7;
