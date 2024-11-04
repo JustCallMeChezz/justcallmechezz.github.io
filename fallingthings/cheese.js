@@ -1,6 +1,6 @@
 document.addEventListener('DOMContentLoaded', function() {
 const chezzFallContainer = document.querySelector('.chezz-fall-container');
-const chezzSources = ['/fallingthings/cheese.png', '/fallingthings/lily_fall.png'];
+const chezzSources = ['cheese.png', 'fallingthings/lily_fall.png'];
 const startWord = document.getElementById('startWord');
 
 function createChezz() {
