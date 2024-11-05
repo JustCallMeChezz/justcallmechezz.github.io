@@ -37,6 +37,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
     function getSocialMediaIcons() {
         return `
+        <div class="fade">
+        <div class="huuu">
         <p>
             <a href="https://youtube.com/@chezzy_lily"><img src="icons/youtube.png" alt="yt" style="width: 40px; height: 40px;"></a>
             <a href="https://www.tiktok.com/@sleepychezz"><img src="icons/tiktok.png" alt="tt" style="width: 40px; height: 40px;"></a>
@@ -44,16 +46,22 @@ document.addEventListener('DOMContentLoaded', () => {
             <a href="https://github.com/JustCallMeChezz"><img src="icons/github.png" alt="git" style="width: 40px; height: 40px;"></a>
             <a href="https://instagram.com/chezzy_lily"><img src="icons/instagram.png" alt="ig" style="width: 40px; height: 40px;"></a>
         </p>
+        </div>
+        </div>
         `;
     }
 
     function getGamesIcons() {
         return `
+        <div class="fade">
+        <div class="huuu">
         <p>
             <a id="roblox-icon" href="https://www.roblox.com/users/4379659969/profile"><img src="icons/roblox.png" alt="Roblox" style="width: 40px; height: 40px;"></a>
             <a id="minecraft-icon" href="https://launch.minecraft.net/profile/Chezzy%20Lily"><img src="icons/minecraft.png" alt="Minecraft" style="width: 40px; height: 40px;"></a>
             <a id="mobile-legends-icon" href="https://www.mobilelegends.com"><img src="icons/mlbb.png" alt="Mobile Legends" style="width: 40px; height: 40px;"></a>
         </p>
+        </div>
+        </div>
         `;
     }
 });
