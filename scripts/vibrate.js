@@ -1,4 +1,4 @@
-const elementsToVibrate = ['.theme', '.linked', '.games', '.social-media', '.clickable-word'];
+const elementsToVibrate = ['.profile img', '.theme', '.linked', '.social-media', '.clickable-word'];
 
   elementsToVibrate.forEach(selector => {
     const element = document.querySelector(selector);
