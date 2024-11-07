@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>⋅˚₊‧ ୨about me • chezz୧ ‧₊˚ ⋅/ai_chatbot</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet"/>
+    <meta name="theme-color" content="#fbc0af">
+    <link href="https://fonts.googleapis.com/css2?family=Short+Stack&display=swap" rel="stylesheet">
+    <link id="theme-stylesheet" rel="stylesheet" href="/chatbot/themes/chatbot.css">
+</head>
+<body>
+    <div class="header">
+        <a href="index.html" target="_blank" class="icon-link">
+            <i class="fas fa-arrow-left"></i>
+        </a>
+        <i class="pfp"><img alt="Pfp" height="40" src="/pfps/pfp1.jpg" style="width: 40px; height: 40px; border-radius: 50%;"/></i>
+        <div class="title">notsleepychezz.</div>
+        <div class="tag">
+            <span>AI</span>
+        </div>
+        <div class="icons">
+            <a href="https://github.com/JustCallMeChezz" target="_blank" class="icon-link">
+                <i class="fas fa-code"></i></a>
+            <i class="fas fa-ellipsis-v" onclick="openNav()"></i>
+        </div>
+    </div>
+    <div id="sidepanel"class="sidepanel">
+    <a href="javascript:void(0)" class="closebtn" onclick="closeNav()" style="right: 8px;">×</a>
+    <a>
+        <img id="pfps" src="/pfps/pfp1.jpg" alt="pfps" style="width: 100px; height: 100px; border-radius: 50%; border: 4px solid #fbc8af;" class="profile" />
+    </a>
+    <a href="#"> sleepychezz.</a>
+    <br><br>
+    <a href="index.html">About Me</a>
+    <a href="#">Source Code</a>
+    <a onclick="toggleCSS()">Theme</a>
+    <a href="https://discord.gg/CSc32EpttY">Contact</a>
+    <br><br>
+    <a>Characters</a>
+    <select id="personality">
+        <option value="chezz">Chezz</option>
+        <option value="chezzie_kiutzz">Chezzie Kiutzz</option>
+        <option value="fubii">Fubii</option>
+    </select>
+</div>
+    <div class="content">
+        <div class="date">
+            <span id="chat-date"></span>
+        </div>
+        <div class="message">
+            <img alt="chats icon" height="40" src="/pfps/pfp1.jpg" width="40"/>
+            <div class="bubble">
+                <div class="text">
+                    <div class="chatsname">hii! im chezz... nice to meet u... umm... wanna chat smth with me?</div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="footer">
+        <i class="far fa-smile"></i>
+        <input placeholder="Message" type="text"/>
+        <i class="fas fa-paperclip"></i>
+        <i class="fas fa-paper-plane send"></i><i></i>
+    </div>
+    <script src="/chatbot/chatbot.js"></script>
+    <script src="/chatbot/date.js"></script>
+    <script src="/chatbot/sidepanel.js"></script>
+    <script src="/chatbot/themes/themes.js"></script>
+    <script src="/pfps/pfps.js"></script>
+</body>
+</html>
