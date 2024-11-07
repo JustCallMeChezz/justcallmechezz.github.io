@@ -69,8 +69,8 @@ body {
 .sidepanel select {
     width: 100%;
     padding: 10px;
-    background-color: #f5e6e1;
-    color: #4a3626;
+    background-color: #a67c6a;
+    color: #f5e6e1;
     font-size: 16px;
     border: none;
     border-radius: 10px;
@@ -79,8 +79,8 @@ body {
 }
 
 .sidepanel select option {
-    background-color: #f5e6e1;
-    color: #4a3626;
+    background-color: #a67c6a;
+    color: #f5e6e1;
 }
 
 .sidepanel a.profile {
