@@ -38,6 +38,14 @@ body {
     -webkit-tap-highlight-color: transparent;
 }
 
+.username {
+    font-weight: bold;
+    font-size: 0.85em;
+    color: #a67c6a; 
+    margin-bottom: 4px;
+    display: block;
+}
+
 .sidepanel {
     width: 0;
     position: fixed;
