@@ -1,7 +1,7 @@
 body {
     margin: 0;
     font-family: 'Short Stack', cursive;
-    background-color: #FFFAE1;
+    background-color: #FFFDF6;
     color: #4E3D28;
     display: flex;
     flex-direction: column;
@@ -13,8 +13,9 @@ body {
     display: flex;
     align-items: center;
     padding: 10px;
-    background-color: #FFFAE1;
-    border-bottom: 1px solid #FFEBA1;
+    color: #FFC861;
+    background-color: #FFFDF6;
+    border-bottom: 1px solid #e5d0ba;
 }
 
 .header i {
@@ -38,6 +39,34 @@ body {
     -webkit-tap-highlight-color: transparent;
 }
 
+.username {
+    font-weight: bold;
+    font-size: 0.85em;
+    color: #FFFDF6; 
+    margin-bottom: 4px;
+    display: block;
+    display: flex;
+    align-items: center;
+}
+
+.tag {
+    margin-left: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 20px 
+}
+
+.tag span {
+    background-color: #FFC861;
+    color: #FFFDF6;
+    padding: 2px 8px;
+    border-radius: 8px;
+    font-size: 10px;
+    display: flex;
+    align-items: center;
+}
+
 .sidepanel {
     width: 0;
     position: fixed;
@@ -45,7 +74,7 @@ body {
     height: auto;
     top: 0;
     right: 0;
-    background-color: #FFFAE1;
+    background-color: #FFFDF6;
     overflow-x: hidden;
     transition: 0.5s;
     padding-top: 60px;
@@ -69,7 +98,7 @@ body {
 .sidepanel select {
     width: 100%;
     padding: 10px;
-    background-color: #f5e6e1;
+    background-color: #FFD88A;
     color: #4a3626;
     font-size: 16px;
     border: none;
@@ -79,7 +108,7 @@ body {
 }
 
 .sidepanel select option {
-    background-color: #f5e6e1;
+    background-color: #FFD88A;
     color: #4a3626;
 }
 
@@ -130,19 +159,6 @@ body {
     overflow-y: auto;
 }
 
-.tag {
-    display: flex;
-    justify-content: center;
-}
-
-.tag span {
-    background-color: #FFC861;
-    color: #FFFAE1;
-    padding: 4px 10px;
-    border-radius: 10px;
-    font-size: 12px;
-}
-
 .date {
     display: flex;
     justify-content: center;
@@ -172,8 +188,8 @@ body {
 }
 
 .message .bubble {
-    background-color: #FFC861;
-    border-radius: 10px;
+    background-color: #FFD88A;
+    border-radius: 12px;
     padding: 10px;
     max-width: 70%;
     position: relative;
@@ -191,15 +207,16 @@ body {
 }
 
 .message.right .bubble {
-    background-color: #FFC861;
+    background-color: #FFEBA1;
 }
 
 .footer {
     display: flex;
     align-items: center;
     padding: 10px;
-    background-color: #FFFAE1;
-    border-top: 1px solid #FFEBA1;
+    color: #FFC861;
+    background-color: #FFFDF6;
+    border-top: 1px solid #e5d0ba;
     position: fixed;
     bottom: 0;
     width: 100%;
@@ -214,7 +231,7 @@ body {
     flex-grow: 1;
     border: none;
     outline: none;
-    background-color: #FFFAE1;
+    background-color: #FFFDF6;
     font-size: 16px;
 }
 
