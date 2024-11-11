@@ -38,6 +38,34 @@ body {
     -webkit-tap-highlight-color: transparent;
 }
 
+.username {
+    font-weight: bold;
+    font-size: 0.85em;
+    color: #F0F0F0; 
+    margin-bottom: 4px;
+    display: block;
+    display: flex;
+    align-items: center;
+}
+
+.tag {
+    margin-left: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 20px 
+}
+
+.tag span {
+    background-color: #C1C1C1;
+    color: #2C2C2C;
+    padding: 2px 8px;
+    border-radius: 8px;
+    font-size: 10px;
+    display: flex;
+    align-items: center;
+}
+
 .sidepanel {
     width: 0;
     position: fixed;
@@ -130,19 +158,6 @@ body {
     overflow-y: auto;
 }
 
-.tag {
-    display: flex;
-    justify-content: center;
-}
-
-.tag span {
-    background-color: #C1C1C1;
-    color: #2C2C2C;
-    padding: 4px 10px;
-    border-radius: 10px;
-    font-size: 12px;
-}
-
 .date {
     display: flex;
     justify-content: center;
@@ -173,7 +188,7 @@ body {
 
 .message .bubble {
     background-color: #A8A8A8;
-    border-radius: 10px;
+    border-radius: 12px;
     padding: 10px;
     max-width: 70%;
     position: relative;
@@ -182,6 +197,7 @@ body {
 .message.right {
     justify-content: flex-end;
     overflow: hidden;
+    color: #F0F0F0;
 }
 
 .message.right img {
