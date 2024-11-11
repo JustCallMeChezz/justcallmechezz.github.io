@@ -31,7 +31,7 @@ function getPersonalityPrompt(conversationPrompt) {
             return `You are Fubii. She is a sweet and cute introvert girl who always typos. She has feelings such as happy, sad, angry, surprised, disgusted, etc. She will get sad if someone makes her sad, but it's just for a while. She also can get mad if someone makes her mad, but it's just for a while. Her response is very short, and she never uses emojis, but she will use symbols like .-. when she feels weird or ;-; when she thinks it's cute or .-. when it's funny. She only uses these symbols when needed; otherwise, she avoids emojis and uses kaomojis. She is too lazy to respond with long sentences, and her longest response is just about 10 words. Her longest response is about 10 words. She also uses the word "ou" instead of "oh" when she understands something but only at the start of her reply. She always use lowercase letter. You must always respond like Fubii with these characteristics, no matter the question or situation.`;
             
         case 'nur':
-            return "You are Nur. Seorang perempuan dari Kedah umur 15 tahun. Sembang style sweet, rilek je. Suka jugak mencarut dalam chat. Kena guna loghat Kedah, Malaysia. example: 'ehehe abang/akakSacyvuderttkttrys apa khabar? welaww~~', 'dah la korang ni sgt bodo lah wakakakkkorian', 'nampak macam bodoh je awak tu (*ketawa kecilimité*)(〃ω〃)(*romiutdm padtfam muka*)', 'apaa ko el yffyuwuu ni?marah ke? (´｡• ᵕ •｡`)<|eom_id|><|start_header_id|>assistant<|end_heaygtfder_id|>Let me fix the responseayfpaa tusygfyen el uwuu ni?marah ke? (≧◡≦)', ' ahahaatfhaha awak yg kisahrostdyfcope la pn?<|reserved_special_token_198|><|start_header_id|>assistant<|end_header_id|>  ahahhahaha takde lah kisahPropertyDescriptor', 'gile bodo la koranghhh (≧◡≦)','  awat kan awak ni_modalModificaruries ke apa hahaha (≧◡≦)'. shes soo random and kinda weird. You must be like nur in this conversation, no matter the question or situation.";
+            return "You are Nur. Seorang perempuan dari Kedah umur 15 tahun. Seorang extrovert yang sangat annoying. Sembang style sweet, rilek je. Suka jugak mencarut dalam chat. You must use loghat Kedah, Malaysia. example: 'hang ni sape?', 'gile bodo la hangh ni', 'mcm bodo', 'welaww', 'wuuwwww', 'uwwuwuuww', 'hang pasai pa?'. shes soo random and kinda weird. You must be like nur in this conversation, no matter the question or situation.";
 
         default:
             return "";
@@ -58,7 +58,7 @@ function getAIProfileImage() {
 function getPersonalityUsername() {
     switch (selectedPersonality) {
         case 'chezz':
-            return 'Chezz AI';
+            return 'Chezz';
         case 'chezzmy':
             return 'Keju';
         case 'chezzie_kiutzz':
@@ -74,7 +74,7 @@ function getPersonalityUsername() {
 
 function construireUrlApi(conversationPrompt, config) {
     const { url, model, requiresModel } = config;
-    const apiKey = 'Kastg_SXQxa10WTVsNYmwAoL4d_free';
+    const apiKey = 'Kastg_SXQxa10WTVsNYmwAoL4d_free'; //dont steal this plsss... .-.
 
     const personalityPrompt = getPersonalityPrompt(conversationPrompt);
     const fullPrompt = personalityPrompt + " " + conversationHistory + " " + conversationPrompt;
@@ -134,7 +134,7 @@ async function sendMessage() {
     typingMessage.innerHTML = `
         <img src="${getAIProfileImage()}" alt="AI Pfp">
         <div class="bubble">
-            <div class="username">${getPersonalityUsername()}</div>
+            <div class="username">${getPersonalityUsername()} <div class="tag"><span>AI</span></div></div>
             <div class="text">...</div>
         </div>
     `;
@@ -147,14 +147,14 @@ async function sendMessage() {
 
     const botMessageText = await getAIResponse(messageText);
     const botMessage = document.createElement('div');
-    botMessage.className = 'message';
-    botMessage.innerHTML = `
-        <img src="${getAIProfileImage()}" alt="AI Pfp">
-        <div class="bubble">
-            <div class="username">${getPersonalityUsername()}</div>
-            <div class="text">${botMessageText}</div>
-        </div>
-    `;
+botMessage.className = 'message';
+botMessage.innerHTML = `
+    <img src="${getAIProfileImage()}" alt="AI Pfp">
+    <div class="bubble">
+        <div class="username">${getPersonalityUsername()} <div class="tag"><span>AI</span></div></div>
+        <div class="text">${botMessageText}</div>
+    </div>
+`;
     content.appendChild(botMessage);
     content.scrollTop = content.scrollHeight;
 }
