@@ -44,6 +44,26 @@ body {
     color: #a67c6a; 
     margin-bottom: 4px;
     display: block;
+    display: flex;
+    align-items: center;
+}
+
+.tag {
+    margin-left: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 20px 
+}
+
+.tag span {
+    background-color: #a67c6a;
+    color: #f5e6e1;
+    padding: 2px 8px;
+    border-radius: 8px;
+    font-size: 10px;
+    display: flex;
+    align-items: center;
 }
 
 .sidepanel {
@@ -139,19 +159,6 @@ body {
     overflow-y: auto;
 }
 
-.tag {
-    display: flex;
-    justify-content: center;
-}
-
-.tag span {
-    background-color: #a67c6a;
-    color: #f5e6e1;
-    padding: 4px 10px;
-    border-radius: 10px;
-    font-size: 12px;
-}
-
 .date {
     display: flex;
     justify-content: center;
@@ -182,7 +189,7 @@ body {
 
 .message .bubble {
     background-color: #ffe9e3;
-    border-radius: 10px;
+    border-radius: 12px;
     padding: 10px;
     max-width: 70%;
     position: relative;
