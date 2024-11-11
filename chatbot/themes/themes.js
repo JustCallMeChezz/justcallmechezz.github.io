@@ -8,15 +8,15 @@ function toggleCSS() {
     clickCount++;
 
     if (clickCount % 5 === 1) {
-      stylesheet.setAttribute('href', '/chatbot/themes/chatbotcheese.css');
+      stylesheet.setAttribute('href', '/chatbot/themes/chezzyy.css');
     } else if (clickCount % 5 === 2) {
-      stylesheet.setAttribute('href', '/chatbot/themes/chatbotcitrus.css');
+      stylesheet.setAttribute('href', '/chatbot/themes/citrus.css');
     } else if (clickCount % 5 === 3) {
-      stylesheet.setAttribute('href', '/chatbot/themes/chatbotcharcoal.css');
+      stylesheet.setAttribute('href', '/chatbot/themes/charcoal.css');
     } else if (clickCount % 5 === 4) {
-      stylesheet.setAttribute('href', '/chatbot/themes/chatbotdark.css');
+      stylesheet.setAttribute('href', '/chatbot/themes/dark.css');
     } else {
-      stylesheet.setAttribute('href', '/chatbot/themes/chatbot.css');
+      stylesheet.setAttribute('href', '/chatbot/themes/pastellyy.css');
     }
 
     setTimeout(() => {
