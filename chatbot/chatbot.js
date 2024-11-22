@@ -74,7 +74,7 @@ function getPersonalityUsername() {
 
 function construireUrlApi(conversationPrompt, config) {
     const { url, model, requiresModel } = config;
-    const apiKey = 'Kastg_SXQxa10WTVsNYmwAoL4d_free'; //dont steal this plsss... .-.
+    const apiKey = 'Kastg_SXQxa10WTVsNYmwAoL4d_free'; //dont steal this plsss... yea... ik thiss the stupidest thing i ever do... but idk how to hide it... can someone help...? .-.
 
     const personalityPrompt = getPersonalityPrompt(conversationPrompt);
     const fullPrompt = personalityPrompt + " " + conversationHistory + " " + conversationPrompt;
