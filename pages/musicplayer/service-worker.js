@@ -1,11 +1,11 @@
 const CACHE_NAME = 'music-player-cache-v1';
 const urlsToCache = [
   '/',
-  '/index.html',
-  '/styles.css',
-  '/script.js',
-  '/images/icon-256x256.png',
-  '/images/icon-512x512.png',
+  '/pages/musicplayer/index.html',
+  '/pages/musicplayer/styles.css',
+  '/pages/musicplayer/script.js',
+  '/pages/musicplayer/images/icon-256x256.png',
+  '/pages/musicplayer/images/icon-512x512.png',
 ];
 
 self.addEventListener('install', (event) => {
