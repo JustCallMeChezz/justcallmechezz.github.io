@@ -1,7 +1,7 @@
 {
   "name": "Music Player",
   "short_name": "MusicPlayer",
-  "description": "a simple PWA music player that plays audio files from ur device...",
+  "description": "a simple PWA music player that plays audio files from your device...",
   "start_url": "/pages/musicplayer/index.html",
   "display": "standalone",
   "background_color": "#f1d4c8",
