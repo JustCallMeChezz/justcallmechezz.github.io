@@ -65,3 +65,15 @@ function formatTime(seconds) {
     const secondsFormatted = Math.floor(seconds % 60);
     return `${minutes}:${secondsFormatted < 10 ? '0' + secondsFormatted : secondsFormatted}`;
 }
+
+if ('serviceWorker' in navigator) {
+    window.addEventListener('load', () => {
+        navigator.serviceWorker.register('/service-worker.js')
+            .then((registration) => {
+                console.log('Service Worker registered with scope:', registration.scope);
+            })
+            .catch((error) => {
+                console.log('Service Worker registration failed:', error);
+            });
+    });
+}
