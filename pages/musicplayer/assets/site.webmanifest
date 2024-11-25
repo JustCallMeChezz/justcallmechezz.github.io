@@ -1,6 +1,6 @@
 {
-  "name": "Music Player",
-  "short_name": "Music",
+  "name": "Muzzic",
+  "short_name": "Muzzic",
   "icons": [
     {
       "src": "/pages/musicplayer/assets/web-app-manifest-192x192.png",
