@@ -8,206 +8,247 @@
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-
+    
     <style>
-        @font-face {
-            font-family: "Minecrafter";
-            src: url("fonts/minecrafter.ttf") format("truetype");
-            font-weight: normal;
-            font-style: normal;
-        }
+      @font-face {
+    font-family: "Minecrafter";
+    src: url("fonts/minecrafter.ttf") format("truetype");
+    font-weight: normal;
+    font-style: normal;
+}
 
+html {
+    scroll-behavior: smooth;
+}
 
-        html {
-            scroll-behavior: smooth;
-        }
+body {
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+    background: #000;
+    color: #fff;
+    overflow-x: hidden;
+    -webkit-tap-highlight-color: transparent;
+}
 
-        body {
-            font-family: 'Poppins', sans-serif;
-            margin: 0;
-            padding: 0;
-            background: #000000;
-            color: #ffffff;
-            overflow-x: hidden;
-      -webkit-tap-highlight-color: transparent;
-        }
+header {
+    text-align: center;
+    padding: 40px 0px 20px 0px;
+    background: #1a001a;
+}
 
-        header {
-            text-align: center;
-            padding: 50px 20px;
-            background: #1a001a;
-        }
+header h1 {
+    font-family: 'Minecrafter', sans-serif;
+    font-size: 3rem;
+    margin: 0;
+    color: #a020f0;
+    text-shadow: 0 0 20px #a020f0, 0 0 40px #8000ff;
+    transition: text-shadow 0.3s;
+}
 
-        header h1 {
-            font-family: 'Minecrafter', sans-serif;
-            font-size: 3rem;
-            margin: 0;
-            color: #a020f0;
-            text-shadow: 0 0 20px #a020f0, 0 0 40px #8000ff;
-            transition: text-shadow 0.3s;
-        }
+header h1:hover {
+    text-shadow: 0 0 40px #d020f0, 0 0 60px #a020f0, 0 0 80px #ff00ff;
+}
 
-        header h1:hover {
-            text-shadow: 0 0 40px #d020f0, 0 0 60px #a020f0, 0 0 80px #ff00ff;
-        }
+header p {
+    font-size: 1rem;
+    margin-top: -2px;
+    color: #d8b3ff;
+}
 
-        header p {
-            font-size: 1rem;
-            margin-top: -2px;
-            color: #d8b3ff;
-        }
+button, .community {
+    display: inline-block;
+    margin-top: 10px;
+    background: #a020f0;
+    color: #fff;
+    padding: 15px 30px;
+    text-decoration: none;
+    border-radius: 25px;
+    font-weight: bold;
+    transition: 0.3s;
+    box-shadow: 0 0 20px #8000ff;
+}
 
-        .invite-button {
-            display: inline-block;
-            margin-top: 10px;
-            background: #a020f0;
-            color: #fff;
-            padding: 15px 30px;
-            text-decoration: none;
-            border-radius: 25px;
-            font-weight: bold;
-            transition: 0.3s;
-            box-shadow: 0 0 20px #8000ff;
-        }
+.invite-button {
+    display: inline-block;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    background: #a020f0;
+    color: #fff;
+    padding: 15px 30px;
+    text-decoration: none;
+    border-radius: 25px;
+    font-weight: bold;
+    transition: 0.3s;
+    box-shadow: 0 0 20px #8000ff;
+}
 
-        .invite-button:hover {
-            background: #8000ff;
-            box-shadow: 0 0 40px #ff00ff, 0 0 80px #d020f0;
-        }
-        
-        .community {
-            display: inline-block;
-            margin-top: 10px;
-            background: #a020f0;
-            color: #fff;
-            padding: 15px 30px;
-            text-decoration: none;
-            border-radius: 25px;
-            font-weight: bold;
-            transition: 0.3s;
-            box-shadow: 0 0 20px #8000ff;
-        }
+button:hover, .invite-button:hover, .community:hover {
+    background: #8000ff;
+    box-shadow: 0 0 40px #ff00ff, 0 0 80px #d020f0;
+}
 
-        .community:hover {
-            background: #8000ff;
-            box-shadow: 0 0 40px #ff00ff, 0 0 80px #d020f0;
-        }
+.navbar {
+    background: #6a1b9a;
+    color: white;
+    padding: 10px 20px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    box-sizing: border-box;
+}
 
-        .screenshot-slider {
-            text-align: center;
-            margin: 40px auto;
-        }
+.nav-list {
+    display: flex;
+    gap: 15px;
+    overflow-x: auto;
+    padding: 0;
+    margin: 0;
+    list-style-type: none;
+    flex-wrap: nowrap;
+    width: 100%;
+    box-sizing: border-box;
+}
 
-        .slider {
-            position: relative;
-            width: 100%;
-            max-width: auto;
-            margin: auto;
-            overflow: hidden;
-        }
+.nav-list li {
+    flex-shrink: 0;
+}
 
-        .slider-images {
-            display: flex;
-            transition: transform 1s ease-in-out;
-        }
+.nav-list a {
+    text-decoration: none;
+    color: #d8b3ff;
+    font-size: 1rem;
+    font-weight: 500;
+    padding: 10px 15px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
 
-        .slider img {
-            width: 100%;
-            flex-shrink: 0;
-        }
+.nav-list a:hover {
+    background-color: #9c4dcc;
+    transform: translateY(-2px);
+}
 
-        .info {
-            text-align: center;
-            margin: 50px auto;
-            padding: 0 20px;
-        }
-        
-        .note {
-            text-align: center;
-            margin: 50px auto;
-            padding: 0 20px;
-        }
-        
-        .uhh {
-          overflow: hidden;
-        }
+.screenshot-slider {
+    text-align: center;
+    margin: 0px auto;
+}
 
-        .info h2 {
-            font-family: 'Poppins', sans-serif;
-            font-size: 2rem;
-            margin-bottom: 20px;
-            color: #a020f0;
-            text-shadow: 0 0 20px #8000ff;
-        }
+.info, .invite {
+    text-align: center;
+    margin: 50px auto;
+}
 
-        .info ul {
-            list-style: none;
-            padding: 0;
-            transition: 0.5s;
-        }
-        
-        .info ul:hover {
-          color: #d8b3ff;
-        }
+ .slider {
+     position: relative;
+     width: 100%;
+     max-width: auto;
+     margin: auto;
+     overflow: hidden;
+}
 
-        .info li {
-            margin: 10px 0;
-            font-size: 1.2rem;
-        }
+.slider-images {
+     display: flex;
+     transition: transform 1s ease-in-out;
+}
 
-        footer {
-            text-align: center;
-            padding: 20px;
-            background-color: #1a001a;
-            color: #d8b3ff;
-        }
+.slider img {
+      width: 100%;
+      flex-shrink: 0;
+}
 
-        footer i {
-            color: #ff00ff;
-            animation: heartbeat 1.5s ease-in-out infinite;
-        }
+.uhh {
+    overflow: hidden;
+}
 
-        @keyframes heartbeat {
-            0% {
-                transform: scale(1);
-            }
-            25% {
-                transform: scale(1.2);
-            }
-            50% {
-                transform: scale(1);
-            }
-            75% {
-                transform: scale(1.2);
-            }
-            100% {
-                transform: scale(1);
-            }
-        }
+.info h2, .invite h2 {
+    font-family: 'Poppins', sans-serif;
+    font-size: 2rem;
+    margin-bottom: 20px;
+    color: #a020f0;
+    text-shadow: 0 0 20px #8000ff;
+}
 
-        @media (max-width: 768px) {
-            header h1 {
-                font-size: 2.5rem;
-            }
+.info ul, .invite ul {
+    list-style: none;
+    padding: 0;
+    transition: 0.5s;
+}
 
-            .info h2 {
-                font-size: 1.8rem;
-            }
+.info ul:hover, .invite ul:hover {
+    color: #d8b3ff;
+}
 
-            .invite-button {
-                padding: 10px 20px;
-            }
-        }
+.info li, .invite li {
+    margin: 10px 0;
+    font-size: 1.2rem;
+}
+
+footer {
+    text-align: center;
+    padding: 20px;
+    background-color: #1a001a;
+    color: #d8b3ff;
+}
+
+footer i {
+    color: #ff00ff;
+    animation: heartbeat 1.5s ease-in-out infinite;
+}
+
+@keyframes heartbeat {
+    0%, 50%, 100% {
+        transform: scale(1);
+    }
+    25%, 75% {
+        transform: scale(1.2);
+    }
+}
+
+@media (max-width: 768px) {
+    header h1 {
+        font-size: 2.5rem;
+    }
+
+    .info h2 {
+        font-size: 1.8rem;
+    }
+
+    .invite-button {
+        padding: 10px 20px;
+    }
+}
+    
+@media (min-width: 768px) {
+    .navbar {
+        display: flex;
+        justify-content: center; /* Center the nav list */
+    }
+
+    .nav-list {
+        justify-content: center; /* Center the nav items when the screen is wide enough */
+        width: auto; /* Allow the width to adjust based on content */
+    }
+}
     </style>
+
 </head>
 <body>
     <header>
-        <div class="Ultra">
+        <div id="header" class="Ultra">
             <h1>Ultra MC</h1>
             <p>By BangUltra</p>
-            <a href="https://chat.whatsapp.com/HWhwpq5exS76i7fMJm15zx" class="invite-button">Join Server</a>
         </div>
     </header>
+    
+    <nav class="navbar">
+    <ul class="nav-list">
+        <li><a href="#invite">Invite</a></li>
+        <li><a href="#members">Members</a></li>
+        <li><a href="#info">Info</a></li>
+        <li><a href="#rules">Rules</a></li>
+        <li><a href="#community">Community</a></li>
+    </ul>
+</nav>
 
     <section class="screenshot-slider">
         <div class="slider">
@@ -217,40 +258,33 @@
                 <img src="https://media.discordapp.net/attachments/1181254257798807635/1310831886876147762/screenshot3.png?ex=6746a6d3&is=67455553&hm=885918820569560952c86397e11bc4b093ec0bf5659a725a6e476447913b6ee2&" alt="Screenshot 3">
                 <img src="https://media.discordapp.net/attachments/1181254257798807635/1310831887597703169/screenshot4.png?ex=6746a6d4&is=67455554&hm=c8ac58335eb3201c41330bd9c8c365164e78c622a7a691fb8ef7abe915a21e82&" alt="Screenshot 4">
             </div>
+            <a style="color: #d8b3ff;">note: images here just random... not from ultra mc<br>ill add it later after i get a real screenshots...</a>
         </div>
     </section>
     
-    <section class="note">
-      <h1>note</h1>
-      <a>ni screenshot random je...<br>bukan dari ultra mc pun... ill add it later</a>
-    </section>
-    
     <div class="uhh">
-      
-    <section class="info" data-aos="zoom-out-down" data-aos-duration="1000">
-        <h2>Member Count</h2>
-        <ul>
-            <li><b>N/A</b></li>
-        </ul>
+    
+    <section id="invite" class="invite">
+      <a href="https://chat.whatsapp.com/HWhwpq5exS76i7fMJm15zx" class="invite-button">Join Server</a>
     </section>
     
-    <section class="info" data-aos="zoom-out-down" data-aos-duration="1000">
-        <h2>How to join? Here...</h2>
+    <section class="invite" data-aos="zoom-out-down" data-aos-duration="1000">
+        <h2>Add to Minecraft</h2>
         <ul>
             <li><b>IP:</b> 144.76.58.217</li>
             <li><b>Port:</b> 32299</li>
             <li><b>Minecraft</b> Bedrock Edition</li>
         </ul>
     </section>
+      
+    <section id="members" class="info" data-aos="zoom-out-down" data-aos-duration="1000">
+        <h2>Member Count</h2>
+        <ul>
+            <li><b>N/A</b></li>
+        </ul>
+    </section>
     
-    <section class="info" data-aos="zoom-out-down" data-aos-duration="1000">
-    <h2>Server Rules</h2>
-    <ul>
-        <li>Nothing here... yet...</li>
-    </ul>
-</section>
-    
-    <section class="info" data-aos="zoom-out-down" data-aos-duration="1000">
+    <section id="info"class="info" data-aos="zoom-out-down" data-aos-duration="1000">
         <h2>Some Info</h2>
         <ul>
             <li><b>Owner: </b>BangUltra kot...</li>
@@ -259,7 +293,14 @@
         </ul>
     </section>
     
-    <section class="info" data-aos="zoom-out" data-aos-duration="1000">
+    <section id="rules" class="info" data-aos="zoom-out-down" data-aos-duration="1000">
+    <h2>Server Rules</h2>
+    <ul>
+        <li>Nothing here... yet...</li>
+    </ul>
+</section>
+    
+    <section id="community" class="info" data-aos="zoom-out" data-aos-duration="1000">
         <h2>Community</h2>
         <ul>
             <a class="community" href="https://chat.whatsapp.com/HWhwpq5exS76i7fMJm15zx"><i class="fab fa-whatsapp"></i> Whatsapp Group</a>
@@ -275,7 +316,7 @@
     </footer>
 
     <script>
-        let currentSlide = 0;
+      let currentSlide = 0;
         const sliderImages = document.querySelector('.slider-images');
         const slides = document.querySelectorAll('.slider img');
         
@@ -298,8 +339,7 @@
             showSlide(currentSlide);
         }
     </script>
-    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js">
-    </script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script>
   AOS.init();
 </script>
