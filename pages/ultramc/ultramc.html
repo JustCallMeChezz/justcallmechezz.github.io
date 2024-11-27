@@ -1,1 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ultra MC - Minecraft Server</title>
+    
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link href="ultramc.css" rel="stylesheet">
+
+</head>
+<body>
+    <header>
+        <div id="header" class="Ultra">
+            <h1>Ultra MC</h1>
+            <p>By BangUltra</p>
+        </div>
+    </header>
+    
+    <nav class="navbar">
+    <ul class="nav-list">
+        <li><a href="#invite">Invite</a></li>
+        <li><a href="#members">Members</a></li>
+        <li><a href="#info">Info</a></li>
+        <li><a href="#rules">Rules</a></li>
+        <li><a href="#community">Community</a></li>
+    </ul>
+</nav>
+
+    <section class="screenshot-slider">
+        <div class="slider">
+            <div class="slider-images">
+                <img src="https://media.discordapp.net/attachments/1181254257798807635/1310831885748011140/screenshot1.png?ex=6746a6d3&is=67455553&hm=fda819b663413f3306a06247937161e85c8211e7dd1f52026450e9515809167a&" alt="Screenshot 1">
+                <img src="https://media.discordapp.net/attachments/1181254257798807635/1310831886398132244/screenshot2.png?ex=6746a6d3&is=67455553&hm=44bb78042368c25ec25e655d939737a928dfa92951c5cd3cdf8e1916567eadae&" alt="Screenshot 2">
+                <img src="https://media.discordapp.net/attachments/1181254257798807635/1310831886876147762/screenshot3.png?ex=6746a6d3&is=67455553&hm=885918820569560952c86397e11bc4b093ec0bf5659a725a6e476447913b6ee2&" alt="Screenshot 3">
+                <img src="https://media.discordapp.net/attachments/1181254257798807635/1310831887597703169/screenshot4.png?ex=6746a6d4&is=67455554&hm=c8ac58335eb3201c41330bd9c8c365164e78c622a7a691fb8ef7abe915a21e82&" alt="Screenshot 4">
+            </div>
+            <a style="color: #d8b3ff;">note: images here just random... not from ultra mc<br>ill add it later after i get a real screenshots...</a>
+        </div>
+    </section>
+    
+    <div class="uhh">
+    
+    <section id="invite" class="invite">
+      <a href="https://chat.whatsapp.com/HWhwpq5exS76i7fMJm15zx" class="invite-button">Join Server</a>
+    </section>
+    
+    <section class="invite" data-aos="zoom-out-down" data-aos-duration="1000">
+        <h2>Add to Minecraft</h2>
+        <ul>
+            <li><b>IP:</b> 144.76.58.217</li>
+            <li><b>Port:</b> 32299</li>
+            <li><b>Minecraft</b> Bedrock Edition</li>
+        </ul>
+    </section>
+      
+    <section id="members" class="info" data-aos="zoom-out-down" data-aos-duration="1000">
+        <h2>Member Count</h2>
+        <ul>
+            <li><b>N/A</b></li>
+        </ul>
+    </section>
+    
+    <section id="info"class="info" data-aos="zoom-out-down" data-aos-duration="1000">
+        <h2>Some Info</h2>
+        <ul>
+            <li><b>Owner: </b>BangUltra kot...</li>
+            <li><b>Admin: </b>Lutfi?</li>
+            <li><b>Website Creator: </b>Chezz</li>
+        </ul>
+    </section>
+    
+    <section id="rules" class="info" data-aos="zoom-out-down" data-aos-duration="1000">
+    <h2>Peraturan yang patut di patuhi oleh pemain server</h2>
+    <ul>
+        <li>Jangan rusuh</li>
+        <li>Jangan main nama bapak</li>
+        <li>Jangan curi item orang lain</li>
+        <li>Jangan minta² sama admin</li>
+        <li>Jangan bezakan server ini dengan server lain</li>
+        <li>Jangan mencarut</li>
+        <li>Jangan membuat shop yang illegal</li>
+        <li>Jangan berjudi di dalam server</li>
+        <li>Patuhi jika tidak lu di sunat 7 kali 🗿</li>
+    </ul>
+</section>
+    
+    <section id="community" class="info" data-aos="zoom-out" data-aos-duration="1000">
+        <h2>Community</h2>
+        <ul>
+            <a class="community" href="https://chat.whatsapp.com/HWhwpq5exS76i7fMJm15zx"><i class="fab fa-whatsapp"></i> Whatsapp Group</a>
+            <li></li>
+            <a class="community" href="#discord"><i class="fab fa-discord"></i> Discord Server</a>
+            <li></li>
+        </ul>
+    </section>
+    </div>
+
+    <footer>
+        <p>&copy; 2024 Ultra MC.<br>Website made with <i class="fas fa-heart"> </i> by sleepychezz.</p>
+    </footer>
+
+    <script src="ultramc.js"></script>
+    <script>const h1 = document.querySelector('header h1');
+const p = document.querySelector('header p');
+const h1Texts = ['Ultra MC', 'Minecraft'];
+const pTexts = ['By BangUltra', 'Server'];
+let currentTextIndex = 0;
+
+function changeText() {
+    h1.classList.add('fade');
+    p.classList.add('fade');
+    
+    setTimeout(() => {
+        h1.textContent = h1Texts[currentTextIndex]; 
+        p.textContent = pTexts[currentTextIndex]; 
+        currentTextIndex = (currentTextIndex + 1) % h1Texts.length; 
+        h1.classList.remove('fade');
+        p.classList.remove('fade');
+    }, 1000); 
+}
+
+setInterval(changeText, 5000); 
+</script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+  AOS.init();
+</script>
+</body>
+  </html>
 
