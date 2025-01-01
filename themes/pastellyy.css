@@ -5,11 +5,18 @@ html {
 
 body {
     font-family: 'Short Stack', cursive;
-    background-color: #f2ebe7;
+    background-image: 
+        linear-gradient(0deg,
+            rgba(255, 230, 222, 0.2) 0% 12.5%, rgba(255, 255, 255, 0.2) 12.5% 37.5%, rgba(255, 230, 222, 0.2) 37.5% 62.5%, rgba(255, 255, 255, 0.2) 62.5% 87.5%, rgba(255, 230, 222, 0.2) 87.5% 100%),
+        linear-gradient(90deg,
+            rgba(255, 230, 222, 0.2) 0% 12.5%, rgba(255, 255, 255, 0.2) 12.5% 37.5%, rgba(255, 230, 222, 0.2) 37.5% 62.5%, rgba(255, 255, 255, 0.2) 62.5% 87.5%, rgba(255, 230, 222, 0.2) 87.5% 100%
+        );
+    background-size: 160px 160px, 160px 160px;
     color: #4a3626;
     margin: 0;
     padding: 0;
     user-select: none;
+    font-size: 0.8em;
 }
 
 .website-name {
@@ -21,10 +28,55 @@ body {
     margin: 50px auto;
     background-color: #fef6f7;
     padding: 30px;
-    border-radius: 16px;
+    border-radius: 20px;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-    border: 1px solid #e5d0ba;
+    border: 5px solid rgba(255, 230, 222, 0.6);
     overflow: hidden;
+}
+
+@media (max-width: 768px) {
+    .container {
+        margin-left: 8px;
+        margin-right: 8px;
+    }
+}
+
+.github-stats {
+  text-align: center;
+  margin: 20px auto;
+}
+
+.github-stats h3 {
+    font-size: 1.5em;
+    color: #b07255;
+    border-bottom: 2px solid #fbc8af;
+    display: inline-block;
+    padding-bottom: 5px;
+    margin-bottom: 10px;
+}
+
+.stats-container {
+  display: inline-block;
+  max-width: 600px;
+  width: 100%;
+}
+
+.stats-container img {
+  max-width: 100%;
+  height: auto;
+  margin: 10px 0;
+}
+
+@media (min-width: 768px) {
+  .github-stats {
+    text-align: center; 
+  }
+  
+  .stats-container {
+    display: block;
+    margin: 0 auto;
+    text-align: center; 
+  }
 }
 
 .blush {
@@ -134,11 +186,13 @@ transition: all 0.6s ease;
 .name.fade-out {
 opacity: 0;
 transform: scale(1.2);
+transition: opacity 500ms ease-out;
 }
 
 .name.fade-in {
 opacity: 1;
 transform: scale(1);
+transition: opacity 500ms ease-in;
 }
 
 .profile a, .name {
