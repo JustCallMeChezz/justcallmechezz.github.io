@@ -4,6 +4,7 @@ function toggleCSS() {
   const stylesheet = document.getElementById('theme-stylesheet');
   const themeColorMeta = document.querySelector('meta[name="theme-color"]');
   const triggerElement = document.querySelector('.theme');
+  const githubStatsSection = document.querySelector('.github-stats');
   
   triggerElement.classList.add('rubber-bounce');
   
@@ -13,34 +14,44 @@ function toggleCSS() {
     clickCount++;
 
     let themeColor = "#fbc0af";
+    let themeToApply = 'themes/pastellyy.css'; // default pastellyy
 
     if (clickCount % 8 === 1) {
-      stylesheet.setAttribute('href', 'themes/chezzyy.css');
+      themeToApply = 'themes/chezzyy.css';
       themeColor = "#ffbb8a";
     } else if (clickCount % 8 === 2) {
-      stylesheet.setAttribute('href', 'themes/frostyy.css');
+      themeToApply = 'themes/frostyy.css';
       themeColor = "#e0f7fa";
     } else if (clickCount % 8 === 3) {
-      stylesheet.setAttribute('href', 'themes/rosydream.css');
+      themeToApply = 'themes/rosydream.css';
       themeColor = "#f7c6d2";
     } else if (clickCount % 8 === 4) {
-      stylesheet.setAttribute('href', 'themes/neonrose.css');
+      themeToApply = 'themes/neonrose.css';
       themeColor = "#ff66b2";
     } else if (clickCount % 8 === 5) {
-      stylesheet.setAttribute('href', 'themes/purpurr.css');
+      themeToApply = 'themes/purpurr.css';
       themeColor = "#800080";
     } else if (clickCount % 8 === 6) {
-      stylesheet.setAttribute('href', 'themes/purpurrgloww.css');
+      themeToApply = 'themes/purpurrgloww.css';
       themeColor = "#8a2be2";
     } else if (clickCount % 8 === 7) {
-      stylesheet.setAttribute('href', 'themes/dark.css');
+      themeToApply = 'themes/dark.css';
       themeColor = "#333333";
-    } else {
-      stylesheet.setAttribute('href', 'themes/pastellyy.css');
-      themeColor = "#fbc0af";
     }
 
+    // set the theme
+    stylesheet.setAttribute('href', themeToApply);
     themeColorMeta.setAttribute('content', themeColor);
+
+    // this thing to hide or show github stats section based on theme
+    if (themeToApply !== 'themes/pastellyy.css') {
+      githubStatsSection.style.display = 'none';
+    } else {
+      githubStatsSection.style.display = 'block';
+    }
+
+    // refresh AOS animations
+    AOS.refresh();
 
     setTimeout(() => {
       document.body.classList.remove('fade-out');
