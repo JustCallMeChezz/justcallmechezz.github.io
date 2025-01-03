@@ -1,0 +1,184 @@
+html {
+  scroll-behavior: smooth;
+  -webkit-tap-highlight-color: transparent;
+}
+
+body {
+    font-family: 'Short Stack', cursive;
+    background-image: 
+        linear-gradient(0deg,
+            rgba(255, 230, 222, 0.2) 0% 12.5%, rgba(255, 255, 255, 0.2) 12.5% 37.5%, rgba(255, 230, 222, 0.2) 37.5% 62.5%, rgba(255, 255, 255, 0.2) 62.5% 87.5%, rgba(255, 230, 222, 0.2) 87.5% 100%),
+        linear-gradient(90deg,
+            rgba(255, 230, 222, 0.2) 0% 12.5%, rgba(255, 255, 255, 0.2) 12.5% 37.5%, rgba(255, 230, 222, 0.2) 37.5% 62.5%, rgba(255, 255, 255, 0.2) 62.5% 87.5%, rgba(255, 230, 222, 0.2) 87.5% 100%
+        );
+    background-size: 160px 160px, 160px 160px;
+    color: #4a3626;
+    margin: 20px;
+    padding: 0;
+    user-select: none;
+    font-size: 0.8em;
+    text-align: center;
+}
+
+select, button {
+  margin: 10px;
+}
+
+.container {
+    max-width: 800px;
+    margin: 40px auto;
+    z-index: 999;
+    overflow: hidden;
+}
+
+#inputContainer {
+    margin-top: 30px;
+    margin-bottom: 20px;
+    padding: 30px;
+    border: 5px solid #fbd5d5;
+    border-radius: 16px;
+    background-color: #fff5f5;
+}
+
+#outputContainer {
+    margin-top: 20px;
+    padding: 30px;
+    border: 5px solid #d5fbd5;
+    border-radius: 16px;
+    background-color: #f5fff5;
+}
+
+@media (max-width: 768px) {
+    .container {
+        margin-left: 10px;
+        margin-right: 10px;
+    }
+}
+
+.idk {
+  margin-top: 20px;
+}
+
+input {
+  padding: 10px;
+  width: 80%;
+  border-radius: 32px;
+  margin-top: 20px;
+  margin-bottom: 2px;
+  border: none;
+  outline: none;
+  font-family: 'Short Stack', cursive;
+}
+
+.idk h2 {
+  margin-bottom: 5px;
+}
+
+.idk p {
+  margin-top: 0;
+}
+
+.generate {
+  padding: 10px;
+  border: none;
+  border-radius: 32px;
+  background-color: #fbd5d5;
+  color: white;
+  cursor: pointer;
+  font-family: 'Short Stack', cursive;
+}
+
+.generate, input, select, {
+  transition: transform 0.2s ease;
+}
+
+.cute-bouncyy {
+  animation: cute-bouncyy 0.4s ease-in-out;
+}
+
+@keyframes cute-bouncyy {
+  0% { transform: scale(1); }
+  30% { transform: scale(0.95); }
+  50% { transform: scale(1.1); }
+  70% { transform: scale(0.98); }
+  100% { transform: scale(1); }
+}
+
+select {
+  padding: 2px;
+  border: none;
+  border-radius: 32px;
+  background-color: #d4f0d4;
+  color: white;
+  cursor: pointer;
+  font-family: 'Short Stack', cursive;
+  outline: none;
+}
+
+.animation {
+  color: #999;
+  font-style: italic;
+}
+
+#output {
+  margin-top: 20px;
+  white-space: pre-wrap;
+  text-align: left;
+}
+
+.suggestion-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 15px;
+  padding: 10px;
+  border: none;
+  border-radius: 16px;
+  background-color: #ffffff;
+}
+
+.copy-btn {
+  cursor: pointer;
+  color: #d4f0d4;
+  font-size: 1.2em;
+}
+
+.copy-btn:focus {
+  color: #f5fff5;
+}
+
+.ai {
+  background-color: #fbd5d5;
+  color: #ffffff;
+  padding: 5px 10px;
+  border-radius: 10px;
+  font-size: 14px;
+  display: inline-flex;
+  justify-content: center;
+  margin: 20px 0;
+}
+
+footer {
+  text-align: center;
+  color: #fbd5d5;
+  position: fixed;
+  font-size: 1em;
+  bottom: 0;
+  width: 100%;
+  left: 0;
+  z-index: -1;
+}
+
+footer i {
+  color: #fbd5d5;
+  animation: heartbeat 1.5s ease-in-out infinite;
+}
+
+@keyframes heartbeat {
+  0%, 50%, 100% {
+    transform: scale(1);
+  }
+  25%, 75% {
+    transform: scale(1.2);
+  }
+}
