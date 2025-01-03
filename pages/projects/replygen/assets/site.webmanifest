@@ -1,6 +1,6 @@
 {
-  "name": "replygen ai",
-  "short_name": "replygen",
+  "name": "Replygen AI",
+  "short_name": "Replygen",
   "icons": [
     {
       "src": "/assets/web-app-manifest-192x192.png",
@@ -15,7 +15,7 @@
       "purpose": "maskable"
     }
   ],
-  "theme_color": "#ffffff",
-  "background_color": "#ffffff",
+  "theme_color": "#fbd5d5",
+  "background_color": "#fff5f5",
   "display": "standalone"
 }
