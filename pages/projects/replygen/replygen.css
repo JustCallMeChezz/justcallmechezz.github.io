@@ -7,12 +7,12 @@ body {
     font-family: 'Short Stack', cursive;
     background-image: 
         linear-gradient(0deg,
-            rgba(255, 230, 222, 0.2) 0% 12.5%, rgba(255, 255, 255, 0.2) 12.5% 37.5%, rgba(255, 230, 222, 0.2) 37.5% 62.5%, rgba(255, 255, 255, 0.2) 62.5% 87.5%, rgba(255, 230, 222, 0.2) 87.5% 100%),
+            rgba(255, 218, 208, 0.2) 0% 12.5%, rgba(255, 255, 255, 0.2) 12.5% 37.5%, rgba(255, 218, 208, 0.2) 37.5% 62.5%, rgba(255, 255, 255, 0.2) 62.5% 87.5%, rgba(255, 218, 208, 0.2) 87.5% 100%),
         linear-gradient(90deg,
-            rgba(255, 230, 222, 0.2) 0% 12.5%, rgba(255, 255, 255, 0.2) 12.5% 37.5%, rgba(255, 230, 222, 0.2) 37.5% 62.5%, rgba(255, 255, 255, 0.2) 62.5% 87.5%, rgba(255, 230, 222, 0.2) 87.5% 100%
+            rgba(255, 218, 208, 0.2) 0% 12.5%, rgba(255, 255, 255, 0.2) 12.5% 37.5%, rgba(255, 218, 208, 0.2) 37.5% 62.5%, rgba(255, 255, 255, 0.2) 62.5% 87.5%, rgba(255, 218, 208, 0.2) 87.5% 100%
         );
     background-size: 160px 160px, 160px 160px;
-    color: #4a3626;
+    color: #553728;
     margin: 20px;
     padding: 0;
     user-select: none;
@@ -35,17 +35,17 @@ select, button {
     margin-top: 30px;
     margin-bottom: 20px;
     padding: 30px;
-    border: 5px solid #fbd5d5;
+    border: 5px solid #f8caca;
     border-radius: 16px;
-    background-color: #fff5f5;
+    background-color: #ffecec;
 }
 
 #outputContainer {
     margin-top: 20px;
     padding: 30px;
-    border: 5px solid #d5fbd5;
+    border: 5px solid #cafaaf;
     border-radius: 16px;
-    background-color: #f5fff5;
+    background-color: #edffed;
 }
 
 @media (max-width: 768px) {
@@ -82,7 +82,7 @@ input {
   padding: 10px;
   border: none;
   border-radius: 32px;
-  background-color: #fbd5d5;
+  background-color: #f8caca;
   color: white;
   cursor: pointer;
   font-family: 'Short Stack', cursive;
@@ -108,7 +108,7 @@ select {
   padding: 2px;
   border: none;
   border-radius: 32px;
-  background-color: #d4f0d4;
+  background-color: #c2eac2;
   color: white;
   cursor: pointer;
   font-family: 'Short Stack', cursive;
@@ -116,8 +116,9 @@ select {
 }
 
 .animation {
-  color: #999;
+  color: #888;
   font-style: italic;
+  text-align: center;
 }
 
 #output {
@@ -139,16 +140,16 @@ select {
 
 .copy-btn {
   cursor: pointer;
-  color: #d4f0d4;
+  color: #c2eac2;
   font-size: 1.2em;
 }
 
 .copy-btn:focus {
-  color: #f5fff5;
+  color: #edffed;
 }
 
 .ai {
-  background-color: #fbd5d5;
+  background-color: #f8caca;
   color: #ffffff;
   padding: 5px 10px;
   border-radius: 10px;
@@ -160,7 +161,7 @@ select {
 
 footer {
   text-align: center;
-  color: #fbd5d5;
+  color: #f8caca;
   position: fixed;
   font-size: 1em;
   bottom: 0;
@@ -170,7 +171,7 @@ footer {
 }
 
 footer i {
-  color: #fbd5d5;
+  color: #f8caca;
   animation: heartbeat 1.5s ease-in-out infinite;
 }
 
