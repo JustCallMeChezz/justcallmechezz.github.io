@@ -79,7 +79,7 @@
             return botMessageText; 
         } catch (error) {
             console.error('Error fetching AI response:', error);
-            return "no.";
+            return "idk... reply it yourself...";
         }
     }
 
