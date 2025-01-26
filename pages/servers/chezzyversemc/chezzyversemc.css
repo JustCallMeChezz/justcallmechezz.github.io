@@ -184,6 +184,18 @@ scrollbar-width: none;
     margin: 50px auto;
 }
 
+.glass {
+  margin: 20px auto;
+  padding: 22px;
+  width: 300px;
+  background: rgba(160, 32, 240, 0.07);
+  border-radius: 16px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+  border: 1px solid rgba(160, 32, 240, 0.3);
+}
+
 .members-container {
   width: 50px;
   margin: 20px auto;
@@ -285,7 +297,7 @@ scrollbar-width: none;
 
 .info-card img {
   width: 100%;
-  height: 60%;  /* Adjust to fit the 3:4 ratio */
+  height: 60%;  
   object-fit: cover;
   border-radius: 15px 15px 0 0;
 }
@@ -301,7 +313,6 @@ scrollbar-width: none;
   margin: 0 15px 15px;
 }
 
-/* Responsive Design */
 @media (max-width: 768px) {
   .info-card-container {
     padding: 10px;
@@ -310,7 +321,7 @@ scrollbar-width: none;
 
   .info-card {
     width: 250px;
-    height: 333px;  /* Adjust for 3:4 ratio */
+    height: 333px;  
   }
 }
 
@@ -321,68 +332,123 @@ scrollbar-width: none;
 
   .info-card {
     width: 320px;
-    height: 260px;  /* Adjust for 3:4 ratio */
+    height: 260px;  
   }
 }
 
-.sidepanel {
-    width: 100%; /* take full width */
-    height: 0; /* start with 0 height */
-    position: fixed;
-    z-index: 1;
-    top: 0;
-    left: 0;
-    background-color: #000000;
-    overflow-x: hidden;
-    transition: 0.5s;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    border-radius: 10px;
+body {
+    transition: margin-top 0.3s; 
 }
 
-.sidepanel a {
+#more-things {
+    width: 100%;
+    height: 0; 
+    position: fixed;
+    z-index: 9999;
+    top: 0;
+    left: 0;
+    overflow: hidden; 
+    transition: height 0.5s ease, padding 0.5s ease; 
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    border-radius: 16px;
+    padding: 0; 
+}
+
+#more-things.more-things-open {
+    width: 100%;
+    height: 40vh;  
+    position: fixed;
+    top: 0;
+    left: 0;
+    
+    transition: 0.5s ease;
+    z-index: 9999;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#rickroll-video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; 
+    border: none;
+}
+
+#lol {
+    position: absolute;
+    bottom: 20px;
+    left: 20px;
+    padding: 0px 0px;
+    font-size: 2em;
+    color: #fff;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    box-shadow: 0 0 0 0;
+    transition: background-color 0.3s;
+}
+
+#lol:hover {
+    color: #d8b3ff;
+}
+
+#more-things a {
     padding: 8px 8px 8px 32px;
     text-decoration: none;
     font-size: 20px;
-    color: #a020f0; /* changed to purple */
+    color: #a020f0; 
     display: block;
     transition: 0.3s;
 }
 
-.sidepanel a:hover {
-    color: #d8b3ff; /* lighter purple */
+#more-things a:hover {
+    color: #d8b3ff; 
 }
 
-.sidepanel a.profile {
+#more-things a.profile {
     font-size: 18px;
     font-weight: bold;
-    color: #a020f0; /* purple */
+    color: #a020f0; 
     text-align: center;
     display: block;
     margin-top: 20px;
 }
 
-.sidepanel a.profile:hover {
-    color: #d8b3ff; /* lighter purple */
+#more-things a.profile:hover {
+    color: #d8b3ff; 
 }
 
-.sidepanel .closebtn {
+#more-things .closebtn {
     position: absolute;
     top: 0;
     right: 25px;
     font-size: 36px;
-}
-
-.openbtn {
-    font-size: 20px;
-    cursor: pointer;
-    background-color: #ffffff;
     color: white;
-    padding: 10px 15px;
-    border: none;
+    cursor: pointer;
 }
 
-.openbtn:hover {
-    background-color: #ffffff;
+body.more-things-open {
+    margin-top: 40vh; 
+}
+
+.more-things-open {
+    top: 0; 
+}
+
+.menu-icon {
+    font-size: 30px;
+    cursor: pointer;
+    transition: opacity 0.3s ease;
+    color: white;
+}
+
+.menu-icon.open {
+    opacity: 0; 
+}
+
+.menu-icon.close {
+    opacity: 1; 
 }
 
 footer {
