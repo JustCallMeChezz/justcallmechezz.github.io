@@ -28,18 +28,25 @@
   </nav>
 
   <menu class="menu-section">
-    <i class="fa fa-bars menu-icon" onclick="openNav()"></i>
-    <div id="sidepanel"class="sidepanel">
-    <a href="javascript:void(0)" class="closebtn" onclick="closeNav()" style="right: 8px;">×</a>
-    <a href="/index.html">About Us</a>
-    <a onclick="toggleCSS()">Theme</a>
-    <a href="https://discord.gg/CSc32EpttY">Contact</a>
+    <i id="menu-icon" class="fa fa-bars menu-icon" onclick="toggleNav()"></i>
+    <div id="more-things" class="more-things">
+        <iframe 
+            id="rickroll-video" 
+            src="" 
+            width="100%" 
+            height="100%" 
+            frameborder="0" 
+            allow="autoplay" 
+            allowfullscreen>
+        </iframe>
+        <button id="lol" class="lol" onclick="toggleRickroll()">
+            <i class="fa-solid fa-play"></i>
     </div>
-  </menu>
+</menu>
 </div>
 
     <header>
-        <div id="header" class="Ultra" data-aos="fade-in" data-aos-duration="3000">
+        <div id="header" class="Chezz" data-aos="fade-in" data-aos-duration="3000">
             <h1><i class="fas fa-cheese" style="margin-bottom: 20px;"></i></h1>
             <p><b>hii! wellcyy to our website...</b></p>
         </div>
@@ -59,29 +66,31 @@
     <div class="uhh">
     
     <section id="invite" class="invite">
-      <a href="https://chat.whatsapp.com/HWhwpq5exS76i7fMJm15zx" class="invite-button">Join Server</a>
+      <a href="#" class="invite-button">Join Server</a>
     </section>
     
-    <section class="invite" data-aos="zoom-out-down" data-aos-duration="1000">
+    <section class="invite">
         <h2>Add to Minecraft</h2>
+        <div class="glass" data-aos="zoom-out-right" data-aos-duration="1000">
         <ul>
             <li><b>IP:</b> 144.76.58.217</li>
             <li><b>Port:</b> 32299</li>
             <li><b>Minecraft</b> Bedrock Edition</li>
         </ul>
+        </div>
     </section>
       
-    <section id="members" class="members" data-aos="zoom-out-down" data-aos-duration="1000">
+    <section id="members" class="members">
         <h2>Member Count</h2>
-        <div class="members-container">
+        <div class="members-container" data-aos="zoom-out" data-aos-duration="1000">
             <a>001</a>
         </div>
         <p>Last checked: Jan 20 2025</p>
     </section>
     
-    <section id="info" class="info" data-aos="zoom-out-down" data-aos-duration="1000">
+    <section id="info" class="info">
   <h2>Some Info</h2>
-  <div class="info-card-container">
+  <div class="info-card-container" data-aos="zoom-in-left" data-aos-duration="1000">
     <div class="info-card">
       <img src="images/lily.jpg" alt="Card Image">
       <h3>Owner <i class="fas fa-crown" style="color: #fbea8a;"></i></h3>
@@ -155,15 +164,42 @@ setInterval(changeText, 5000);
   AOS.init();
 </script>
 
-<script>
-  function openNav() {
-    document.getElementById("sidepanel").style.height = "40vh"; 
+<script>function toggleNav() {
+    const menuIcon = document.getElementById("menu-icon");
+    const panel = document.getElementById("more-things");
+    const video = document.getElementById("rickroll-video");
+    const body = document.body;
+
+    const isOpen = panel.classList.toggle("more-things-open");
+    body.classList.toggle("more-things-open");
+
+    if (isOpen) {
+        video.src = "https://www.youtube.com/embed/dQw4w9WgXcQ?autoplay=1&controls=0&loop=1&playlist=dQw4w9WgXcQ&mute=1";
+    } else {
+        video.src = "";
+    }
+
+    if (menuIcon.classList.contains("fa-bars")) {
+        menuIcon.classList.remove("fa-bars");
+        menuIcon.classList.add("fa-solid", "fa-xmark");
+    } else {
+        menuIcon.classList.remove("fa-solid", "fa-xmark");
+        menuIcon.classList.add("fa-bars");
+    }
 }
 
-function closeNav() {
-    document.getElementById("sidepanel").style.height = "0"; 
-}
-</script>
+function toggleRickroll() {
+    const video = document.getElementById("rickroll-video");
+    const lol = document.getElementById("lol");
+
+    if (video.src.includes("mute=1")) {
+        video.src = "https://www.youtube.com/embed/dQw4w9WgXcQ?autoplay=1&controls=0&loop=1&playlist=dQw4w9WgXcQ";
+        lol.style.display = "none";
+    } else {
+        video.src = "https://www.youtube.com/embed/dQw4w9WgXcQ?autoplay=1&controls=0&loop=1&playlist=dQw4w9WgXcQ&mute=1";
+        lol.style.display = "block";  
+    }
+}</script>
 
 </body>
   </html>
