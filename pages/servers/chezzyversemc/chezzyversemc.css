@@ -424,7 +424,7 @@ body {
     top: 0;
     right: 25px;
     font-size: 36px;
-    color: white;
+    color: #d8b3ff;
     cursor: pointer;
 }
 
@@ -440,7 +440,7 @@ body.more-things-open {
     font-size: 30px;
     cursor: pointer;
     transition: opacity 0.3s ease;
-    color: white;
+    color: #d8b3ff;
 }
 
 .menu-icon.open {
@@ -506,6 +506,14 @@ footer i {
 
     header h1 {
         font-size: 8vw;
+    }
+    
+    body.more-things-open {
+        margin-top: 80vh; 
+    }
+    
+    #more-things.more-things-open {
+        height: 80vh;
     }
 }
 
