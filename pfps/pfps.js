@@ -1,6 +1,7 @@
 window.onload = function() {
     const profilePhoto = document.getElementById('pfps');
     const photoArray = [
+        '/pfps/lilyliyana.png',
         '/pfps/pfp1.jpg',
         '/pfps/pfp2.jpg',
         '/pfps/pfp3.jpg',
