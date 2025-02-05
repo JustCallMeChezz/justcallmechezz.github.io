@@ -55,6 +55,29 @@ body {
     margin-bottom: 10px;
 }
 
+.catchthecheese {
+  padding: 8px;
+  border: none;
+  border-radius: 32px;
+  background-color: #fbd5d5;
+  color: white;
+  cursor: pointer;
+  font-family: 'Short Stack', cursive;
+  transition: transform 0.2s ease;
+}
+
+.cute-bouncyy {
+  animation: cute-bouncyy 0.4s ease-in-out;
+}
+
+@keyframes cute-bouncyy {
+  0% { transform: scale(1); }
+  30% { transform: scale(0.95); }
+  50% { transform: scale(1.1); }
+  70% { transform: scale(0.98); }
+  100% { transform: scale(1); }
+}
+
 .stats-container {
   display: inline-block;
   max-width: 600px;
