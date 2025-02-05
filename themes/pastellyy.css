@@ -66,6 +66,11 @@ body {
   transition: transform 0.2s ease;
 }
 
+.catchthecheese:hover {
+  transform: scale(1.05);
+  box-shadow: 0 6px 8px #fbd5d5;
+}
+
 .cute-bouncyy {
   animation: cute-bouncyy 0.4s ease-in-out;
 }
