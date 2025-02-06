@@ -64,6 +64,7 @@ body {
   cursor: pointer;
   font-family: 'Short Stack', cursive;
   transition: transform 0.2s ease;
+  box-shadow: 0 2px 4px #fbd5d5;
 }
 
 .catchthecheese:hover {
