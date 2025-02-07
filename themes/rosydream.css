@@ -148,6 +148,16 @@ header h1 {
     -webkit-tap-highlight-color: transparent;
 }
 
+#irl-name {
+  cursor: pointer;
+  transition: opacity 0.6s ease;
+}
+
+#irl-name.hidden {
+  opacity: 0;
+  transition: opacity 0.6s ease;
+}
+
 .details {
     margin-top: 20px;
 }
