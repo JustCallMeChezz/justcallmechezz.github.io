@@ -1,3 +1,9 @@
+document.addEventListener("contextmenu", (e) => e.preventDefault());
+document.addEventListener("copy", (e) => e.preventDefault());
+document.addEventListener("paste", (e) => e.preventDefault());
+document.addEventListener("cut", (e) => e.preventDefault());
+document.addEventListener("selectstart", (e) => e.preventDefault());
+
 function fadeInOut(element, newText, timeout = 600) {
     element.classList.add('fade-out');
     setTimeout(() => {
