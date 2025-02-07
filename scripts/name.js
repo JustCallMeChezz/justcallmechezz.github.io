@@ -6,7 +6,7 @@ function irlName() {
     nameElement.classList.add("hidden");
 
     setTimeout(() => {
-      nameElement.textContent = currentName === "Name: Lily Liyana | Chezz" ? "Name: Nur Lily Liyana | sleepychezz" : "Name: Lily Liyana | Chezz";
+      nameElement.textContent = currentName === "Lily Liyana | Chezz" ? "Nur Lily Liyana | sleepychezz" : "Lily Liyana | Chezz";
       nameElement.classList.remove("hidden");
     }, 500);
   }, 5000);
