@@ -1,3 +1,9 @@
+document.addEventListener("contextmenu", (e) => e.preventDefault());
+document.addEventListener("copy", (e) => e.preventDefault());
+document.addEventListener("paste", (e) => e.preventDefault());
+document.addEventListener("cut", (e) => e.preventDefault());
+document.addEventListener("selectstart", (e) => e.preventDefault());
+
 const canvas = document.getElementById("gameCanvas");
 const ctx = canvas.getContext("2d");
 
