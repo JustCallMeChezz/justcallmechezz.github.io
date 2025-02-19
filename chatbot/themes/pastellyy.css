@@ -1,8 +1,8 @@
 body {
     margin: 0;
     font-family: 'Short Stack', cursive;
-    background-color: #f5e6e1;
-    color: #5a3e36;
+    background-color: #fdf6f6; 
+    color: #6b4840;
     display: flex;
     flex-direction: column;
     height: 100vh;
@@ -13,8 +13,8 @@ body {
     display: flex;
     align-items: center;
     padding: 10px;
-    background-color: #f5e6e1;
-    border-bottom: 1px solid #e0d4d1;
+    background-color: #fdf6f6;
+    border-bottom: 1px solid #f1e2e1;
 }
 
 .header i {
@@ -41,9 +41,8 @@ body {
 .username {
     font-weight: bold;
     font-size: 0.85em;
-    color: #a67c6a; 
+    color: #d7a8a0; 
     margin-bottom: 4px;
-    display: block;
     display: flex;
     align-items: center;
 }
@@ -53,12 +52,12 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
-    height: 20px 
+    height: 20px;
 }
 
 .tag span {
-    background-color: #a67c6a;
-    color: #f5e6e1;
+    background-color: #d7a8a0;
+    color: #fdf6f6;
     padding: 2px 8px;
     border-radius: 8px;
     font-size: 10px;
@@ -73,11 +72,11 @@ body {
     height: auto;
     top: 0;
     right: 0;
-    background-color: #f5e6e1;
+    background-color: #fdf6f6;
     overflow-x: hidden;
     transition: 0.5s;
     padding-top: 60px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
     border-radius: 10px;
 }
 
@@ -85,20 +84,20 @@ body {
     padding: 8px 8px 8px 32px;
     text-decoration: none;
     font-size: 20px;
-    color: #4a3626;
+    color: #6b4840;
     display: block;
     transition: 0.3s;
 }
 
 .sidepanel a:hover {
-    color: #a67c6a;
+    color: #d7a8a0;
 }
 
 .sidepanel select {
     width: 100%;
     padding: 10px;
-    background-color: #a67c6a;
-    color: #f5e6e1;
+    background-color: #d7a8a0;
+    color: #fdf6f6;
     font-size: 16px;
     border: none;
     border-radius: 10px;
@@ -108,8 +107,8 @@ body {
 }
 
 .sidepanel select option {
-    background-color: #a67c6a;
-    color: #f5e6e1;
+    background-color: #d7a8a0;
+    color: #fdf6f6;
 }
 
 .sidepanel a.profile {
@@ -123,14 +122,14 @@ body {
 .sidepanel a.profile {
     font-size: 18px;
     font-weight: bold;
-    color: #4a3626;
+    color: #6b4840;
     text-align: center;
     display: block;
     margin-top: 20px;
 }
 
 .sidepanel a.profile:hover {
-    color: #ffea9b;
+    color: #ffdfcc;
 }
 
 .sidepanel .closebtn {
@@ -166,8 +165,8 @@ body {
 }
 
 .date span {
-    background-color: #a67c6a;
-    color: #f5e6e1;
+    background-color: #d7a8a0;
+    color: #fdf6f6;
     padding: 5px 10px;
     border-radius: 10px;
     font-size: 14px;
@@ -188,7 +187,7 @@ body {
 }
 
 .message .bubble {
-    background-color: #ffe9e3;
+    background-color: #ffedea;
     border-radius: 12px;
     padding: 10px;
     max-width: 70%;
@@ -207,15 +206,15 @@ body {
 }
 
 .message.right .bubble {
-    background-color: #fab7a4;
+    background-color: #f7c6ba;
 }
 
 .footer {
     display: flex;
     align-items: center;
     padding: 10px;
-    background-color: #f5e6e1;
-    border-top: 1px solid #e0d4d1;
+    background-color: #fdf6f6;
+    border-top: 1px solid #f1e2e1;
     position: fixed;
     bottom: 0;
     width: 100%;
@@ -230,7 +229,7 @@ body {
     flex-grow: 1;
     border: none;
     outline: none;
-    background-color: #f5e6e1;
+    background-color: #fdf6f6;
     font-size: 16px;
 }
 
