@@ -4,7 +4,7 @@ html {
 
 body {
     font-family: 'Short Stack', cursive;
-    background-color: #f2ebe7;
+    background-color: #f8f0ee; 
     color: #4a3626;
     margin: 0;
     padding: 0;
@@ -16,7 +16,7 @@ h1 {
     font-size: 1.8em;
     font-weight: bold;
     text-align: center;
-    color: #b07255;
+    color: #a86d5d;
     margin-top: 30px;
 }
 
@@ -45,16 +45,16 @@ a {
     position: absolute;
     left: 15px;
     font-size: 1.2em;
-    color: #b07255;
+    color: #a86d5d;
 }
 
 #search-bar {
     width: 100%;
     padding: 10px 15px 10px 40px; 
-    border: 1px solid #e5d0ba;
+    border: 1px solid #e3bfb6;
     border-radius: 24px;
-    background-color: #fef6f7;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    background-color: #fcf5f3;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
     font-size: 1em;
     color: #4a3626;
     outline: none;
@@ -62,8 +62,8 @@ a {
 }
 
 #search-bar:focus {
-    border-color: #fbc8af;
-    box-shadow: 0 4px 12px rgba(251, 200, 175, 0.3);
+    border-color: #e8a79b;
+    box-shadow: 0 4px 12px rgba(232, 167, 155, 0.3);
 }
 
 .project-list {
@@ -76,11 +76,11 @@ a {
 }
 
 .project {
-    background-color: #fef6f7;
+    background-color: #fcf5f3;
     padding: 20px;
     border-radius: 16px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-    border: 1px solid #e5d0ba;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    border: 1px solid #e3bfb6;
     width: 250px;
     transition: transform 0.3s ease;
     cursor: pointer;
@@ -90,24 +90,24 @@ a {
 
 .project.aos-animate:hover {
     transform: scale(1.05);
-    background-color: #fef0e5;
-    border-color: #fbc8af;
-    box-shadow: 0 4px 12px rgba(251, 200, 175, 0.3);
+    background-color: #f6e4df;
+    border-color: #e8a79b;
+    box-shadow: 0 4px 12px rgba(232, 167, 155, 0.3);
 }
 
 .project-icon {
     font-size: 3em;
-    color: #fbc8af;
+    color: #e8a79b;
 }
 
 .project-content h2 {
     font-size: 1.6em;
-    color: #b07255;
+    color: #a86d5d;
 }
 
-.project-content p {
+project-content p {
     font-size: 1em;
-    color: #5d4037;
+    color: #6d4e44;
 }
 
 .language-info {
@@ -131,6 +131,7 @@ a {
 
 .project .language-info .language-icon {
     font-size: 1.3em;
+    color: #e8a79b;
 }
 
 .project .language-info .language-name {
