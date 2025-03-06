@@ -150,6 +150,16 @@
 <script>
   AOS.init();
 </script>
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+  const statsImg = document.querySelector(".stats-container img");
+  const baseUrl = statsImg.src.split("?")[0];
+  const params = new URLSearchParams(statsImg.src.split("?")[1]);
+
+  params.set("cache", Date.now());
+  statsImg.src = `${baseUrl}?${params}`;
+});
+</script>
 
   </div>
 </div>
