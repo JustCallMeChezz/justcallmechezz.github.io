@@ -1,37 +1,37 @@
-let lastX = null, lastY = null, lastZ = null;
-let threshold = 10;
-let shakeTimeout;
+let lastX = 0, lastY = 0, lastZ = 0;
+let threshold = 6;
 let audio = document.getElementById("shakeSound");
-let isVibrating = false;
+let container = document.querySelector(".container");
+let spinTimeout;
 
 window.addEventListener("devicemotion", (event) => {
-    if (!event.accelerationIncludingGravity) return;
+    let { x = 0, y = 0, z = 0 } = event.accelerationIncludingGravity || {};
 
-    let { x, y, z } = event.accelerationIncludingGravity;
+    let deltaX = Math.abs(x - lastX);
+    let deltaY = Math.abs(y - lastY);
+    let deltaZ = Math.abs(z - lastZ);
 
-    if (lastX !== null) {
-        let deltaX = Math.abs(x - lastX);
-        let deltaY = Math.abs(y - lastY);
-        let deltaZ = Math.abs(z - lastZ);
+    let totalShake = deltaX + deltaY + deltaZ;
 
-        let totalShake = deltaX + deltaY + deltaZ;
+    if (totalShake > threshold) {
+        if ("vibrate" in navigator) {
+            navigator.vibrate(300);
+            console.log("Vibrating!");
+        }
 
-        if (totalShake > threshold) {
-            if (!shakeTimeout) {
-                if (!isVibrating) {
-                    navigator.vibrate([300, 100, 300]); 
-                    isVibrating = true;
-                    setTimeout(() => (isVibrating = false), 700);
-                }
+        if (audio.paused) {
+            audio.play();
+        }
 
-                if (audio.paused) {
-                    audio.play();
-                }
+        clearTimeout(spinTimeout); 
 
-                shakeTimeout = setTimeout(() => {
-                    shakeTimeout = null;
-                }, 700);
-            }
+        if (!audio.paused) { 
+            spinTimeout = setTimeout(() => {
+                container.classList.add("spin");
+                setTimeout(() => {
+                    container.classList.remove("spin");
+                }, 6000); 
+            }, 3000); 
         }
     }
 
