@@ -84,6 +84,16 @@ body {
   100% { transform: scale(1); }
 }
 
+@keyframes spin {
+    0% { transform: rotate(0deg) translate(0, 0); }
+    100% { transform: rotate(1080deg) translate(0, 0); }
+}
+
+.spin {
+    animation: spin 4s linear;
+    transform-origin: 50vw 50vh;
+}
+
 .stats-container {
   display: inline-block;
   max-width: 600px;
