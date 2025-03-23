@@ -5,12 +5,19 @@
     font-style: normal;
 }
 
+@font-face {
+    font-family: "Minecraft";
+    src: url("fonts/Minecraft.ttf") format("truetype");
+    font-weight: normal;
+    font-style: normal;
+}
+
 html {
     scroll-behavior: smooth;
 }
 
 body {
-   font-family: "Poppins", sans-serif; 
+   font-family: "Minecraft", sans-serif; 
     margin: 0;
     padding: 0;
     background: #f5efff;
@@ -234,6 +241,7 @@ scrollbar-width: none;
 }
 
 .members {
+  margin-top: 8px;
   padding: 8px 8px;
   text-align: center;
 }
@@ -344,7 +352,6 @@ scrollbar-width: none;
     left: 0;
     overflow: hidden; 
     transition: height 0.5s ease, padding 0.5s ease; 
-    
     border-radius: 16px;
     padding: 0; 
 }
@@ -453,7 +460,7 @@ footer {
   font-size: 14px;
 }
 
-footer i {
+footer .copyright i {
     color: #ff00ff;
     animation: heartbeat 1.5s ease-in-out infinite;
 }
@@ -525,4 +532,71 @@ footer i {
         justify-content: center;
         width: auto;
     }
+}
+
+.connections {
+    text-align: center;
+}
+
+.connections a {
+  outline: none;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.connections ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.social-media {
+    text-align: center;
+}
+
+footer .social-media a {
+  font-size: 40px;
+  color: #a020f0;
+  margin: 0 8px;
+  transition: color 0.3s;
+  text-decoration: none;
+}
+
+footer .social-media a:hover {
+  color: #d8b3ff;
+}
+
+footer .social-media i {
+  display: inline-block;
+}
+
+.social-media img {
+    border-radius: 40%;
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+}
+
+.invite-button, .community {
+    transition: transform 0.2s ease;
+    box-shadow: 0 4px 10px rgba(210, 180, 255, 0.5);
+}
+
+ .social-media i {
+   transition: transform 0.2s ease;
+ }
+
+.cute-bouncyy {
+    animation: cute-bouncyy 0.4s ease-in-out;
+}
+
+@keyframes cute-bouncyy {
+    0% { transform: scale(1); }
+    30% { transform: scale(0.95); }
+    50% { transform: scale(1.1); }
+    70% { transform: scale(0.98); }
+    100% { transform: scale(1); }
+}
+
+.sleepyy {
+  font-family: 'Roboto', sans-serif;
+  text-align: center;
 }
