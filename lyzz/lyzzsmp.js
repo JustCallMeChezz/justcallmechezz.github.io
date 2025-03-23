@@ -20,3 +20,32 @@ let currentSlide = 0;
             currentSlide += n;
             showSlide(currentSlide);
         }
+        
+        const date = new Date();
+const formattedDate = date.toLocaleDateString("en-US", {
+    month: "short",
+    day: "2-digit",
+    year: "numeric"
+});
+document.getElementById("last-checked").textContent = formattedDate;
+
+document.querySelectorAll('.info-card').forEach(card => {
+    card.addEventListener('click', function() {
+        const link = this.getAttribute('data-link');
+        if (link) window.open(link, '_blank');
+    });
+});
+        
+        const elementsToVibrate = ['.invite-button', '.community', '.social-media i'];
+
+elementsToVibrate.forEach(selector => {
+    document.querySelectorAll(selector).forEach(element => {
+        element.addEventListener('click', function() {
+            if (navigator.vibrate) navigator.vibrate(100);
+            this.classList.add('cute-bouncyy');
+            setTimeout(() => {
+                this.classList.remove('cute-bouncyy');
+            }, 400);
+        });
+    });
+});
