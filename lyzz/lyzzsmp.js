@@ -35,8 +35,31 @@ document.querySelectorAll('.info-card').forEach(card => {
         if (link) window.open(link, '_blank');
     });
 });
+
+const buttonIds = ["joinButton", "discord", "telegram",];
+
+buttonIds.forEach(id => {
+    const button = document.getElementById(id);
+    if (button) {
+        button.addEventListener("click", function() {
+            let sound = document.getElementById("click");
+            sound.currentTime = 0;
+            sound.play();
+        });
+    }
+});
+
+const iconButton = document.getElementById("icon");
+
+if (iconButton) {
+    iconButton.addEventListener("click", function() {
+        let sound = document.getElementById("ariaMath");
+        sound.currentTime = 0;
+        sound.play();
+    });
+}
         
-        const elementsToVibrate = ['.invite-button', '.community', '.social-media i'];
+        const elementsToVibrate = ['.invite-button', '.community', '.social-media i', '.icon'];
 
 elementsToVibrate.forEach(selector => {
     document.querySelectorAll(selector).forEach(element => {
