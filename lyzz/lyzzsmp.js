@@ -53,9 +53,8 @@ const iconButton = document.getElementById("icon");
 
 if (iconButton) {
     iconButton.addEventListener("click", function() {
-        let sound = document.getElementById("ariaMath");
-        sound.currentTime = 0;
-        sound.play();
+        let music = document.getElementById("music");
+        music.src += "&autoplay=1";
     });
 }
         
