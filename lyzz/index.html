@@ -60,10 +60,10 @@
     <section class="images-slider">
         <div class="slider">
             <div class="slider-images">
-                <img src="images/images1.jpg" alt="images 1">
-                <img src="images/images2.jpg" alt="images 2">
-                <img src="images/images3.jpg" alt="images 3">
-                <img src="images/images4.jpg" alt="images 4">
+                <img src="images/images1.png" alt="images 1">
+                <img src="images/images2.png" alt="images 2">
+                <img src="images/images3.png" alt="images 3">
+                <img src="images/images4.png" alt="images 4">
             </div>
         </div>
     </section>
@@ -71,13 +71,13 @@
     <section id="invite" class="invite">
       <div class="description"><b>୨୧ Lyzz SMP ♡</b> is a cozy and friendly Minecraft survival multiplayer (SMP) for everyone! Whether you love building, exploring, or just vibing with friends, Lyzz SMP is the perfect place to chill and have fun. This server also can be a place to get a new friends so u can get a lotsss of new friendss. Hope u interested to join our server. See ya in the server! <3
       <br>
-      <a href="https://add.aternos.org/lyzzsmp" class="invite-button">Join Server</a>
+      <a href="https://add.aternos.org/lyzzsmp" class="invite-button" id="joinButton">Join Server</a>
       </div>
     </section>
     
     <div class="flex-box">
   <div class="box" data-aos="fade-right" data-aos-duration="1000">
-    <img class="icon" src="images/minecraft.svg"><br>
+    <img class="icon" id="icon" src="images/minecraft.svg" ><br>
     <b>Minecraft</b> Bedrock Edition
         </div>
   <div class="box" data-aos="fade-left" data-aos-duration="1000">
@@ -125,9 +125,9 @@
     <section id="community" class="info" data-aos="zoom-out" data-aos-duration="1000">
         <h2>Community</h2>
         <ul>
-            <a class="community" href="https://discord.gg/CSc32EpttY"><i class="fab fa-discord"></i> Discord Server</a>
+            <a class="community" id="discord" href="https://discord.gg/CSc32EpttY"><i class="fab fa-discord"></i> Discord Server</a>
             <li></li>
-            <a class="community" href="#"><i class="fab fa-telegram"></i> Telegram Group</a>
+            <a class="community" id="telegram" href="#"><i class="fab fa-telegram"></i> Telegram Group</a>
             <li></li>
         </ul>
     </section>
@@ -147,7 +147,13 @@
     </p>
   </div>
 </section>
+<div class="sleepyy">
+    <a>(⸝⸝ᴗ﹏ᴗ⸝⸝) ᶻ 𝗓 𐰁</a>
+    </div>
     </footer>
+    
+    <audio id="click" src="sounds/click.mp3"></audio>
+<audio id="ariaMath" src="sounds/aria_math.mp3"></audio>
 
     <script src="lyzzsmp.js"></script>
     <script>const h1 = document.querySelector('header h1');
