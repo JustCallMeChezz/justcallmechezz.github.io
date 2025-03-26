@@ -245,6 +245,11 @@ scrollbar-width: none;
   height: 80px;
   border-radius: 20px;
   margin: 12px 0;
+  transition: filter 0.2s;
+}
+
+.icon.hit {
+  filter: brightness(1.1) saturate(2.8) hue-rotate(-20deg) sepia(0.3) drop-shadow(0 0 10px rgba(255, 150, 170, 0.7));
 }
 
 .members {
