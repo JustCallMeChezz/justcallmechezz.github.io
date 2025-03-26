@@ -49,14 +49,37 @@ buttonIds.forEach(id => {
     }
 });
 
-const iconButton = document.getElementById("icon");
+const icon = document.getElementById("icon");
+let clickCount = 0;
 
-if (iconButton) {
-    iconButton.addEventListener("click", function() {
-        let music = document.getElementById("music");
-        music.src += "&autoplay=1";
+const hitSound = new Audio("sounds/hit.mp3");
+const getOutSound = new Audio("sounds/getout.mp3");
+
+const playSound = (sound, callback) => {
+  sound.currentTime = 0;  
+  sound.play().then(() => {
+    if (callback) sound.onended = callback;  
+  }).catch(() => {
+    console.log("Autoplay blocked");
+    if (callback) callback(); 
+  });
+};
+
+icon.addEventListener("click", () => {
+  clickCount++;
+
+  if (clickCount === 9) {
+    playSound(getOutSound, () => {
+      window.location.href = "minecraft://"; 
     });
-}
+    clickCount = 0;
+  } else {
+    playSound(hitSound);
+  }
+
+  icon.classList.add("hit");
+  setTimeout(() => icon.classList.remove("hit"), 200);
+});
         
         const elementsToVibrate = ['.invite-button', '.community', '.social-media i', '.icon'];
 
