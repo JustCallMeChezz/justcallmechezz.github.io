@@ -36,6 +36,39 @@ document.querySelectorAll('.info-card').forEach(card => {
     });
 });
 
+document.querySelectorAll('.card-img').forEach(img => {
+    img.addEventListener('click', function(e) {
+      e.stopPropagation();
+      const parent = this.closest('.info-card');
+      const link = parent.getAttribute('data-link');
+      if (link) window.open(link, '_blank');
+    });
+  });
+
+  // other parts open modal
+  document.querySelectorAll('.card-info').forEach(info => {
+    info.addEventListener('click', function(e) {
+      e.stopPropagation();
+      openModal();
+    });
+  });
+
+  function openModal() {
+    const modal = document.getElementById('modal');
+    modal.classList.remove('fade-out');
+    modal.style.display = 'flex';
+    modal.classList.add('fade-in');
+  }
+
+  function closeModal() {
+    const modal = document.getElementById('modal');
+    modal.classList.remove('fade-in');
+    modal.classList.add('fade-out');
+    setTimeout(() => {
+      modal.style.display = 'none';
+    }, 300);
+  }
+
 const buttonIds = ["joinButton", "discord", "telegram",];
 
 buttonIds.forEach(id => {
