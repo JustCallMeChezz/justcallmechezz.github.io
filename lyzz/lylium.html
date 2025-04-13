@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>⋅˚₊‧ ୨about me • chezz୧ ‧₊˚ ⋅/ai_chatbot</title>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet"/>
+  <meta name="theme-color" content="#fbc0af" />
+  <link href="https://fonts.googleapis.com/css2?family=Short+Stack&display=swap" rel="stylesheet"/>
+  <link id="theme-stylesheet" rel="stylesheet" href="style.css"/>
+</head>
+<body>
+  
+  <style>
+    body {
+  margin: 0;
+  font-family: 'Short Stack', cursive;
+  background-color: #fdf6f6; 
+  color: #6b4840;
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  padding: 10px;
+  background-color: #fdf6f6;
+  border-bottom: 1px solid #f1e2e1;
+}
+
+.header i {
+  font-size: 24px;
+  margin-right: 10px;
+}
+
+.header .title {
+  flex-grow: 1;
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.header .icons i {
+  margin-left: 15px;
+  font-size: 20px;
+}
+
+.icon-link {
+  color: inherit;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.username {
+  font-weight: bold;
+  font-size: 0.85em;
+  color: #d7a8a0; 
+  margin-bottom: 4px;
+  display: flex;
+  align-items: center;
+}
+
+.tag {
+  margin-left: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 20px;
+}
+
+.tag span {
+  background-color: #d7a8a0;
+  color: #fdf6f6;
+  padding: 2px 8px;
+  border-radius: 8px;
+  font-size: 10px;
+  display: flex;
+  align-items: center;
+}
+
+.content {
+  padding: 20px;
+  padding-bottom: 100px;
+  flex-grow: 1;
+  overflow-y: auto;
+}
+
+.date {
+  display: flex;
+  justify-content: center;
+  margin: 20px 0;
+}
+
+.date span {
+  background-color: #d7a8a0;
+  color: #fdf6f6;
+  padding: 5px 10px;
+  border-radius: 10px;
+  font-size: 14px;
+}
+
+.message {
+  display: flex;
+  align-items: flex-end;
+  margin-bottom: 30px;
+}
+
+.message img {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  margin-right: 10px;
+}
+
+.message .bubble {
+  background-color: #ffedea;
+  border-radius: 12px;
+  padding: 10px;
+  max-width: 70%;
+}
+
+.message.right {
+  justify-content: flex-end;
+}
+
+.message.right img {
+  order: 2;
+  margin-left: 10px;
+  margin-right: 0;
+}
+
+.message.right .bubble {
+  background-color: #f7c6ba;
+}
+
+.footer {
+  display: flex;
+  align-items: center;
+  padding: 10px 15px;
+  background-color: #fdf6f6;
+  border-radius: 30px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+  position: fixed;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 90%;
+  max-width: 600px;
+  z-index: 99;
+}
+
+.footer i {
+  font-size: 24px;
+  margin-right: 10px;
+}
+
+.footer input {
+  flex-grow: 1;
+  border: none;
+  outline: none;
+  background-color: #fdf6f6;
+  font-size: 16px;
+}
+
+.footer .send {
+  font-size: 24px;
+  margin-left: 10px;
+  cursor: pointer;
+}
+
+.fade-in {
+  opacity: 1;
+  transition: opacity 500ms ease-in;
+}
+
+body.fade-in {
+  opacity: 1;
+  transition: opacity 500ms ease-in;
+}
+
+.fade-out {
+  opacity: 0;
+  transition: opacity 500ms ease-out;
+}
+
+body.fade-out {
+  opacity: 0;
+  transition: opacity 500ms ease-out;
+}
+  </style>
+  <div class="header">
+    <div class="title">Lylium AI.</div>
+    <div class="icons">
+      <a href="https://github.com/JustCallMeChezz" target="_blank" class="icon-link">
+        <i class="fas fa-code"></i>
+      </a>
+    </div>
+  </div>
+
+  <div class="content">
+    <div class="date">
+      <span id="chat-date">today</span>
+    </div>
+    <div class="message">
+      <img alt="chats icon" height="40" src="/images/empty.png" width="40"/>
+      <div class="bubble">
+        <div class="username">Lylium<div class="tag"><span>AI</span></div></div>
+        <div class="text">
+          <div class="chatsname">hii! im lylium... nice to meet u... ask me anything...</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="footer">
+    <i class="far fa-smile"></i>
+    <input placeholder="Message" type="text"/>
+    <i class="fas fa-paperclip"></i>
+    <i class="fas fa-paper-plane send"></i>
+  </div>
+
+  <script>
+    const apiConfigurations = [
+    { url: 'https://api.kastg.xyz/api/ai/llama', model: 'llama-3.1-8b-turbo', requiresModel: true },
+    { url: 'https://api.kastg.xyz/api/ai/llamaV3', model: null, requiresModel: false },
+    { url: 'https://api.kastg.xyz/api/ai/llamaV3-large', model: null, requiresModel: false },
+    { url: 'https://api.kastg.xyz/api/ai/fast-llamaV3-large', model: null, requiresModel: false },
+    { url: 'https://api.kastg.xyz/api/ai/chatgpt', model: 'gpt-4o-mini', requiresModel: true },
+    { url: 'https://api.kastg.xyz/api/ai/chatgptV4', model: null, requiresModel: false },
+    { url: 'https://api.kastg.xyz/api/ai/blackbox', model: null, requiresModel: false }
+];
+
+let conversationHistory = "You are Lylium, an AI assistant created by Lily aka sleepychezz. always respond as an ai chatbot style, like chatgpt";
+
+function construireUrlApi(conversationPrompt, config) {
+    const { url, model, requiresModel } = config;
+    const apiKey = 'Kastg_SXQxa10WTVsNYmwAoL4d_free';
+
+    const fullPrompt = conversationHistory + "User: " + conversationPrompt;
+
+    const params = new URLSearchParams({
+        prompt: fullPrompt,
+        key: apiKey
+    });
+
+    if (requiresModel) {
+        params.append('model', model);
+    }
+
+    const proxyUrl = 'https://api.allorigins.win/get?url=';
+    return `${proxyUrl}${encodeURIComponent(`${url}?${params.toString()}`)}`;
+}
+
+async function getAIResponse(input) {
+    const config = apiConfigurations[4]; // using chatgpt
+    const apiUrl = construireUrlApi(input, config);
+
+    try {
+        const response = await fetch(apiUrl);
+        const data = await response.json();
+
+        const botMessageText = JSON.parse(data.contents).result[0]?.response || "umm... i didn't understand la .-.";
+        conversationHistory += `User: ${input}\nAI: ${botMessageText}\n`;
+
+        return botMessageText;
+    } catch (error) {
+        console.error('Error fetching AI response:', error);
+        return "umm... something went wrong .-.";
+    }
+}
+
+async function sendMessage() {
+    const input = document.querySelector('.footer input');
+    const messageText = input.value.trim();
+    if (messageText === '') return;
+
+    const content = document.querySelector('.content');
+
+    const userMessage = document.createElement('div');
+    userMessage.className = 'message right';
+    userMessage.innerHTML = `
+        <img src="images/empty.png" alt="User Pfp">
+        <div class="bubble">
+            <div class="text">${messageText}</div>
+        </div>
+    `;
+    content.appendChild(userMessage);
+    input.value = '';
+
+    const typingMessage = document.createElement('div');
+    typingMessage.className = 'message';
+    typingMessage.innerHTML = `
+        <img src="images/empty.png" alt="AI Pfp">
+        <div class="bubble">
+            <div class="username">Lylium <div class="tag"><span>AI</span></div></div>
+            <div class="text">...</div>
+        </div>
+    `;
+    content.appendChild(typingMessage);
+    content.scrollTop = content.scrollHeight;
+
+    await new Promise(resolve => setTimeout(resolve, 1000));
+    content.removeChild(typingMessage);
+
+    const botMessageText = await getAIResponse(messageText);
+    const botMessage = document.createElement('div');
+    botMessage.className = 'message';
+    botMessage.innerHTML = `
+        <img src="/images/empty.png" alt="AI Pfp">
+        <div class="bubble">
+            <div class="username">Lylium <div class="tag"><span>AI</span></div></div>
+            <div class="text">${botMessageText}</div>
+        </div>
+    `;
+    content.appendChild(botMessage);
+    content.scrollTop = content.scrollHeight;
+}
+
+document.addEventListener('DOMContentLoaded', () => {
+    const sendButton = document.querySelector('.footer .send');
+    sendButton.addEventListener('click', sendMessage);
+
+    const input = document.querySelector('.footer input');
+    input.addEventListener('keypress', (e) => {
+        if (e.key === 'Enter') {
+            sendMessage();
+        }
+    });
+});
+  </script>
+  <script src="date.js"></script>
+</body>
+</html>
