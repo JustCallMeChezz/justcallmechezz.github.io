@@ -3,20 +3,19 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>⋅˚₊‧ ୨about me • chezz୧ ‧₊˚ ⋅/ai_chatbot</title>
+  <title>lylium ai ♡</title>
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet"/>
   <meta name="theme-color" content="#E0BBE4" />
   <link href="https://fonts.googleapis.com/css2?family=Short+Stack&display=swap" rel="stylesheet"/>
-  <link id="theme-stylesheet" rel="stylesheet" href="style.css"/>
 </head>
 <body>
-  
+
   <style>
     body {
       margin: 0;
       font-family: 'Short Stack', cursive;
       background-color: #f5f0f7;
-      color: #4b2f3d; 
+      color: #4b2f3d;
       display: flex;
       flex-direction: column;
       height: 100vh;
@@ -28,12 +27,7 @@
       align-items: center;
       padding: 10px;
       background-color: #f5f0f7;
-      border-bottom: 1px solid #d0a9c7; 
-    }
-
-    .header i {
-      font-size: 24px;
-      margin-right: 10px;
+      border-bottom: 1px solid #d0a9c7;
     }
 
     .header .title {
@@ -55,7 +49,7 @@
     .username {
       font-weight: bold;
       font-size: 0.85em;
-      color: #c07fae; 
+      color: #c07fae;
       margin-bottom: 4px;
       display: flex;
       align-items: center;
@@ -70,13 +64,11 @@
     }
 
     .tag span {
-      background-color: #c07fae; 
+      background-color: #c07fae;
       color: #f5f0f7;
       padding: 2px 8px;
       border-radius: 8px;
       font-size: 10px;
-      display: flex;
-      align-items: center;
     }
 
     .content {
@@ -93,7 +85,7 @@
     }
 
     .date span {
-      background-color: #c07fae; 
+      background-color: #c07fae;
       color: #f5f0f7;
       padding: 5px 10px;
       border-radius: 10px;
@@ -114,10 +106,12 @@
     }
 
     .message .bubble {
-      background-color: #e6ccf0; 
+      background-color: #e6ccf0;
       border-radius: 12px;
       padding: 10px;
       max-width: 70%;
+      opacity: 0;
+      animation: bubbleIn 0.3s ease forwards;
     }
 
     .message.right {
@@ -131,7 +125,7 @@
     }
 
     .message.right .bubble {
-      background-color: #d7a8c6; 
+      background-color: #d7a8c6;
     }
 
     .footer {
@@ -152,7 +146,7 @@
 
     .footer i {
       font-size: 24px;
-      color: #c07fae; 
+      color: #c07fae;
     }
 
     .footer input {
@@ -167,30 +161,52 @@
       font-size: 24px;
       margin-left: 10px;
       cursor: pointer;
-      color: #c07fae; 
+      color: #c07fae;
     }
 
-    .fade-in {
-      opacity: 1;
-      transition: opacity 500ms ease-in;
+    .typing-dots {
+      display: inline-flex;
+      gap: 4px;
+      margin-top: 5px;
     }
 
-    body.fade-in {
-      opacity: 1;
-      transition: opacity 500ms ease-in;
+    .typing-dots span {
+      width: 6px;
+      height: 6px;
+      background-color: #d7a8a0;
+      border-radius: 50%;
+      animation: jump 0.6s infinite;
     }
 
-    .fade-out {
-      opacity: 0;
-      transition: opacity 500ms ease-out;
+    .typing-dots span:nth-child(2) {
+      animation-delay: 0.1s;
     }
 
-    body.fade-out {
-      opacity: 0;
-      transition: opacity 500ms ease-out;
+    .typing-dots span:nth-child(3) {
+      animation-delay: 0.2s;
+    }
+
+    @keyframes jump {
+      0%, 100% {
+        transform: translateY(0);
+      }
+      50% {
+        transform: translateY(-6px);
+      }
+    }
+
+    @keyframes bubbleIn {
+      0% {
+        opacity: 0;
+        transform: translateY(10px) scale(0.95);
+      }
+      100% {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+      }
     }
   </style>
-  
+
   <div class="header">
     <div class="title">Lylium AI.</div>
     <div class="icons">
@@ -221,114 +237,108 @@
     <i class="fas fa-paperclip"></i>
     <i class="fas fa-paper-plane send"></i>
   </div>
+  
+  <audio id="bubble-sound" src="sounds/getout.mp3" preload="auto"></audio>
 
   <script>
-    const apiConfigurations = [
-      { url: 'https://api.kastg.xyz/api/ai/chatgpt', model: 'gpt-4o-mini', requiresModel: true },
-      { url: 'https://api.kastg.xyz/api/ai/llama', model: 'llama-3.1-8b-turbo', requiresModel: true }
-    ];
+  const apiConfigurations = [
+    { url: 'https://api.kastg.xyz/api/ai/chatgpt', model: 'gpt-4o-mini', requiresModel: true },
+    { url: 'https://api.kastg.xyz/api/ai/llama', model: 'llama-3.1-8b-turbo', requiresModel: true }
+  ];
 
-    let conversationHistory = "You are Lylium, an AI assistant created by Lily aka sleepychezz. always respond as an ai chatbot style, like chatgpt.";
+  let conversationHistory = "You are Lylium, an AI assistant created by Lily aka sleepychezz. always respond as an ai chatbot style, like chatgpt.";
 
-    function constructUrlApi(conversationPrompt, config) {
-      const { url, model, requiresModel } = config;
-      const apiKey = 'Kastg_SXQxa10WTVsNYmwAoL4d_free';
+  function constructUrlApi(conversationPrompt, config) {
+    const { url, model, requiresModel } = config;
+    const apiKey = 'Kastg_SXQxa10WTVsNYmwAoL4d_free';
+    const fullPrompt = conversationHistory + "User: " + conversationPrompt;
+    const params = new URLSearchParams({ prompt: fullPrompt, key: apiKey });
+    if (requiresModel) params.append('model', model);
+    return `https://api.allorigins.win/get?url=${encodeURIComponent(`${url}?${params.toString()}`)}`;
+  }
 
-      const fullPrompt = conversationHistory + "User: " + conversationPrompt;
-
-      const params = new URLSearchParams({
-        prompt: fullPrompt,
-        key: apiKey
-      });
-
-      if (requiresModel) {
-        params.append('model', model);
-      }
-
-      const proxyUrl = 'https://api.allorigins.win/get?url=';
-      return `${proxyUrl}${encodeURIComponent(`${url}?${params.toString()}`)}`;
-    }
-
-    async function tryFetchFromApis(prompt) {
-      for (const config of apiConfigurations) {
-        const apiUrl = constructUrlApi(prompt, config);
-        try {
-          const res = await fetch(apiUrl);
-          const data = await res.json();
-          const response = JSON.parse(data.contents)?.result?.[0]?.response;
-          if (response) {
-            conversationHistory += `User: ${prompt}\nAI: ${response}\n`;
-            return response;
-          }
-        } catch (err) {
-          console.warn(`failed with ${config.model}, trying next...`);
-        }
-      }
-      return "umm... all my brains are sleepy rn... try again later~";
-    }
-
-    async function getImageUrl(prompt) {
-      const apiUrl = `https://api.kastg.xyz/api/ai/flux?prompt=${encodeURIComponent(prompt)}&ratio=square&key=Kastg_SXQxa10WTVsNYmwAoL4d_free`;
+  async function tryFetchFromApis(prompt) {
+    let response = null;
+    for (const config of apiConfigurations) {
+      const apiUrl = constructUrlApi(prompt, config);
       try {
         const res = await fetch(apiUrl);
         const data = await res.json();
-        return data.status === "true" ? data.result[0]?.url : "";
-      } catch {
-        return "";
-      }
+        response = JSON.parse(data.contents)?.result?.[0]?.response;
+        if (response) {
+          conversationHistory += `User: ${prompt}\nAI: ${response}\n`;
+          return response;
+        }
+      } catch {}
+    }
+    return null;  // Both APIs failed
+  }
+
+  async function getImageUrl(prompt) {
+    const apiUrl = `https://api.kastg.xyz/api/ai/flux?prompt=${encodeURIComponent(prompt)}&ratio=square&key=Kastg_SXQxa10WTVsNYmwAoL4d_free`;
+    try {
+      const res = await fetch(apiUrl);
+      const data = await res.json();
+      return data.status === "true" ? data.result[0]?.url : "";
+    } catch {
+      return "";
+    }
+  }
+
+  function parseMarkdown(text) {
+    return text.replace(/\*\*(.*?)\*\*/g, '<b>$1</b>').replace(/_(.*?)_/g, '<i>$1</i>');
+  }
+
+  async function sendMessage() {
+    const input = document.querySelector('.footer input');
+    const messageText = input.value.trim();
+    if (!messageText) return;
+
+    const content = document.querySelector('.content');
+    const userMessage = document.createElement('div');
+    userMessage.className = 'message right';
+    userMessage.innerHTML = `<img src="images/empty.png"><div class="bubble"><div class="text">${messageText}</div></div>`;
+    content.appendChild(userMessage);
+    input.value = '';
+
+    const typing = document.createElement('div');
+    typing.className = 'message';
+    typing.innerHTML = `<img src="images/empty.png"><div class="bubble"><div class="username">Lylium<div class="tag"><span>AI</span></div></div><div class="text"><div class="typing-dots"><span></span><span></span><span></span></div></div></div>`;
+    content.appendChild(typing);
+    content.scrollTop = content.scrollHeight;
+
+    await new Promise(r => setTimeout(r, 800));
+
+    let reply = "";
+    if (messageText.startsWith('/generate')) {
+      const prompt = messageText.replace('/generate', '').trim();
+      const img = await getImageUrl(prompt);
+      reply = img
+        ? `<img src="${img}" style="max-width:300px; border-radius:10px;">`
+        : "uh srry, image generator not working rn...";
+    } else {
+      reply = await tryFetchFromApis(messageText);
+      if (!reply) reply = "umm... all my brains are sleepy rn... try again later~";
     }
 
-    function parseMarkdown(text) {
-      return text
-        .replace(/\*\*(.*?)\*\*/g, '<b>$1</b>')
-        .replace(/_(.*?)_/g, '<i>$1</i>');
-    }
+    content.removeChild(typing);
 
-    async function sendMessage() {
-      const input = document.querySelector('.footer input');
-      const messageText = input.value.trim();
-      if (messageText === '') return;
+    const botMsg = document.createElement('div');
+    botMsg.className = 'message';
+    botMsg.innerHTML = `<img src="images/empty.png"><div class="bubble"><div class="username">Lylium<div class="tag"><span>AI</span></div></div><div class="text">${parseMarkdown(reply)}</div></div>`;
+    content.appendChild(botMsg);
+    content.scrollTop = content.scrollHeight;
 
-      const content = document.querySelector('.content');
-      const userMessage = document.createElement('div');
-      userMessage.className = 'message right';
-      userMessage.innerHTML = `<img src="images/empty.png"><div class="bubble"><div class="text">${messageText}</div></div>`;
-      content.appendChild(userMessage);
-      input.value = '';
+    const bubbleSound = document.getElementById('bubble-sound');
+    bubbleSound.play();
+  }
 
-      const typing = document.createElement('div');
-      typing.className = 'message';
-      typing.innerHTML = `<img src="images/empty.png"><div class="bubble"><div class="username">Lylium<div class="tag"><span>AI</span></div></div><div class="text">...</div></div>`;
-      content.appendChild(typing);
-      content.scrollTop = content.scrollHeight;
-
-      await new Promise(r => setTimeout(r, 800));
-      content.removeChild(typing);
-
-      let reply = "";
-      if (messageText.startsWith('/generate')) {
-        const prompt = messageText.replace('/generate', '').trim();
-        const img = await getImageUrl(prompt);
-        reply = img
-          ? `<img src="${img}" style="max-width:300px; border-radius:10px;">`
-          : "uh srry, image generator not working rn...";
-      } else {
-        reply = await tryFetchFromApis(messageText);
-      }
-
-      const botMsg = document.createElement('div');
-      botMsg.className = 'message';
-      botMsg.innerHTML = `<img src="images/empty.png"><div class="bubble"><div class="username">Lylium<div class="tag"><span>AI</span></div></div><div class="text">${parseMarkdown(reply)}</div></div>`;
-      content.appendChild(botMsg);
-      content.scrollTop = content.scrollHeight;
-    }
-
-    document.addEventListener('DOMContentLoaded', () => {
-      const sendBtn = document.querySelector('.footer .send');
-      const input = document.querySelector('.footer input');
-      sendBtn.addEventListener('click', sendMessage);
-      input.addEventListener('keypress', e => { if (e.key === 'Enter') sendMessage(); });
-    });
-  </script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const sendBtn = document.querySelector('.footer .send');
+    const input = document.querySelector('.footer input');
+    sendBtn.addEventListener('click', sendMessage);
+    input.addEventListener('keypress', e => { if (e.key === 'Enter') sendMessage(); });
+  });
+</script>
 </body>
 </html>
