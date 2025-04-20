@@ -103,7 +103,7 @@ icon.addEventListener("click", () => {
 
   if (clickCount === 9) {
     playSound(getOutSound, () => {
-      window.location.href = "minecraft://"; 
+      window.location.href = "https://bbk.endyun.ltd"; 
     });
     clickCount = 0;
   } else {
