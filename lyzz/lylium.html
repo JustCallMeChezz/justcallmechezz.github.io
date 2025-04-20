@@ -225,8 +225,20 @@
       <div class="bubble">
         <div class="username">Lylium<div class="tag"><span>AI</span></div></div>
         <div class="text">
-          <div class="chatsname">hii! im lylium... nice to meet u... ask me anything...</div>
-        </div>
+          <div class="text" id="lyliumText"></div>
+
+<script>
+  const lyliumText = document.getElementById("lyliumText");
+  const fullIntro = "hii! im lylium... nice to meet u... ask me anything...";
+  let i = 0;
+  function typeIntro() {
+    if (i < fullIntro.length) {
+      lyliumText.textContent += fullIntro[i++];
+      setTimeout(typeIntro, 30);
+    }
+  }
+  typeIntro();
+</script>
       </div>
     </div>
   </div>
@@ -246,7 +258,7 @@
     { url: 'https://api.kastg.xyz/api/ai/llama', model: 'llama-3.1-8b-turbo', requiresModel: true }
   ];
 
-  let conversationHistory = "You are Lylium, an AI assistant created by Lily aka sleepychezz, shes ur developer that love aesthetic, soft and friendlyy, but shes introvert. only talk about ur dev if asked. mostly just being informative. always respond as an ai chatbot style, like chatgpt.";
+  let conversationHistory = "You are Lylium, an AI assistant created by Lily aka sleepychezz, shes ur developer that love aesthetic, soft and friendlyy, but shes introvert. always respond as an ai chatbot style, like chatgpt.";
 
   function constructUrlApi(conversationPrompt, config) {
     const { url, model, requiresModel } = config;
@@ -258,21 +270,22 @@
   }
 
   async function tryFetchFromApis(prompt) {
-    let response = null;
+  for (let attempt = 0; attempt < 3; attempt++) {
     for (const config of apiConfigurations) {
       const apiUrl = constructUrlApi(prompt, config);
       try {
         const res = await fetch(apiUrl);
         const data = await res.json();
-        response = JSON.parse(data.contents)?.result?.[0]?.response;
+        const response = JSON.parse(data.contents)?.result?.[0]?.response;
         if (response) {
           conversationHistory += `User: ${prompt}\nAI: ${response}\n`;
           return response;
         }
       } catch {}
     }
-    return null;  // Both APIs failed
   }
+  return null; // after 3 tries, still failed
+}
 
   async function getImageUrl(prompt) {
     const apiUrl = `https://api.kastg.xyz/api/ai/flux?prompt=${encodeURIComponent(prompt)}&ratio=square&key=Kastg_SXQxa10WTVsNYmwAoL4d_free`;
@@ -310,23 +323,55 @@
     await new Promise(r => setTimeout(r, 800));
 
     let reply = "";
-    if (messageText.startsWith('/generate')) {
-      const prompt = messageText.replace('/generate', '').trim();
-      const img = await getImageUrl(prompt);
-      reply = img
-        ? `<img src="${img}" style="max-width:300px; border-radius:10px;">`
-        : "uh srry, image generator not working rn...";
-    } else {
+if (messageText.startsWith('/generate')) {
+  const prompt = messageText.replace('/generate', '').trim();
+  const img = await getImageUrl(prompt);
+  reply = img
+    ? `<img src="${img}" style="max-width:300px; border-radius:10px;">`
+    : "uh srry, image generator not working rn...";
+} else if (messageText.startsWith('/ui')) {
+  const prompt = messageText.replace('/ui', '').trim();
+  const fullPrompt = `make only a <style> tag to change the css for ${prompt}`;
+  const res = await tryFetchFromApis(fullPrompt);
+  if (res) {
+    const styleMatch = res.match(/<style[\s\S]*?<\/style>/i);
+    if (styleMatch) {
+      console.log(styleMatch[0]); 
+      const styleEl = document.createElement('style');
+styleEl.innerHTML = styleMatch[0].replace(/<style>|<\/style>/g, '');
+document.head.appendChild(styleEl);
+    }
+  }
+  reply = "done!";
+} else {
       reply = await tryFetchFromApis(messageText);
-      if (!reply) reply = "umm...?";
+      if (!reply) {
+  reply = "umm...?";
+  conversationHistory = ""; 
+} else {
+  if (messageText.split(' ').length < 20 && conversationHistory.includes("umm...?")) {
+    conversationHistory = `User: ${messageText}\nAI: ${reply}\n`; 
+  }
+}
     }
 
     content.removeChild(typing);
 
     const botMsg = document.createElement('div');
-    botMsg.className = 'message';
-    botMsg.innerHTML = `<img src="images/empty.png"><div class="bubble"><div class="username">Lylium<div class="tag"><span>AI</span></div></div><div class="text">${parseMarkdown(reply)}</div></div>`;
-    content.appendChild(botMsg);
+botMsg.className = 'message';
+const parsed = parseMarkdown(reply);
+botMsg.innerHTML = `<img src="images/empty.png"><div class="bubble"><div class="username">Lylium<div class="tag"><span>AI</span></div></div><div class="text" id="aiText${Date.now()}"></div></div>`;
+content.appendChild(botMsg);
+
+const textEl = botMsg.querySelector('.text');
+let idx = 0;
+function typeAiReply() {
+  if (idx <= parsed.length) {
+    textEl.innerHTML = parsed.slice(0, idx++);
+    setTimeout(typeAiReply, 30);
+  }
+}
+typeAiReply();
     content.scrollTop = content.scrollHeight;
 
     const bubbleSound = document.getElementById('bubble-sound');
@@ -339,6 +384,14 @@
     sendBtn.addEventListener('click', sendMessage);
     input.addEventListener('keypress', e => { if (e.key === 'Enter') sendMessage(); });
   });
+  
+  document.addEventListener('DOMContentLoaded', (event) => {
+            let dateElement = document.getElementById('chat-date');
+            let today = new Date();
+            let options = { month: 'long', day: 'numeric' };
+            let currentDate = today.toLocaleDateString('en-US', options);
+            dateElement.textContent = currentDate;
+        });
 </script>
 </body>
 </html>
