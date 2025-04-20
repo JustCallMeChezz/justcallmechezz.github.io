@@ -60,10 +60,10 @@
     <section class="images-slider">
         <div class="slider">
             <div class="slider-images">
-                <img src="images/images1.jpg" alt="images 1">
-                <img src="images/images2.jpg" alt="images 2">
-                <img src="images/images3.jpg" alt="images 3">
-                <img src="images/images4.jpg" alt="images 4">
+                <img src="images/images1.png" alt="images 1">
+                <img src="images/images2.png" alt="images 2">
+                <img src="images/images3.png" alt="images 3">
+                <img src="images/images4.png" alt="images 4">
             </div>
         </div>
     </section>
@@ -71,7 +71,23 @@
     <section id="invite" class="invite">
       <div class="description"><b>୨୧ Lyzz SMP ♡</b> is a cozy and friendly Minecraft survival multiplayer (SMP) for everyone! Whether you love building, exploring, or just vibing with friends, Lyzz SMP is the perfect place to chill and have fun. This server also can be a place to get a new friends so u can get a lotsss of new friendss. Hope u interested to join our server. See ya in the server! <3
       <br>
-      <a href="https://add.aternos.org/lyzzsmp" class="invite-button" id="joinButton">Join Server</a>
+<a class="invite-button" id="joinButton">Join Server</a>
+  <div class="verification-container verification-m-p" id="verify-box">
+    <div class="verification-checkbox-window verification-m-p verification-block">
+      <div class="verification-checkbox-container verification-m-p">
+        <button type="button" id="verification-checkbox" class="verification-checkbox verification-m-p verification-line-normal">
+          <i id="check-icon" class="fa-solid fa-check check-icon"></i>
+        </button>
+        <div id="verification-spinner" class="verification-spinner">
+          <span></span><span></span><span></span>
+        </div>
+      </div>
+      <p class="verification-im-not-a-robot verification-m-p verification-line-normal">i'm not a robot</p>
+      <i class="fas fa-shield-alt verification-logo"></i>
+      <p class="verification-checkbox-desc verification-m-p verification-line-normal">Verification</p>
+      <p class="verification-checkbox-desc verification-m-p verification-line-normal">Privacy - Terms</p>
+    </div>
+  </div>
       </div>
     </section>
     
@@ -83,7 +99,7 @@
   <div class="box" data-aos="fade-left" data-aos-duration="1000">
     <a><br><b>Member Count</b></a>
         <div class="members">
-            <a>002</a>
+            <a>001</a>
         </div>
         <p>Last checked: <br><span id="last-checked"></span></p>
   </div>
@@ -164,8 +180,11 @@
     </p>
   </div>
 </section>
+<div class="sleepyy">
+    <a>(⸝⸝ᴗ﹏ᴗ⸝⸝) ᶻ 𝗓 𐰁</a>
+    </div>
     </footer>
-
+    
     <!-- lylium button -->
 <button id="lylium-btn"><i class="fa-solid fa-comment-dots"></i></button>
 
@@ -177,6 +196,7 @@
 </div>
     
     <audio id="click" src="sounds/click.mp3"></audio>
+<iframe id="music" src="https://www.youtube.com/embed/atgjKEgSqSU?enablejsapi=1&loop=1&playlist=atgjKEgSqSU" allow="autoplay" style="display: none;"></iframe>
 
     <script src="lyzzsmp.js"></script>
     <script>const h1 = document.querySelector('header h1');
