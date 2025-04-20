@@ -128,7 +128,7 @@ elementsToVibrate.forEach(selector => {
     });
 });
 
- const lyliumBtn = document.getElementById("lylium-btn");
+  const lyliumBtn = document.getElementById("lylium-btn");
   const lyliumModal = document.getElementById("lylium-modal");
 
   lyliumBtn.onclick = () => {
@@ -152,3 +152,82 @@ function closeLyliumModal() {
   modal.style.opacity = '0';
   modal.style.visibility = 'hidden';
 }
+
+const inviteBtn = document.getElementById("joinButton");
+  const verifyBox = document.getElementById("verify-box");
+  const checkboxBtn = document.getElementById("verification-checkbox");
+  const checkboxBtnSpinner = document.getElementById("verification-spinner");
+  const checkIcon = document.getElementById("check-icon");
+  const fullverifyBox = document.querySelector(".verification-checkbox-window");
+
+  inviteBtn.addEventListener("click", () => {
+    inviteBtn.style.display = "none";
+    verifyBox.style.display = "block";
+
+    if (navigator.vibrate) navigator.vibrate(100);
+
+    setTimeout(() => {
+      verifyBox.classList.add("verification-hide");
+      setTimeout(() => {
+        verifyBox.style.display = "none";
+        verifyBox.classList.remove("verification-hide");
+        inviteBtn.style.display = "inline-block";
+      }, 400);
+    }, 6000);
+  });
+  
+  fullverifyBox.addEventListener("click", (event) => {
+  event.preventDefault();
+  checkboxBtn.disabled = true;
+  checkboxBtn.style.opacity = "0";
+  checkboxBtnSpinner.style.visibility = "visible";
+  checkboxBtnSpinner.style.opacity = "1";
+
+  setTimeout(() => {
+    checkboxBtnSpinner.style.visibility = "hidden";
+    checkboxBtnSpinner.style.opacity = "0";
+    checkboxBtn.style.opacity = "1";
+    checkIcon.classList.add("show");
+
+    setTimeout(() => {
+      window.location.href = 'https://add.aternos.org/lyzzsmp';
+
+      setTimeout(() => {
+        checkIcon.classList.remove("show");
+        checkboxBtn.disabled = false;
+        inviteBtn.style.display = "inline-block";
+        verifyBox.style.display = "none";
+      }, 1000);
+    }, 1000);
+  }, 3000);
+});
+
+fullverifyBox.addEventListener("click", (event) => {
+  event.preventDefault();
+  checkboxBtn.disabled = true;
+  checkboxBtn.style.opacity = "0";
+  checkboxBtnSpinner.style.visibility = "visible";
+  checkboxBtnSpinner.style.opacity = "1";
+  
+  const robotText = document.querySelector('.verification-im-not-a-robot');
+  robotText.textContent = "Verifying...";
+
+  setTimeout(() => {
+    checkboxBtnSpinner.style.visibility = "hidden";
+    checkboxBtnSpinner.style.opacity = "0";
+    checkboxBtn.style.opacity = "1";
+    checkIcon.classList.add("show");
+
+    setTimeout(() => {
+      window.location.href = 'https://add.aternos.org/lyzzsmp';
+
+      setTimeout(() => {
+        checkIcon.classList.remove("show");
+        checkboxBtn.disabled = false;
+        inviteBtn.style.display = "inline-block";
+        verifyBox.style.display = "none";
+        robotText.textContent = "i'm not a robot";
+      }, 1000);
+    }, 1000);
+  }, 3000);
+});
