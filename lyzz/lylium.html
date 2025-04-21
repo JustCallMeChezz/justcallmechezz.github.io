@@ -7,6 +7,12 @@
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet"/>
   <meta name="theme-color" content="#E0BBE4" />
   <link href="https://fonts.googleapis.com/css2?family=Short+Stack&display=swap" rel="stylesheet"/>
+  <link rel="icon" type="image/png" href="/icons/lylium/favicon-96x96.png" sizes="96x96" />
+<link rel="icon" type="image/svg+xml" href="/icons/lylium/favicon.svg" />
+<link rel="shortcut icon" href="/icons/lylium/favicon.ico" />
+<link rel="apple-touch-icon" sizes="180x180" href="/icons/lylium/apple-touch-icon.png" />
+<meta name="apple-mobile-web-app-title" content="Lylium" />
+<link rel="manifest" href="/icons/lylium/site.webmanifest" />
 </head>
 <body>
 
@@ -368,7 +374,7 @@ let idx = 0;
 function typeAiReply() {
   if (idx <= parsed.length) {
     textEl.innerHTML = parsed.slice(0, idx++);
-    setTimeout(typeAiReply, 30);
+    setTimeout(typeAiReply, 2);
   }
 }
 typeAiReply();
