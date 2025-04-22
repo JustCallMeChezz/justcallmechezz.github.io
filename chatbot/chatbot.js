@@ -107,7 +107,7 @@ async function getAIResponse(input) {
         return botMessageText; 
     } catch (error) {
         console.error('Error fetching AI response:', error);
-        return "umm... i didn't understand .-.";
+        return "ai not available... pls use <a href="https://justcallmechezz.github.io/lyzz/lylium.html>lylium</a> instead";
     }
 }
 
