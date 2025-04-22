@@ -100,14 +100,14 @@ async function getAIResponse(input) {
         const response = await fetch(apiUrl);
         const data = await response.json();
 
-        const botMessageText = JSON.parse(data.contents).result[0]?.response || "ai not available... pls use <a href="https://justcallmechezz.github.io/lyzz/lylium.html>lylium</a> instead";
+        const botMessageText = JSON.parse(data.contents).result[0]?.response || 'ai not available... pls use <a href="https://justcallmechezz.github.io/lyzz/lylium.html">lylium</a> instead';
         
         conversationHistory += `User: ${input}\nAI: ${botMessageText}\n`;
 
         return botMessageText; 
     } catch (error) {
         console.error('Error fetching AI response:', error);
-        return "ai not available... pls use <a href="https://justcallmechezz.github.io/lyzz/lylium.html>lylium</a> instead";
+        return 'ai not available... pls use <a href="https://justcallmechezz.github.io/lyzz/lylium.html">lylium</a> instead';
     }
 }
 
