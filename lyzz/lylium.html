@@ -41,7 +41,7 @@
 
     .header .title {
       flex-grow: 1;
-      font-size: 20px;
+      font-size: 18px;
       font-weight: bold;
     }
 
@@ -380,10 +380,10 @@ document.head.appendChild(styleEl);
 } else {
       reply = await tryFetchFromApis(messageText);
       if (!reply) {
-  reply = "umm...?";
+  reply = "hahh??";
   conversationHistory = ""; 
 } else {
-  if (messageText.split(' ').length < 20 && conversationHistory.includes("umm...?")) {
+  if (messageText.split(' ').length < 20 && conversationHistory.includes("hahh??")) {
     conversationHistory = `User: ${messageText}\nAI: ${reply}\n`; 
   }
 }
