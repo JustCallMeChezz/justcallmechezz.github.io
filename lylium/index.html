@@ -250,7 +250,7 @@ body.grayscale-mode {
       <span id="chat-date">today</span>
     </div>
     <div class="message">
-      <img alt="chats icon" height="40" src="/lyzz/images/empty.png" width="40"/>
+      <img alt="chats icon" height="40" src="icon/lylium.png" width="40"/>
       <div class="bubble">
         <div class="username">Lylium<div class="tag"><span>AI</span></div></div>
         <div class="text">
@@ -350,7 +350,7 @@ body.grayscale-mode {
 
     const typing = document.createElement('div');
     typing.className = 'message';
-    typing.innerHTML = `<img src="/lyzz/images/empty.png"><div class="bubble"><div class="username">Lylium<div class="tag"><span>AI</span></div></div><div class="text"><div class="typing-dots"><span></span><span></span><span></span></div></div></div>`;
+    typing.innerHTML = `<img src="icon/lylium.png"><div class="bubble"><div class="username">Lylium<div class="tag"><span>AI</span></div></div><div class="text"><div class="typing-dots"><span></span><span></span><span></span></div></div></div>`;
     content.appendChild(typing);
     content.scrollTop = content.scrollHeight;
 
@@ -394,7 +394,7 @@ document.head.appendChild(styleEl);
     const botMsg = document.createElement('div');
 botMsg.className = 'message';
 const parsed = parseMarkdown(reply);
-botMsg.innerHTML = `<img src="/lyzz/images/empty.png"><div class="bubble"><div class="username">Lylium<div class="tag"><span>AI</span></div></div><div class="text" id="aiText${Date.now()}"></div></div>`;
+botMsg.innerHTML = `<img src="icon/lylium.png"><div class="bubble"><div class="username">Lylium<div class="tag"><span>AI</span></div></div><div class="text" id="aiText${Date.now()}"></div></div>`;
 content.appendChild(botMsg);
 
 const textEl = botMsg.querySelector('.text');
