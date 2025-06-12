@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>୨୧ Lyzz SMP ♡</title>
-<meta name="theme-color" content="#dfb3ff">
+    <title>୨୧ Lyzz SMP ᡣ𐭩</title>
+    
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -12,12 +12,19 @@
 <link href="https://fonts.googleapis.com/css2?family=Knewave&display=swap" rel="stylesheet">
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <link href="lyzzsmp.css" rel="stylesheet">
-    <link rel="icon" type="image/png" href="icon/favicon-96x96.png" sizes="96x96" />
-<link rel="icon" type="image/svg+xml" href="icon/favicon.svg" />
-<link rel="shortcut icon" href="icon/favicon.ico" />
-<link rel="apple-touch-icon" sizes="180x180" href="icon/apple-touch-icon.png" />
-<meta name="apple-mobile-web-app-title" content="Lyzz SMP ♡" />
-<link rel="manifest" href="icon/site.webmanifest" />
+    <link rel="icon" type="image/png" href="/icons/favicon-96x96.png" sizes="96x96" />
+<link rel="icon" type="image/svg+xml" href="/icons/favicon.svg" />
+<link rel="shortcut icon" href="/icons/favicon.ico" />
+<link rel="apple-touch-icon" sizes="180x180" href="/icons/apple-touch-icon.png" />
+<meta name="apple-mobile-web-app-title" content="Lyzz SMP ᡣ𐭩" />
+<link rel="manifest" href="/icons/site.webmanifest" />
+<link href="https://fonts.cdnfonts.com/css/kg-corner-of-the-sky" rel="stylesheet">
+
+<style>
+  body {
+    font-family: 'KG Corner of the Sky', sans-serif;
+  }
+</style>
 
 </head>
 <body>
@@ -75,8 +82,8 @@
     </section>
     
     <section id="invite" class="invite">
-      <div class="description"><b>୨୧ Lyzz SMP ♡</b> is a cozy and friendly Minecraft survival multiplayer (SMP) for everyone! Whether you love building, exploring, or just vibing with friends, Lyzz SMP is the perfect place to chill and have fun. This server also can be a place to get a new friends so u can get a lotsss of new friendss. Hope u interested to join our server. See ya in the server! <3
-      <br>
+      <div class="description"><br><b>୨୧ Lyzz SMP ᡣ𐭩</b> is a cozy and friendly Minecraft survival multiplayer (SMP) for everyone! Whether you love building, exploring, or just vibing with friends, Lyzz SMP is the perfect place to chill and have fun. This server also can be a place to get a new friends so u can get a lotsss of new friendss. Hope u interested to join our server. See ya in the server! <3
+      <br><br>
 <a class="invite-button" id="joinButton">Join Server</a>
   <div class="verification-container verification-m-p" id="verify-box">
     <div class="verification-checkbox-window verification-m-p verification-block">
@@ -100,7 +107,7 @@
     <div class="flex-box">
   <div class="box" data-aos="fade-right" data-aos-duration="1000">
     <img class="icon" id="icon" src="images/minecraft.svg" ><br>
-    <b>Minecraft</b> Bedrock Edition
+    <a><b>Minecraft</b> <br> Bedrock Edition</a>
         </div>
   <div class="box" data-aos="fade-left" data-aos-duration="1000">
     <a><br><b>Member Count</b></a>
@@ -124,7 +131,8 @@
 </ul>
 </section>
     
-    <section id="info" class="info">
+    <section id="info" class="info" data-aos="fade-up" data-aos-duration="1000">
+      <h2 style="margin-top: 40px;">About Staff</h2>
   <div class="info-card-container" data-aos="zoom-in-left" data-aos-duration="1000">
     <div class="info-card" data-link="https://justcallmechezz.github.io">
       <img class="card-img" src="images/lily.jpg" alt="Card Image">
@@ -145,6 +153,36 @@
     </div>
   </div>
 </section>
+
+<section id="featured-servers" class="featured-servers" data-aos="fade-up" data-aos-duration="1000">
+  <h2>Featured Servers</h2>
+  <div class="servers">
+    
+    <div class="server-box">
+      <div class="server-item">
+        <img src="images/minecraft.svg" class="server-icon">
+        <div class="text-box">
+          <a class="server-name" href="#">Ultra MC</a>
+          <p class="desc">my friend serve...</p>
+          <a class="serverjoin-btn" href="https://zenzctfyt.github.io">Join Server</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="server-box">
+      <div class="server-item">
+        <img src="images/minecraft.svg" class="server-icon">
+        <div class="text-box">
+          <a class="server-name" href="#">Bonded Realm SMP</a>
+          <p class="desc">a random server that i got invited... i like this server so i put it here... XD</p>
+          <a class="serverjoin-btn" href="#">Join Server</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
 
 <!-- modal -->
 <div id="modal" onclick="closeModal()">
@@ -207,7 +245,7 @@
     <script src="lyzzsmp.js"></script>
     <script>const h1 = document.querySelector('header h1');
 const p = document.querySelector('header p');
-const h1Texts = ['୨୧ Lyzz SMP ♡', 'Minecraft'];
+const h1Texts = ['୨୧ Lyzz SMP ᡣ𐭩', 'Minecraft'];
 const pTexts = ['By sleepychezz.', 'Server'];
 let currentTextIndex = 0;
 
