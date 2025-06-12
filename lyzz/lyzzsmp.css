@@ -20,8 +20,11 @@ body {
    font-family: "Minecraft", sans-serif; 
     margin: 0;
     padding: 0;
-    background: #f5efff;
-    background-size: 160px 160px;
+    background: 
+        linear-gradient(to right, #f5efff 2px, transparent 1px),
+        linear-gradient(to bottom, #f5efff 2px, transparent 1px),
+        #fbf8ff;
+    background-size: 30px 30px;
     color: #5b3d69;
     overflow-x: hidden;
     -webkit-tap-highlight-color: transparent;
@@ -100,6 +103,7 @@ button, .community {
     border-radius: 25px;
     font-weight: bold;
     transition: 0.3s;
+    font-size: 0.8em;
 }
 
 .invite-button {
@@ -204,15 +208,16 @@ scrollbar-width: none;
 
 .info, .invite {
     text-align: center;
-    margin: 20px auto;
+    margin: 8px auto;
 }
 
 .description, .rules {
-  border-radius: 24px;
-  background: white;
-  font-size: 14px;
+  border-radius: 30px;
+  background: #f0e7ff;
+  font-size: 0.6em;
   padding: 20px;
   box-shadow: 0 4px 10px rgba(210, 180, 255, 0.5);
+  opacity: 0.8;
 }
 
 .rules {
@@ -223,19 +228,24 @@ scrollbar-width: none;
 .flex-box {
   display: flex;
   gap: 16px;
+  margin: 20px auto;
 }
 
 .box {
-  background: white;
-  padding: 15px;
+  background: #fcd6e5;
+  padding: 8px;
   border-radius: 24px;
   text-align: center;
   flex: 1;
   box-shadow: 0 4px 10px rgba(210, 180, 255, 0.5);
 }
 
-.box p {
+.box a {
   font-size: 0.8em;
+}
+
+.box p {
+  font-size: 0.5em;
   text-align: center;
   transition: 0.5s;
 }
@@ -244,7 +254,8 @@ scrollbar-width: none;
   width: 80px;
   height: 80px;
   border-radius: 20px;
-  margin: 12px 0;
+  margin-top: 12px;
+  margin-bottom: -2px;
   transition: filter 0.2s;
 }
 
@@ -281,7 +292,7 @@ scrollbar-width: none;
 
 .info li, .invite li, .rules li {
     margin: 8px 0;
-    font-size: 14px;
+    font-size: 0.9em;
 }
 
 .info-card-container {
@@ -302,6 +313,76 @@ scrollbar-width: none;
   background-color: #d8b3ff;
   box-shadow: 0 4px 10px rgba(210, 180, 255, 0.5);
   transition: transform 0.4s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+.featured-servers {
+  /* uhh... idk... */
+}
+
+.servers {
+  border-radius: 30px;
+  background: #fcd6e5;
+  font-size: 0.6em;
+  padding: 20px;
+  box-shadow: 0 4px 10px rgba(252, 214, 229, 0.5);
+  opacity: 0.8;
+}
+
+.server-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  margin-bottom: 15px;
+}
+
+.server-icon {
+  width: 80px;
+  height: 80px;
+  border-radius: 24px;
+}
+
+.text-box {
+  display: flex;
+  flex-direction: column;
+}
+
+.server-name {
+  font-weight: bold;
+  font-size: 0.9em;
+  color: #c58ad1;
+  text-decoration: none;
+  margin-bottom: 3px;
+}
+
+.desc {
+  font-size: 0.8em;
+  color: #555;
+}
+
+.server-box {
+  background: #ffffff40;
+  backdrop-filter: blur(8px);
+  border-radius: 20px;
+  padding: 15px;
+  margin-bottom: 15px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+}
+
+.serverjoin-btn {
+  margin-top: 8px;
+  display: inline-block;
+  background-color: #d8c7f9;
+  color: #fff;
+  padding: 4px 10px;
+  border-radius: 10px;
+  font-size: 0.75em;
+  text-decoration: none;
+  width: fit-content;
+  transition: background 0.3s ease;
+}
+
+.serverjoin-btn:hover {
+  background-color: #c3aaf3;
 }
 
 @media (min-width: 1024px) {
@@ -469,7 +550,8 @@ footer {
   background: linear-gradient(to bottom, #f5efff, #d8b3ff);
   text-align: center;
   padding: 15px;
-  font-size: 14px;
+  font-size: 0.7em;
+  border-radius: 30px 30px 0px 0px
 }
 
 footer .copyright i {
@@ -500,8 +582,12 @@ footer .copyright i {
       opacity: 0;
     }
 
-    .info h2 {
-        font-size: 1.8rem;
+    .info h3 {
+        font-size: 0.8em;
+    }
+    
+    .info p {
+       font-size: 0.6em;
     }
 
     .invite-button {
@@ -777,7 +863,7 @@ footer .social-media i {
 
     .verification-im-not-a-robot {
       position: relative;
-      left: -32px;
+      left: -40px;
       bottom: 20px;
       font-size: 15px;
       color: #444;
@@ -844,3 +930,11 @@ footer .social-media i {
       opacity: 1;
       transform: scale(1);
     }
+    
+    [data-aos] {
+  opacity: 0 !important;
+}
+
+[data-aos].aos-animate {
+  opacity: 0.88 !important;
+}
