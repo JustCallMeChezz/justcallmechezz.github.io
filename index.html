@@ -80,50 +80,87 @@
 
 <section class="pills" data-aos="zoom-out" data-aos-duration="1000">
   <div style="display: flex; justify-content: center; gap: 12px;">
-    
-    <!-- visit counter (uhh... does ppl visit my website?) -->
-    <a>
-      <div style="
-        display: inline-flex;
-        align-items: center;
-        height: 28px;
-        font-family: 'Short Stack', cursive;
-        font-size: 14px;
-        line-height: 1;
-      ">
-        <div style="
-          background: #d49d9d;
-          padding-left: 8px;
-          padding-right: 0;
-          border-top-left-radius: 16px;
-          border-bottom-left-radius: 16px;
-          height: 100%;
-          display: flex;
-          align-items: center;
-          justify-content: center;
-        ">
-          <i class="fas fa-heart" style="color: white; font-size: 13px;"></i>
-        </div>
-        <img
-          src="https://hits.sh/github.com/JustCallMeChezz/justcallmechezz.github.io.svg?style=for-the-badge&label=Visits&color=fbd5d5&labelColor=d49d9d"
-          style="
-            border-top-left-radius: 0;
-            border-bottom-left-radius: 0;
-            border-top-right-radius: 16px;
-            border-bottom-right-radius: 16px;
-            height: 100%;
-          "
-        >
-      </div>
-    </a>
 
-    <!-- status badge (yes... always sleepy .-.) -->
-    <a>
+    <!-- visits badge -->
+    <div style="
+      display: inline-flex;
+      align-items: center;
+      height: 28px;
+      font-family: 'Short Stack', cursive;
+      font-size: 13px;
+      line-height: 1;
+    ">
+      <!-- heart + visits -->
+      <div style="
+        background: #d49d9d;
+        padding: 0 8px;
+        border-top-left-radius: 16px;
+        border-bottom-left-radius: 16px;
+        height: 100%;
+        display: flex;
+        align-items: center;
+        gap: 6px;
+        color: white;
+        margin-right: -32px;
+        z-index: 2;
+      ">
+        <i class="fas fa-heart"></i>
+        <span>visits</span>
+      </div>
+
+      <!-- count only (uhh... i cant change the style .-.) -->
       <img
-        src="https://img.shields.io/badge/status-ᶻ𝗓𐰁-fbd5d5?style=for-the-badge&labelColor=d49d9d&logo=icloud&logoColor=white"
-        style="border-radius: 16px;"
+        src="https://hits.sh/github.com/JustCallMeChezz/justcallmechezz.github.io.svg?style=flat-square&label=%E2%80%8B&color=fbd5d5&labelColor=fbd5d5"
+        style="
+          background: #fbd5d5;
+          height: 100%;
+          padding: 0 10px;
+          border-top-right-radius: 16px;
+          border-bottom-right-radius: 16px;
+        "
       >
-    </a>
+    </div>
+
+    <!-- status badge -->
+    <div style="
+      display: inline-flex;
+      align-items: center;
+      height: 28px;
+      font-size: 13px;
+      line-height: 1;
+      font-family: 'Short Stack', cursive;
+    ">
+      <!-- icon + label -->
+      <div style="
+        background: #d49d9d;
+        padding: 0 8px;
+        border-top-left-radius: 16px;
+        border-bottom-left-radius: 16px;
+        height: 100%;
+        display: flex;
+        align-items: center;
+        gap: 6px;
+        color: white;
+      ">
+        <i class="fas fa-cloud" style="font-size: 13px;"></i>
+        <span>status</span>
+      </div>
+
+      <!-- status text -->
+      <div style="
+        background: #fbd5d5;
+        padding: 0 12px;
+        border-top-right-radius: 16px;
+        border-bottom-right-radius: 16px;
+        height: 100%;
+        display: flex;
+        align-items: center;
+        font-family: sans-serif;
+        color: #d49d9d;
+      ">
+        ᶻ 𝗓 𐰁
+      </div>
+    </div>
 
   </div>
 </section>
