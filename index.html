@@ -81,7 +81,7 @@
 <section class="pills" data-aos="zoom-out" data-aos-duration="1000">
   <div style="display: flex; justify-content: center; gap: 12px;">
 
-    <!-- visits badge -->
+    <!-- visits pill -->
     <div style="
       display: inline-flex;
       align-items: center;
@@ -101,29 +101,30 @@
         align-items: center;
         gap: 6px;
         color: white;
-        margin-right: -32px;
-        z-index: 2;
         box-shadow: 0 2px 4px #fbd5d5;
       ">
         <i class="fas fa-heart"></i>
         <span>visits</span>
       </div>
 
-      <!-- count only (uhh... i cant change the style .-.) -->
-      <img
-        src="https://hits.sh/github.com/JustCallMeChezz/justcallmechezz.github.io.svg?style=flat-square&label=%E2%80%8B&color=fbd5d5&labelColor=fbd5d5"
-        style="
-          background: #fbd5d5;
-          height: 100%;
-          padding: 0 10px;
-          border-top-right-radius: 16px;
-          border-bottom-right-radius: 16px;
-          box-shadow: 0 2px 4px #fbd5d5;
-        "
-      >
+      <!-- count only -->
+      <div id="visit-count" style="
+        background: #fbd5d5;
+        height: 100%;
+        padding: 0 10px;
+        border-top-right-radius: 16px;
+        border-bottom-right-radius: 16px;
+        box-shadow: 0 2px 4px #fbd5d5;
+        display: flex;
+        align-items: center;
+        font-family: 'Short Stack', cursive;
+        color: #d49d9d;
+      ">
+        ...
+      </div>
     </div>
 
-    <!-- status badge -->
+    <!-- status pill -->
     <div style="
       display: inline-flex;
       align-items: center;
@@ -132,7 +133,7 @@
       line-height: 1;
       font-family: 'Short Stack', cursive;
     ">
-      <!-- icon + label -->
+      <!-- cloud + status -->
       <div style="
         background: #d49d9d;
         padding: 0 8px;
@@ -145,11 +146,11 @@
         color: white;
         box-shadow: 0 2px 4px #fbd5d5;
       ">
-        <i class="fas fa-cloud" style="font-size: 13px;"></i>
+        <i class="fas fa-cloud"></i>
         <span>status</span>
       </div>
 
-      <!-- status text -->
+      <!-- for that zzz thing -->
       <div style="
         background: #fbd5d5;
         padding: 0 12px;
@@ -168,6 +169,23 @@
 
   </div>
 </section>
+
+<script>
+  fetch("https://api.allorigins.win/raw?url=" + encodeURIComponent("https://hits.sh/github.com/JustCallMeChezz/justcallmechezz.github.io.svg") + "&" + Date.now())
+  .then(res => res.text())
+  .then(svg => {
+    const match = svg.match(/<title>.*?: (\d+)<\/title>/);
+    if (match) {
+      document.getElementById("visit-count").textContent = match[1];
+    } else {
+      document.getElementById("visit-count").textContent = "???";
+    }
+  })
+  .catch(err => {
+    document.getElementById("visit-count").textContent = "error";
+    console.error(err);
+  });
+</script>
 
             <section class="connections">
               <div data-aos="zoom-out-down" data-aos-duration="1000">
