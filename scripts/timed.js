@@ -57,7 +57,7 @@ document.addEventListener('DOMContentLoaded', () => {
         <div class="huuu">
         <p>
             <a id="roblox-icon" href="https://www.roblox.com/users/4379659969/profile"><img src="icons/roblox.png" alt="Roblox" style="width: 40px; height: 40px;"></a>
-            <a id="minecraft-icon" href="https://launch.minecraft.net/profile/Chezzy%20Lily"><img src="icons/minecraft.png" alt="Minecraft" style="width: 40px; height: 40px;"></a>
+            <a id="minecraft-icon" href="https://justcallmechezz.github.io/lyzz"><img src="icons/minecraft.png" alt="Minecraft" style="width: 40px; height: 40px;"></a>
             <a id="mobile-legends-icon" href="https://www.mobilelegends.com"><img src="icons/mlbb.png" alt="Mobile Legends" style="width: 40px; height: 40px;"></a>
         </p>
         </div>
