@@ -315,6 +315,10 @@ transition: opacity 500ms ease-in;
     text-decoration: underline;
 }
 
+.pills {
+  margin-top: 30px;
+}
+
 .connections {
     margin-top: 20px;
     text-align: center;
