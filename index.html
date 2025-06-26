@@ -1,429 +1,394 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>⋅˚₊‧ ୨about me • chezz୧ ‧₊˚ ⋅</title>
-    <meta name="theme-color" content="#fbc0af">
-    <link href="https://fonts.googleapis.com/css2?family=Short+Stack&display=swap" rel="stylesheet">
-    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-    <link id="theme-stylesheet" rel="stylesheet" href="themes/pastellyy.css">
-    <link rel="apple-touch-icon" sizes="180x180" href="icons/apple-touch-icon.png">
-<link rel="icon" type="image/png" sizes="32x32" href="icons/favicon-32x32.png">
-<link rel="icon" type="image/png" sizes="16x16" href="icons/favicon-16x16.png">
-<link rel="manifest" href="site.webmanifest.txt">
-  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.0/css/all.min.css" rel="stylesheet"/>
-</head>
-<body class="leBlurIn">
-   <div class="chezz-fall-container"></div>
-    <div class="container">
-        <header>
+   <head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>⋅˚₊‧ ୨about me • chezz୧ ‧₊˚ ⋅</title>
+      <meta name="theme-color" content="#fbc0af">
+      <link href="https://fonts.googleapis.com/css2?family=Short+Stack&display=swap" rel="stylesheet">
+      <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+      <link id="theme-stylesheet" rel="stylesheet" href="themes/pastellyy.css">
+      <link rel="apple-touch-icon" sizes="180x180" href="icons/apple-touch-icon.png">
+      <link rel="icon" type="image/png" sizes="32x32" href="icons/favicon-32x32.png">
+      <link rel="icon" type="image/png" sizes="16x16" href="icons/favicon-16x16.png">
+      <link rel="manifest" href="site.webmanifest.txt">
+      <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.0/css/all.min.css" rel="stylesheet"/>
+   </head>
+   <body class="leBlurIn">
+      <div class="chezz-fall-container"></div>
+      <div class="container">
+         <header>
             <h1 data-aos="fade-down" data-aos-duration="1000">About Me</h1>
-        </header>
-        <section class="profile" data-aos="zoom-in" data-aos-duration="1000">
+         </header>
+         <section class="profile" data-aos="zoom-in" data-aos-duration="1000">
             <a href="https://youtu.be/dQw4w9WgXcQ">
             <img id="pfps" src="pfps/lilyliyana.png" alt="pfps"></a>
             <h2 data-aos="zoom-in" data-aos-duration="1200"><span class="name" id="name">✮sᥣᥱᥱρყcнεzz🧀</span></h2>
             <p data-aos="zoom-in" data-aos-duration="1000"><span class="blush">Hello! I'm Lily or also known as Chezz 🧀, a programmer, animator, YouTuber and also TikToker (mostly posting on tiktok now cuz lazy to post on youtube). Still learning in programming... My fav programming language is Javascript and C/C++... also love styling website ui using css. i rily ii loves cheese (fr). btw... here's some of my projects if u interested to see it... <a class="projects" href="/pages/projects/projects.html"><b>click here!</b></a></span></p>
-        </section>
-        
-        <section class="github-stats">
-  <h3 data-aos="zoom-out-down" data-aos-duration="1000">୨୧ Github Stats ୨୧</h3>
-  <div class="stats-container">
-    <img data-aos="zoom-out" data-aos-duration="1000" src="https://github-readme-stats.vercel.app/api?username=JustCallMeChezz&show_icons=true&hide_title=true&hide_border=true&count_private=true&theme=radical&bg_color=white&text_color=4A3626&icon_color=B07255&border_color=transparent&ring_color=F7C6A1" alt="GitHub Stats" style="border-radius: 15px;">
-  </div>
-
-  <div data-aos="zoom-out" data-aos-duration="1000">
-  <p>hey... wanna play a game i made?</p>
-  <a href="https://justcallmechezz.github.io/pages/projects/catchthecheese/game.html">
-    <button class="catchthecheese">click here!</button>
-  </a>
-  </div>
-
-  <script>
-    document.querySelectorAll('.catchthecheese').forEach(element => {
-      element.addEventListener('click', function() {
-        
-        if (navigator.vibrate) {
-          navigator.vibrate(100);  
-        }
-        this.classList.add('cute-bouncyy', 'vibrate');
-        setTimeout(() => {
-          this.classList.remove('cute-bouncyy', 'vibrate');
-        }, 400);
-      });
-    });
-  </script>
-</section>
-
-<section class="quote" data-aos="zoom-out" data-aos-duration="1000">
-<style>
-  #quote-box-container {
-    font-family: 'Short Stack', system-ui, sans-serif;
-    font-size: 14px;
-    padding: 10px 14px;
-    background: #fbd5d5;
-    color: #d49d9d;
-    border-radius: 12px;
-    box-shadow: 0 2px 4px #fbd5d5;
-    max-width: 300px;
-    margin: auto;
-    text-align: center;
-  }
-
-  #quote-title {
-    font-weight: bold;
-    margin-bottom: 6px;
-    font-size: 14px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 6px;
-  }
-
-  #quote-box {
-    font-size: 13px;
-    max-height: 0;
-    overflow: hidden;
-    transition: max-height 0.6s ease, padding-top 0.6s ease;
-  }
-
-  #quote-box.loaded {
-    max-height: 200px;
-    padding-top: 6px;
-  }
-
-  .typing-dots {
-    display: inline-flex;
-    gap: 4px;
-    justify-content: center;
-    margin-top: 2px;
-  }
-
-  .typing-dots span {
-    width: 6px;
-    height: 6px;
-    background-color: #d7a8a0;
-    border-radius: 50%;
-    animation: jump 0.6s infinite;
-  }
-
-  .typing-dots span:nth-child(2) {
-    animation-delay: 0.1s;
-  }
-
-  .typing-dots span:nth-child(3) {
-    animation-delay: 0.2s;
-  }
-
-  @keyframes jump {
-    0%, 100% { transform: translateY(0); }
-    50% { transform: translateY(-4px); }
-  }
-</style>
-
-<div id="quote-box-container">
-  <div id="quote-title">random quote ✧˖°</div>
-  <div id="typing-dots" class="typing-dots">
-    <span></span><span></span><span></span>
-  </div>
-  <div id="quote-box"></div>
-</div>
-</section>
-        
-        <section class="details">
+         </section>
+         <section class="github-stats">
+            <h3 data-aos="zoom-out-down" data-aos-duration="1000">୨୧ Github Stats ୨୧</h3>
+            <div class="stats-container">
+               <img data-aos="zoom-out" data-aos-duration="1000" src="https://github-readme-stats.vercel.app/api?username=JustCallMeChezz&show_icons=true&hide_title=true&hide_border=true&count_private=true&theme=radical&bg_color=white&text_color=4A3626&icon_color=B07255&border_color=transparent&ring_color=F7C6A1" alt="GitHub Stats" style="border-radius: 15px;">
+            </div>
+            <div data-aos="zoom-out" data-aos-duration="1000">
+               <p>hey... wanna play a game i made?</p>
+               <a href="https://justcallmechezz.github.io/pages/projects/catchthecheese/game.html">
+               <button class="catchthecheese">click here!</button>
+               </a>
+            </div>
+            <script>
+               document.querySelectorAll('.catchthecheese').forEach(element => {
+                 element.addEventListener('click', function() {
+                   
+                   if (navigator.vibrate) {
+                     navigator.vibrate(100);  
+                   }
+                   this.classList.add('cute-bouncyy', 'vibrate');
+                   setTimeout(() => {
+                     this.classList.remove('cute-bouncyy', 'vibrate');
+                   }, 400);
+                 });
+               });
+            </script>
+         </section>
+         <section class="quote" data-aos="zoom-out" data-aos-duration="1000">
+            <style>
+               #quote-box-container {
+               font-family: 'Short Stack', system-ui, sans-serif;
+               font-size: 14px;
+               padding: 10px 14px;
+               background: #fbd5d5;
+               color: #d49d9d;
+               border-radius: 12px;
+               box-shadow: 0 2px 4px #fbd5d5;
+               max-width: 300px;
+               margin: auto;
+               text-align: center;
+               }
+               #quote-title {
+               font-weight: bold;
+               margin-bottom: 6px;
+               font-size: 14px;
+               display: flex;
+               justify-content: center;
+               align-items: center;
+               gap: 6px;
+               }
+               #quote-box {
+               font-size: 13px;
+               max-height: 0;
+               overflow: hidden;
+               transition: max-height 0.6s ease, padding-top 0.6s ease;
+               }
+               #quote-box.loaded {
+               max-height: 200px;
+               padding-top: 6px;
+               }
+               .typing-dots {
+               display: inline-flex;
+               gap: 4px;
+               justify-content: center;
+               margin-top: 2px;
+               }
+               .typing-dots span {
+               width: 6px;
+               height: 6px;
+               background-color: #d7a8a0;
+               border-radius: 50%;
+               animation: jump 0.6s infinite;
+               }
+               .typing-dots span:nth-child(2) {
+               animation-delay: 0.1s;
+               }
+               .typing-dots span:nth-child(3) {
+               animation-delay: 0.2s;
+               }
+               @keyframes jump {
+               0%, 100% { transform: translateY(0); }
+               50% { transform: translateY(-4px); }
+               }
+            </style>
+            <div id="quote-box-container">
+               <div id="quote-title">random quote ✧˖°</div>
+               <div id="typing-dots" class="typing-dots">
+                  <span></span><span></span><span></span>
+               </div>
+               <div id="quote-box"></div>
+            </div>
+         </section>
+         <section class="details">
             <h3 data-aos="zoom-in-right" data-aos-duration="1000">𐔌   .  ⋮ Some info  .ᐟ  ֹ    ꒱</h3>
-            <ul data-aos="fade-right" data-aos-duration="1000"><span class="blush">
-                <li>Name: <a id="irl-name" onclick="irlName()">Lily Liyana | Chezz</a></li>
-<!-- 🤍 ᶻ 𝗓 𐰁 -->
-                <li>Age: Shh... its secretss...</li>
-                <li>Gender: Girl/female</li>
-                <li>Nationality: Malaysian</li>
-                <li><span id="startWord" class="clickable-word"><b>I like cheese!</b></span></span></li>
+            <ul data-aos="fade-right" data-aos-duration="1000">
+               <span class="blush">
+                  <li>Name: <a id="irl-name" onclick="irlName()">Lily Liyana | Chezz</a></li>
+                  <!-- 🤍 ᶻ 𝗓 𐰁 -->
+                  <li>Age: Shh... its secretss...</li>
+                  <li>Gender: Girl/female</li>
+                  <li>Nationality: Malaysian</li>
+                  <li><span id="startWord" class="clickable-word"><b>I like cheese!</b></span>
+               </span>
+               </li>
             </ul>
-            </section>
-            <section class="interest">
+         </section>
+         <section class="interest">
             <h3 data-aos="zoom-in-left" data-aos-duration="1000">𐔌   .  ⋮ Interest  .ᐟ  ֹ    ꒱</h3>
-            <ul data-aos="fade-left" data-aos-duration="1000"><span class="blush">
-                <li>Web Development</li>
-                <li onclick="toggleCSS()" class="theme"><b>UI Designing</b></li>
-                <li><a href="chatbot/chatbot.html" target="_blank" class="ai"><b>Artificial Intelligence</b></a></li>
-                <li><a href="https://guthib.com" target="_blank" class="uhhhh"><b>Open Source Contribution</b></a></li>
-                <li>Animating/editing</li></span>
+            <ul data-aos="fade-left" data-aos-duration="1000">
+               <span class="blush">
+                  <li>Web Development</li>
+                  <li onclick="toggleCSS()" class="theme"><b>UI Designing</b></li>
+                  <li><a href="chatbot/chatbot.html" target="_blank" class="ai"><b>Artificial Intelligence</b></a></li>
+                  <li><a href="https://guthib.com" target="_blank" class="uhhhh"><b>Open Source Contribution</b></a></li>
+                  <li>Animating/editing</li>
+               </span>
             </ul>
-            </section>
-
-<section id="screen-pet">
-  <img id="pet" src="climb1.png" />
-</section>
-
-<style>
-  #screen-pet {
-    position: fixed;
-    right: 0;
-    bottom: 0;
-    width: 100px;
-    height: 100px;
-    z-index: 9999;
-    pointer-events: none;
-  }
-
-  #pet {
-    position: absolute;
-    bottom: 0;
-    right: -40px;
-    width: 100px;
-    height: 100px;
-  }
-</style>
-
-<script>
-  const pet = document.getElementById("pet");
-const climbFrames = ["fallingthings/smol/climb1.png", "fallingthings/smol/climb2.png"];
-const fallFrame = "fallingthings/smol/fall.png";
-const hitFrame = "fallingthings/smol/hit.png";
-const wakeFrame = "fallingthings/smol/wake.png";
-
-let y = 0;
-let direction = "climb";
-let climbIndex = 0;
-let fallHeight = getRandomFallHeight();
-let frameDelay = 0;
-const frameSpeed = 30;
-
-function getRandomFallHeight() {
-  const heights = [window.innerHeight * 1.0, window.innerHeight * 0.8, window.innerHeight * 0.6, window.innerHeight * 0.4];
-  return heights[Math.floor(Math.random() * heights.length)];
-}
-
-function animatePet() {
-  if (direction === "climb") {
-    y += 1;
-    frameDelay++;
-    if (frameDelay >= frameSpeed) {
-      climbIndex = (climbIndex + 1) % climbFrames.length;
-      pet.src = climbFrames[climbIndex];
-      frameDelay = 0;
-    }
-    pet.style.bottom = y + "px";
-    pet.style.right = "-36px";
-
-    if (y > fallHeight) {
-      direction = "fall";
-      pet.src = fallFrame;
-      pet.style.right = "-20px";
-    }
-  } else if (direction === "fall") {
-    y -= 5;
-    pet.style.bottom = y + "px";
-    pet.style.right = "-20px";
-
-    if (y <= 0) {
-      direction = "hit";
-      pet.src = hitFrame;
-      navigator.vibrate?.(50);
-      setTimeout(() => {
-        pet.src = wakeFrame;
-        setTimeout(() => {
-          direction = "climb";
-          y = 0;
-          fallHeight = getRandomFallHeight();
-        }, 800);
-      }, 800);
-    }
-  }
-
-  requestAnimationFrame(animatePet);
-}
-
-animatePet();
-</script>
-
-<section class="pills" data-aos="zoom-out" data-aos-duration="1000">
-  <div style="display: flex; justify-content: center; gap: 12px;">
-
-    <!-- visits pill -->
-    <div style="
-      display: inline-flex;
-      align-items: center;
-      height: 28px;
-      font-family: 'Short Stack', cursive;
-      font-size: 13px;
-      line-height: 1;
-    ">
-      <!-- heart + visits -->
-      <div style="
-        background: #d49d9d;
-        padding: 0 8px;
-        border-top-left-radius: 16px;
-        border-bottom-left-radius: 16px;
-        height: 100%;
-        display: flex;
-        align-items: center;
-        gap: 6px;
-        color: white;
-        box-shadow: 0 2px 4px #fbd5d5;
-      ">
-        <i class="fas fa-heart"></i>
-        <span>visits</span>
+         </section>
+         <section id="screen-pet">
+            <img id="pet" src="climb1.png" />
+         </section>
+         <style>
+            #screen-pet {
+            position: fixed;
+            right: 0;
+            bottom: 0;
+            width: 100px;
+            height: 100px;
+            z-index: 9999;
+            pointer-events: none;
+            }
+            #pet {
+            position: absolute;
+            bottom: 0;
+            right: -40px;
+            width: 100px;
+            height: 100px;
+            }
+         </style>
+         <script>
+            const pet = document.getElementById("pet");
+            const climbFrames = ["fallingthings/smol/climb1.png", "fallingthings/smol/climb2.png"];
+            const fallFrame = "fallingthings/smol/fall.png";
+            const hitFrame = "fallingthings/smol/hit.png";
+            const wakeFrame = "fallingthings/smol/wake.png";
+            
+            let y = 0;
+            let direction = "climb";
+            let climbIndex = 0;
+            let fallHeight = getRandomFallHeight();
+            let frameDelay = 0;
+            const frameSpeed = 30;
+            
+            function getRandomFallHeight() {
+            const heights = [window.innerHeight * 1.0, window.innerHeight * 0.8, window.innerHeight * 0.6, window.innerHeight * 0.4];
+            return heights[Math.floor(Math.random() * heights.length)];
+            }
+            
+            function animatePet() {
+            if (direction === "climb") {
+              y += 1;
+              frameDelay++;
+              if (frameDelay >= frameSpeed) {
+                climbIndex = (climbIndex + 1) % climbFrames.length;
+                pet.src = climbFrames[climbIndex];
+                frameDelay = 0;
+              }
+              pet.style.bottom = y + "px";
+              pet.style.right = "-36px";
+            
+              if (y > fallHeight) {
+                direction = "fall";
+                pet.src = fallFrame;
+                pet.style.right = "-20px";
+              }
+            } else if (direction === "fall") {
+              y -= 5;
+              pet.style.bottom = y + "px";
+              pet.style.right = "-20px";
+            
+              if (y <= 0) {
+                direction = "hit";
+                pet.src = hitFrame;
+                navigator.vibrate?.(50);
+                setTimeout(() => {
+                  pet.src = wakeFrame;
+                  setTimeout(() => {
+                    direction = "climb";
+                    y = 0;
+                    fallHeight = getRandomFallHeight();
+                  }, 800);
+                }, 800);
+              }
+            }
+            
+            requestAnimationFrame(animatePet);
+            }
+            
+            animatePet();
+         </script>
+         <section class="pills" data-aos="zoom-out" data-aos-duration="1000">
+            <div style="display: flex; justify-content: center; gap: 12px;">
+               <!-- visits pill -->
+               <div style="
+                  display: inline-flex;
+                  align-items: center;
+                  height: 28px;
+                  font-family: 'Short Stack', cursive;
+                  font-size: 13px;
+                  line-height: 1;
+                  ">
+                  <!-- heart + visits -->
+                  <div style="
+                     background: #d49d9d;
+                     padding: 0 8px;
+                     border-top-left-radius: 16px;
+                     border-bottom-left-radius: 16px;
+                     height: 100%;
+                     display: flex;
+                     align-items: center;
+                     gap: 6px;
+                     color: white;
+                     box-shadow: 0 2px 4px #fbd5d5;
+                     ">
+                     <i class="fas fa-heart"></i>
+                     <span>visits</span>
+                  </div>
+                  <!-- count only -->
+                  <div id="visit-count" style="
+                     background: #fbd5d5;
+                     height: 100%;
+                     padding: 0 10px;
+                     border-top-right-radius: 16px;
+                     border-bottom-right-radius: 16px;
+                     box-shadow: 0 2px 4px #fbd5d5;
+                     display: flex;
+                     align-items: center;
+                     font-family: 'Short Stack', cursive;
+                     color: #d49d9d;
+                     ">
+                     ...
+                  </div>
+               </div>
+               <!-- status pill -->
+               <div style="
+                  display: inline-flex;
+                  align-items: center;
+                  height: 28px;
+                  font-size: 13px;
+                  line-height: 1;
+                  font-family: 'Short Stack', cursive;
+                  ">
+                  <!-- cloud + status -->
+                  <div style="
+                     background: #d49d9d;
+                     padding: 0 8px;
+                     border-top-left-radius: 16px;
+                     border-bottom-left-radius: 16px;
+                     height: 100%;
+                     display: flex;
+                     align-items: center;
+                     gap: 6px;
+                     color: white;
+                     box-shadow: 0 2px 4px #fbd5d5;
+                     ">
+                     <i class="fas fa-cloud"></i>
+                     <span>status</span>
+                  </div>
+                  <!-- for that zzz thing -->
+                  <div style="
+                     background: #fbd5d5;
+                     padding: 0 12px;
+                     border-top-right-radius: 16px;
+                     border-bottom-right-radius: 16px;
+                     height: 100%;
+                     display: flex;
+                     align-items: center;
+                     font-family: sans-serif;
+                     color: #d49d9d;
+                     box-shadow: 0 2px 4px #fbd5d5;
+                     ">
+                     ᶻ 𝗓 𐰁
+                  </div>
+               </div>
+            </div>
+         </section>
+         <script>
+            fetch("https://api.allorigins.win/raw?url=" + encodeURIComponent("https://hits.sh/github.com/JustCallMeChezz/justcallmechezz.github.io.svg") + "&" + Date.now())
+            .then(res => res.text())
+            .then(svg => {
+              const match = svg.match(/<title>.*?: (\d+)<\/title>/);
+              if (match) {
+                document.getElementById("visit-count").textContent = match[1];
+              } else {
+                document.getElementById("visit-count").textContent = "???";
+              }
+            })
+            .catch(err => {
+              document.getElementById("visit-count").textContent = "error";
+              console.error(err);
+            });
+         </script>
+         <section class="connections">
+            <div data-aos="zoom-out-down" data-aos-duration="1000">
+               <h3 id="social-section-title" ></h3>
+            </div>
+            <ul>
+               <div class="social-media" id="icons-container" data-aos="zoom-in" data-aos-duration="1000">
+               </div>
+            </ul>
+         </section>
+         <div class="rain">
+            <div class="falling-cheese">
+               <img src="fallingthings/cheese.png" alt="Falling Cheese"> 
+            </div>
+            <div class="falling-flower">
+               <img src="fallingthings/flowerss.png" alt="Falling Flower">
+            </div>
+            <div class="falling-heart">
+               <img src="fallingthings/heart.png" alt="Falling Heart"> 
+            </div>
+            <div class="falling-luvv">
+               <img src="fallingthings/luvv.png" alt="Falling Luvv"> 
+            </div>
+            <div class="falling-bow">
+               <img src="fallingthings/bow1.png" alt="Falling Bow"> 
+            </div>
+            <div class="falling-cheese2">
+               <img src="fallingthings/cheese.png" alt="Falling Cheese"> 
+            </div>
+            <div class="falling-flower2">
+               <img src="fallingthings/flowerss2.png" alt="Falling Flower">
+            </div>
+            <div class="falling-heart2">
+               <img src="fallingthings/heart.png" alt="Falling Heart"> 
+               <div class="falling-luvv2">
+                  <img src="fallingthings/luvv.png" alt="Falling Luvv"> 
+               </div>
+               <div class="falling-bow2">
+                  <img src="fallingthings/bow2.png" alt="Falling Bow"> 
+               </div>
+            </div>
+            <div class="sleepyy">
+               <a><span class="blush">(⸝⸝ᴗ﹏ᴗ⸝⸝) ᶻ 𝗓 𐰁</span></a>
+            </div>
+            <script src="pfps/pfps.js" defer></script>
+            <script src="scripts/name.js" defer></script>
+            <script src="scripts/quotes.js" defer></script>
+            <script src="scripts/vibrate.js" defer></script>
+            <script src="scripts/vibration.js" defer></script>
+            <script src="scripts/clickable.js" defer></script>
+            <script src="scripts/timed.js" defer></script>
+            <script src="fallingthings/cheese.js" defer></script>
+            <script src="themes/theme.js" defer></script>
+            <script>
+               //i have no idea what to put here...
+            </script>
+            <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+            <script>
+               AOS.init();
+            </script>
+         </div>
       </div>
-
-      <!-- count only -->
-      <div id="visit-count" style="
-        background: #fbd5d5;
-        height: 100%;
-        padding: 0 10px;
-        border-top-right-radius: 16px;
-        border-bottom-right-radius: 16px;
-        box-shadow: 0 2px 4px #fbd5d5;
-        display: flex;
-        align-items: center;
-        font-family: 'Short Stack', cursive;
-        color: #d49d9d;
-      ">
-        ...
       </div>
-    </div>
-
-    <!-- status pill -->
-    <div style="
-      display: inline-flex;
-      align-items: center;
-      height: 28px;
-      font-size: 13px;
-      line-height: 1;
-      font-family: 'Short Stack', cursive;
-    ">
-      <!-- cloud + status -->
-      <div style="
-        background: #d49d9d;
-        padding: 0 8px;
-        border-top-left-radius: 16px;
-        border-bottom-left-radius: 16px;
-        height: 100%;
-        display: flex;
-        align-items: center;
-        gap: 6px;
-        color: white;
-        box-shadow: 0 2px 4px #fbd5d5;
-      ">
-        <i class="fas fa-cloud"></i>
-        <span>status</span>
-      </div>
-
-      <!-- for that zzz thing -->
-      <div style="
-        background: #fbd5d5;
-        padding: 0 12px;
-        border-top-right-radius: 16px;
-        border-bottom-right-radius: 16px;
-        height: 100%;
-        display: flex;
-        align-items: center;
-        font-family: sans-serif;
-        color: #d49d9d;
-        box-shadow: 0 2px 4px #fbd5d5;
-      ">
-        ᶻ 𝗓 𐰁
-      </div>
-    </div>
-
-  </div>
-</section>
-
-<script>
-  fetch("https://api.allorigins.win/raw?url=" + encodeURIComponent("https://hits.sh/github.com/JustCallMeChezz/justcallmechezz.github.io.svg") + "&" + Date.now())
-  .then(res => res.text())
-  .then(svg => {
-    const match = svg.match(/<title>.*?: (\d+)<\/title>/);
-    if (match) {
-      document.getElementById("visit-count").textContent = match[1];
-    } else {
-      document.getElementById("visit-count").textContent = "???";
-    }
-  })
-  .catch(err => {
-    document.getElementById("visit-count").textContent = "error";
-    console.error(err);
-  });
-</script>
-
-            <section class="connections">
-              <div data-aos="zoom-out-down" data-aos-duration="1000">
-  <h3 id="social-section-title" ></h3>
-  </div>
-  <ul>
-    <div class="social-media" id="icons-container" data-aos="zoom-in" data-aos-duration="1000">
-    </div>
-  </ul>
-</section>
-<div class="rain">
-
-  <div class="falling-cheese">
-    <img src="fallingthings/cheese.png" alt="Falling Cheese"> 
-  </div>
-
-  <div class="falling-flower">
-    <img src="fallingthings/flowerss.png" alt="Falling Flower">
-      </div>
-
-  <div class="falling-heart">
-    <img src="fallingthings/heart.png" alt="Falling Heart"> 
-    </div>
-    
-    <div class="falling-luvv">
-    <img src="fallingthings/luvv.png" alt="Falling Luvv"> 
-      </div>
-      
-      <div class="falling-bow">
-    <img src="fallingthings/bow1.png" alt="Falling Bow"> 
-      </div>
-    
-     <div class="falling-cheese2">
-    <img src="fallingthings/cheese.png" alt="Falling Cheese"> 
-  </div>
-
-  <div class="falling-flower2">
-    <img src="fallingthings/flowerss2.png" alt="Falling Flower">
-      </div>
-
-  <div class="falling-heart2">
-    <img src="fallingthings/heart.png" alt="Falling Heart"> 
-    
-    <div class="falling-luvv2">
-    <img src="fallingthings/luvv.png" alt="Falling Luvv"> 
-      </div>
-      
-      <div class="falling-bow2">
-    <img src="fallingthings/bow2.png" alt="Falling Bow"> 
-      </div>
-      </div>
-      
-      <div class="sleepyy">
-    <a><span class="blush">(⸝⸝ᴗ﹏ᴗ⸝⸝) ᶻ 𝗓 𐰁</span></a>
-    </div>
-    
-<script src="pfps/pfps.js" defer></script>
-<script src="scripts/name.js" defer></script>
-<script src="scripts/quotes.js" defer></script>
-<script src="scripts/vibrate.js" defer></script>
-<script src="scripts/vibration.js" defer></script>
-<script src="scripts/clickable.js" defer></script>
-<script src="scripts/timed.js" defer></script>
-<script src="fallingthings/cheese.js" defer></script>
-<script src="themes/theme.js" defer></script>
-<script>
-  //i have no idea what to put here...
-</script>
-<script src="https://unpkg.com/aos@2.3.1/dist/aos.js">
-</script>
-<script>
-  AOS.init();
-</script>
-
-  </div>
-</div>
-    </div>
-</body>
+   </body>
 </html>
 <!-- created by lily/sleepychezz... dont use this code without my permission!! -->
