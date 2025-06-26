@@ -153,6 +153,92 @@
             </ul>
             </section>
 
+<section id="screen-pet">
+  <img id="pet" src="climb1.png" />
+</section>
+
+<style>
+  #screen-pet {
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    width: 100px;
+    height: 100px;
+    z-index: 9999;
+    pointer-events: none;
+  }
+
+  #pet {
+    position: absolute;
+    bottom: 0;
+    right: -40px;
+    width: 100px;
+    height: 100px;
+    image-rendering: pixelated;
+  }
+</style>
+
+<script>
+  const pet = document.getElementById("pet");
+const climbFrames = ["fallingthings/smol/climb1.png", "fallingthings/smol/climb2.png"];
+const fallFrame = "fallingthings/smol/fall.png";
+const hitFrame = "fallingthings/smol/hit.png";
+const wakeFrame = "fallingthings/smol/wake.png";
+
+let y = 0;
+let direction = "climb";
+let climbIndex = 0;
+let fallHeight = getRandomFallHeight();
+let frameDelay = 0;
+const frameSpeed = 30;
+
+function getRandomFallHeight() {
+  const heights = [window.innerHeight * 1.0, window.innerHeight * 0.8, window.innerHeight * 0.6, window.innerHeight * 0.4];
+  return heights[Math.floor(Math.random() * heights.length)];
+}
+
+function animatePet() {
+  if (direction === "climb") {
+    y += 1;
+    frameDelay++;
+    if (frameDelay >= frameSpeed) {
+      climbIndex = (climbIndex + 1) % climbFrames.length;
+      pet.src = climbFrames[climbIndex];
+      frameDelay = 0;
+    }
+    pet.style.bottom = y + "px";
+    pet.style.right = "-36px";
+
+    if (y > fallHeight) {
+      direction = "fall";
+      pet.src = fallFrame;
+      pet.style.right = "-20px";
+    }
+  } else if (direction === "fall") {
+    y -= 5;
+    pet.style.bottom = y + "px";
+    pet.style.right = "-20px";
+
+    if (y <= 0) {
+      direction = "hit";
+      pet.src = hitFrame;
+      setTimeout(() => {
+        pet.src = wakeFrame;
+        setTimeout(() => {
+          direction = "climb";
+          y = 0;
+          fallHeight = getRandomFallHeight();
+        }, 800);
+      }, 800);
+    }
+  }
+
+  requestAnimationFrame(animatePet);
+}
+
+animatePet();
+</script>
+
 <section class="pills" data-aos="zoom-out" data-aos-duration="1000">
   <div style="display: flex; justify-content: center; gap: 12px;">
 
