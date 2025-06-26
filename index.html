@@ -221,6 +221,7 @@ function animatePet() {
     if (y <= 0) {
       direction = "hit";
       pet.src = hitFrame;
+      navigator.vibrate?.(50);
       setTimeout(() => {
         pet.src = wakeFrame;
         setTimeout(() => {
