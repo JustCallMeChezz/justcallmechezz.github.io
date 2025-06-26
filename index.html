@@ -402,9 +402,6 @@ animatePet();
       <div class="sleepyy">
     <a><span class="blush">(⸝⸝ᴗ﹏ᴗ⸝⸝) ᶻ 𝗓 𐰁</span></a>
     </div>
-
-<audio id="shakeSound" src="music/uia.mp3"></audio>
-    <!--- audio used: blue - yung kai, uia cat... i found from youtube... hope it didn't get copyright .-. --->
     
 <script src="pfps/pfps.js" defer></script>
 <script src="scripts/name.js" defer></script>
@@ -422,59 +419,6 @@ animatePet();
 </script>
 <script>
   AOS.init();
-</script>
-<script>
-  document.addEventListener("DOMContentLoaded", () => {
-  const statsImg = document.querySelector(".stats-container img");
-  const baseUrl = statsImg.src.split("?")[0];
-  const params = new URLSearchParams(statsImg.src.split("?")[1]);
-
-  params.set("cache", Date.now());
-  statsImg.src = `${baseUrl}?${params}`;
-});
-</script>
-<script>
-let lastX = 0, lastY = 0, lastZ = 0;
-let threshold = 6;
-let audio = document.getElementById("shakeSound");
-let container = document.querySelector(".container");
-let spinTimeout;
-
-window.addEventListener("devicemotion", (event) => {
-    let { x = 0, y = 0, z = 0 } = event.accelerationIncludingGravity || {};
-
-    let deltaX = Math.abs(x - lastX);
-    let deltaY = Math.abs(y - lastY);
-    let deltaZ = Math.abs(z - lastZ);
-
-    let totalShake = deltaX + deltaY + deltaZ;
-
-    if (totalShake > threshold) {
-        if ("vibrate" in navigator) {
-            navigator.vibrate(300);
-            console.log("Vibrating!");
-        }
-
-        if (audio.paused) {
-            audio.play();
-        }
-
-        clearTimeout(spinTimeout); 
-
-        if (!audio.paused) { 
-            spinTimeout = setTimeout(() => {
-                container.classList.add("spin");
-                setTimeout(() => {
-                    container.classList.remove("spin");
-                }, 6000); 
-            }, 3000); 
-        }
-    }
-
-    lastX = x;
-    lastY = y;
-    lastZ = z;
-});
 </script>
 
   </div>
