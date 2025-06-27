@@ -24,7 +24,7 @@
             <a href="https://youtu.be/dQw4w9WgXcQ">
             <img id="pfps" src="pfps/lilyliyana.png" alt="pfps"></a>
             <h2 data-aos="zoom-in" data-aos-duration="1200"><span class="name" id="name">✮sᥣᥱᥱρყcнεzz🧀</span></h2>
-            <p data-aos="zoom-in" data-aos-duration="1000"><span class="blush">Hello! I'm Lily or also known as Chezz 🧀, a programmer, animator, YouTuber and also TikToker (mostly posting on tiktok now cuz lazy to post on youtube). Still learning in programming... My fav programming language is Javascript and C/C++... also love styling website ui using css. i rily ii loves cheese (fr). btw... here's some of my projects if u interested to see it... <a class="projects" href="/pages/projects/projects.html"><b>click here!</b></a></span></p>
+            <p data-aos="zoom-in" data-aos-duration="1000"><span class="blush">Hello! I'm Lily or also known as Chezz 🧀, a programmer, animator, YouTuber and also TikToker (mostly posting on tiktok now cuz lazy to post on youtube). I rily ii loves cheese (the reason why my name "chezz" lol). Still learning in programming... My fav programming language is Javascript and C/C++... also love styling website ui using css. btw... here's some of my projects if u interested to see it... <a class="projects" href="/pages/projects/projects.html"><b>click here!</b></a></span></p>
          </section>
          <section class="github-stats">
             <h3 data-aos="zoom-out-down" data-aos-duration="1000">୨୧ Github Stats ୨୧</h3>
@@ -144,7 +144,7 @@
             </ul>
          </section>
          <section id="screen-pet">
-            <img id="pet" src="climb1.png" />
+            <img id="pet" src="fallingthings/smol/climb1.png" fetchpriority="high" />
          </section>
          <style>
             #screen-pet {
@@ -170,6 +170,12 @@
             const fallFrame = "fallingthings/smol/fall.png";
             const hitFrame = "fallingthings/smol/hit.png";
             const wakeFrame = "fallingthings/smol/wake.png";
+            
+            const preloadImages = [climbFrames[0], climbFrames[1], fallFrame, hitFrame, wakeFrame];
+            preloadImages.forEach(src => {
+            const img = new Image();
+            img.src = src;
+            });
             
             let y = 0;
             let direction = "climb";
