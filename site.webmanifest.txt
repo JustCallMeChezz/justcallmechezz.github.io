@@ -1,6 +1,6 @@
 {
-  "name": "About Chezz ♡",
-  "short_name": "Chezz",
+  "name": "lilys codecafe ᡣ𐭩",
+  "short_name": "lyscodecafe",
   "icons": [
     {
       "src": "/android-chrome-192x192.png",
@@ -13,7 +13,7 @@
       "type": "image/png"
     }
   ],
-  "theme_color": "#ffffff",
-  "background_color": "#ffffff",
+  "theme_color": "#ffe0d1",
+  "background_color": "#ffe0d1",
   "display": "standalone"
 }
