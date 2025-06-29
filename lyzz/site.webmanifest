@@ -3,7 +3,7 @@
   "short_name": "lyzz",
   "icons": [
     {
-      "src": "/lyzz.png",
+      "src": "/icons/lyzz.png",
       "sizes": "1024x1024",
       "type": "image/png",
       "purpose": "maskable"
