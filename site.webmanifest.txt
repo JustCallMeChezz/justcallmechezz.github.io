@@ -1,6 +1,6 @@
 {
   "name": "lilys codecafe ᡣ𐭩",
-  "short_name": "lyscodecafe",
+  "short_name": "lilys codecafe ᡣ𐭩",
   "icons": [
     {
       "src": "/android-chrome-192x192.png",
