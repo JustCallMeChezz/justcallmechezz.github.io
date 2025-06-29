@@ -1,15 +1,15 @@
 {
-  "name": "Lylium",
-  "short_name": "Lylium",
+  "name": "୨୧ lyzz smp 𖹭",
+  "short_name": "lyzz",
   "icons": [
     {
-      "src": "/lylium.png",
+      "src": "/lyzz.png",
       "sizes": "1024x1024",
       "type": "image/png",
       "purpose": "maskable"
     }
   ],
-  "theme_color": "#edc4ef",
-  "background_color": "#edc4ef",
+  "theme_color": "#f2dcff",
+  "background_color": "#f2dcff",
   "display": "standalone"
 }
