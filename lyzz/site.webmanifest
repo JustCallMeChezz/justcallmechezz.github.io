@@ -1,0 +1,15 @@
+{
+  "name": "Lylium",
+  "short_name": "Lylium",
+  "icons": [
+    {
+      "src": "/lylium.png",
+      "sizes": "1024x1024",
+      "type": "image/png",
+      "purpose": "maskable"
+    }
+  ],
+  "theme_color": "#edc4ef",
+  "background_color": "#edc4ef",
+  "display": "standalone"
+}
