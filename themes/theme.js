@@ -18,30 +18,27 @@ let themeToApply = 'themes/pastellyy.css'; // default pastellyy
 
 if (clickCount % 5 === 1) {  
   themeToApply = 'themes/amethyst.css';  
-  themeColor = "#ffbb8a";  
+  themeColor = "#d8b0e0";  
 } else if (clickCount % 5 === 2) {  
   themeToApply = 'themes/cheesyy.css';  
-  themeColor = "#e0f7fa";  
+  themeColor = "#ffbb8a";  
 } else if (clickCount % 5 === 3) {  
   themeToApply = 'themes/blushh.css';  
-  themeColor = "#f7c6d2";  
+  themeColor = "#f9c6d1";  
 } else if (clickCount % 5 === 4) {  
   themeToApply = 'themes/midnight.css';  
-  themeColor = "#ff66b2";  
+  themeColor = "#3c3c3c";  
 } 
 
-// set the theme  
 stylesheet.setAttribute('href', themeToApply);  
 themeColorMeta.setAttribute('content', themeColor);  
 
-// this thing to hide or show github stats section based on theme  
 if (themeToApply !== 'themes/pastellyy.css') {  
   githubStatsSection.style.display = 'none';  
 } else {  
   githubStatsSection.style.display = 'block';  
 }  
 
-// refresh AOS animations  
 AOS.refresh();  
 
 setTimeout(() => {  
