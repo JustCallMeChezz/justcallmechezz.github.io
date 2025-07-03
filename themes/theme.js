@@ -16,28 +16,19 @@ clickCount++;
 let themeColor = "#fbc0af";  
 let themeToApply = 'themes/pastellyy.css'; // default pastellyy  
 
-if (clickCount % 8 === 1) {  
-  themeToApply = 'themes/chezzyy.css';  
+if (clickCount % 5 === 1) {  
+  themeToApply = 'themes/amethyst.css';  
   themeColor = "#ffbb8a";  
-} else if (clickCount % 8 === 2) {  
-  themeToApply = 'themes/frostyy.css';  
+} else if (clickCount % 5 === 2) {  
+  themeToApply = 'themes/cheesyy.css';  
   themeColor = "#e0f7fa";  
-} else if (clickCount % 8 === 3) {  
-  themeToApply = 'themes/rosydream.css';  
+} else if (clickCount % 5 === 3) {  
+  themeToApply = 'themes/blushh.css';  
   themeColor = "#f7c6d2";  
-} else if (clickCount % 8 === 4) {  
-  themeToApply = 'themes/neonrose.css';  
+} else if (clickCount % 5 === 4) {  
+  themeToApply = 'themes/midnight.css';  
   themeColor = "#ff66b2";  
-} else if (clickCount % 8 === 5) {  
-  themeToApply = 'themes/purpurr.css';  
-  themeColor = "#800080";  
-} else if (clickCount % 8 === 6) {  
-  themeToApply = 'themes/purpurrgloww.css';  
-  themeColor = "#8a2be2";  
-} else if (clickCount % 8 === 7) {  
-  themeToApply = 'themes/dark.css';  
-  themeColor = "#333333";  
-}  
+} 
 
 // set the theme  
 stylesheet.setAttribute('href', themeToApply);  
