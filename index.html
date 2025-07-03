@@ -58,62 +58,6 @@
             </script>
          </section>
          <section class="quote" data-aos="zoom-out" data-aos-duration="1000">
-            <style>
-               #quote-box-container {
-               font-family: 'Short Stack', system-ui, sans-serif;
-               font-size: 14px;
-               padding: 10px 14px;
-               background: #fbd5d5;
-               color: #d49d9d;
-               border-radius: 12px;
-               box-shadow: 0 2px 4px #fbd5d5;
-               max-width: 300px;
-               margin: auto;
-               text-align: center;
-               }
-               #quote-title {
-               font-weight: bold;
-               margin-bottom: 6px;
-               font-size: 14px;
-               display: flex;
-               justify-content: center;
-               align-items: center;
-               gap: 6px;
-               }
-               #quote-box {
-               font-size: 13px;
-               max-height: 0;
-               overflow: hidden;
-               transition: max-height 0.6s ease, padding-top 0.6s ease;
-               }
-               #quote-box.loaded {
-               max-height: 200px;
-               padding-top: 6px;
-               }
-               .typing-dots {
-               display: inline-flex;
-               gap: 4px;
-               justify-content: center;
-               margin-top: 2px;
-               }
-               .typing-dots span {
-               width: 6px;
-               height: 6px;
-               background-color: #d7a8a0;
-               border-radius: 50%;
-               animation: jump 0.6s infinite;
-               }
-               .typing-dots span:nth-child(2) {
-               animation-delay: 0.1s;
-               }
-               .typing-dots span:nth-child(3) {
-               animation-delay: 0.2s;
-               }
-               @keyframes jump {
-               0%, 100% { transform: translateY(0); }
-               50% { transform: translateY(-4px); }
-               }
-            </style>
             <div id="quote-box-container">
                <div id="quote-title">random quote ✧˖°</div>
                <div id="typing-dots" class="typing-dots">
@@ -237,91 +181,27 @@
             animatePet();
          </script>
          <section class="pills" data-aos="zoom-out" data-aos-duration="1000">
-            <div style="display: flex; justify-content: center; gap: 12px;">
-               <!-- visits pill -->
-               <div style="
-                  display: inline-flex;
-                  align-items: center;
-                  height: 28px;
-                  font-family: 'Short Stack', cursive;
-                  font-size: 13px;
-                  line-height: 1;
-                  ">
-                  <!-- heart + visits -->
-                  <div style="
-                     background: #d49d9d;
-                     padding: 0 8px;
-                     border-top-left-radius: 16px;
-                     border-bottom-left-radius: 16px;
-                     height: 100%;
-                     display: flex;
-                     align-items: center;
-                     gap: 6px;
-                     color: white;
-                     box-shadow: 0 2px 4px #fbd5d5;
-                     ">
-                     <i class="fas fa-heart"></i>
-                     <span>visits</span>
-                  </div>
-                  <!-- count only -->
-                  <div id="visit-count" style="
-                     background: #fbd5d5;
-                     height: 100%;
-                     padding: 0 10px;
-                     border-top-right-radius: 16px;
-                     border-bottom-right-radius: 16px;
-                     box-shadow: 0 2px 4px #fbd5d5;
-                     display: flex;
-                     align-items: center;
-                     font-family: 'Short Stack', cursive;
-                     color: #d49d9d;
-                     ">
-                     ...
-                  </div>
-               </div>
-               <!-- status pill -->
-               <div style="
-                  display: inline-flex;
-                  align-items: center;
-                  height: 28px;
-                  font-size: 13px;
-                  line-height: 1;
-                  font-family: 'Short Stack', cursive;
-                  ">
-                  <!-- cloud + status -->
-                  <div style="
-                     background: #d49d9d;
-                     padding: 0 8px;
-                     border-top-left-radius: 16px;
-                     border-bottom-left-radius: 16px;
-                     height: 100%;
-                     display: flex;
-                     align-items: center;
-                     gap: 6px;
-                     color: white;
-                     box-shadow: 0 2px 4px #fbd5d5;
-                     ">
-                     <i class="fas fa-cloud"></i>
-                     <span>status</span>
-                  </div>
-                  <!-- for that zzz thing -->
-                  <div style="
-                     background: #fbd5d5;
-                     padding: 0 12px;
-                     border-top-right-radius: 16px;
-                     border-bottom-right-radius: 16px;
-                     height: 100%;
-                     display: flex;
-                     align-items: center;
-                     font-family: sans-serif;
-                     color: #d49d9d;
-                     box-shadow: 0 2px 4px #fbd5d5;
-                     ">
-                     ᶻ 𝗓 𐰁
-                  </div>
-               </div>
-            </div>
-         </section>
+  <div class="pill-container">
+    <!-- visits pill -->
+    <div class="pill">
+      <div class="pill-label visits">
+        <i class="fas fa-heart"></i>
+        <span>visits</span>
+      </div>
+      <div id="visit-count" class="pill-count">...</div>
+    </div>
+
+    <!-- for that zzz thing -->  
+    <div class="pill">
+      <div class="pill-label status">
+        <i class="fas fa-cloud"></i>
+        <span>status</span>
+      </div>
+      <div class="pill-count status-count">ᶻ 𝗓 𐰁</div>
+    </div>
+  </div>
+</section>
+
          <script>
             fetch("https://api.allorigins.win/raw?url=" + encodeURIComponent("https://hits.sh/github.com/JustCallMeChezz/justcallmechezz.github.io.svg") + "&" + Date.now())
             .then(res => res.text())
