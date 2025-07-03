@@ -5,9 +5,18 @@ const hitFrame = "fallingthings/smol/hit.png";
 const wakeFrame = "fallingthings/smol/wake.png";
 
 const preloadImages = [climbFrames[0], climbFrames[1], fallFrame, hitFrame, wakeFrame];
+let loadedCount = 0;
+
 preloadImages.forEach(src => {
    const img = new Image();
    img.src = src;
+   img.onload = () => {
+      loadedCount++;
+      if (loadedCount === preloadImages.length) {
+         pet.style.display = "block";
+         animatePet();
+      }
+   };
 });
 
 let y = 0;
@@ -18,7 +27,12 @@ let frameDelay = 0;
 const frameSpeed = 30;
 
 function getRandomFallHeight() {
-   const heights = [window.innerHeight * 1.0, window.innerHeight * 0.8, window.innerHeight * 0.6, window.innerHeight * 0.4];
+   const heights = [
+      window.innerHeight * 1.0,
+      window.innerHeight * 0.8,
+      window.innerHeight * 0.6,
+      window.innerHeight * 0.4
+   ];
    return heights[Math.floor(Math.random() * heights.length)];
 }
 
@@ -61,5 +75,3 @@ function animatePet() {
 
    requestAnimationFrame(animatePet);
 }
-
-animatePet();
