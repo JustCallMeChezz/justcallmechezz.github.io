@@ -848,7 +848,7 @@ container.fade-out {
 #lylium-btn {
   position: fixed;
   bottom: 20px;
-  right: 20px;
+  left: 20px;
   background: #fbd5d5;
   font-size: 1.2em;
   padding: 10px 16px;
@@ -919,6 +919,7 @@ container.fade-out {
 	right: -40px;
 	width: 100px;
 	height: 100px;
+ display: none;
 }
 
 /* dh tu jer... */
