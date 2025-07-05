@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>rig.</title>
+  <link href="https://fonts.googleapis.com/css2?family=Short+Stack&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+
+  <style>
+    :root {
+      --bg: #fefbff;
+      --card: #fffaff;
+      --accent: #d8bfff;
+      --accent-dark: #c3a4f5;
+      --text: #5e4a73;
+      --shadow: rgba(204, 177, 255, 0.5);
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      padding: 0;
+      background: var(--bg);
+      font-family: 'Short Stack', cursive;
+      color: var(--text);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+
+    .container {
+      background: var(--card);
+      padding: 2rem;
+      border-radius: 1.5rem;
+      box-shadow: 0 10px 25px rgba(180, 150, 255, 0.1);
+      text-align: center;
+      width: 90%;
+      max-width: 400px;
+    }
+
+    .file-icon {
+      font-size: 3rem;
+      color: var(--accent);
+      margin-bottom: 0.5rem;
+    }
+
+    .file-name {
+      font-size: 1rem;
+      font-weight: 600;
+      margin-bottom: 0.3rem;
+      word-wrap: break-word;
+    }
+
+    .file-size {
+      font-size: 0.9rem;
+      color: #888;
+      margin-bottom: 1.5rem;
+    }
+
+    .download-btn {
+      background: var(--accent);
+      color: white;
+      padding: 0.8rem 2rem;
+      font-size: 1rem;
+      border: none;
+      border-radius: 1.5rem;
+      cursor: pointer;
+      text-decoration: none;
+      display: inline-block;
+      transition: background 0.2s ease, transform 0.2s ease;
+      box-shadow: 0 2px 4px var(--shadow);
+        -webkit-tap-highlight-color: transparent;
+    }
+
+    .download-btn:hover {
+      background: var(--accent-dark);
+    }
+
+    .cute-bouncyy {
+      animation: cute-bouncyy 0.4s ease-in-out;
+    }
+
+    @keyframes cute-bouncyy {
+      0% { transform: scale(1); }
+      30% { transform: scale(0.95); }
+      50% { transform: scale(1.1); }
+      70% { transform: scale(0.98); }
+      100% { transform: scale(1); }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="file-icon">
+      <i class="fas fa-file-archive"></i>
+    </div>
+    <div class="file-name">Sagarbaby RIG by Cubicxie.zip</div>
+    <div class="file-size">502.26 KB</div>
+    <a href="Sagarbaby RIG by Cubicxie.zip" download class="download-btn" id="download-btn">
+      download
+    </a>
+  </div>
+
+  <script>
+    const btn = document.getElementById("download-btn");
+    btn.addEventListener("click", () => {
+      btn.classList.remove("cute-bouncyy");
+      void btn.offsetWidth;
+      btn.classList.add("cute-bouncyy");
+
+      if (navigator.vibrate) {
+        navigator.vibrate(100);
+      }
+    });
+  </script>
+</body>
+</html>
