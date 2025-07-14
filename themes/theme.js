@@ -4,7 +4,7 @@ function toggleCSS() {
 const stylesheet = document.getElementById('theme-stylesheet');
 const themeColorMeta = document.querySelector('meta[name="theme-color"]');
 const triggerElement = document.querySelector('.theme');
-const githubStatsSection = document.querySelector('.github-stats');
+const githubStatsSection = document.querySelector('.sliderr');
 
 triggerElement.classList.add('rubber-bounce');
 
