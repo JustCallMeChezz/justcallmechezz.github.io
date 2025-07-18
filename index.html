@@ -291,49 +291,50 @@
           AOS.init();
         </script>
         <script>
-          const hour = new Date().getHours();
+          window.addEventListener('DOMContentLoaded', () => {
           const icon = document.getElementById('greetingIcon');
           const line = document.getElementById('greetingLine');
           const sub = document.getElementById('greetingSub');
           const toast = document.getElementById('greetings');
           
+          const hour = new Date().getHours();
+          
           if (hour >= 5 && hour < 10) {
-            icon.className = 'fa-solid fa-cloud greetings-icon';
-            line.textContent = 'morninn';
-            sub.textContent = 'wake up sleepyhead️...';
+          icon.className = 'fa-solid fa-cloud greetings-icon';
+          line.textContent = 'morninn';
+          sub.textContent = 'wake up sleepyhead️...';
           } else if (hour >= 10 && hour < 13) {
-            icon.className = 'fa-solid fa-cloud greetings-icon';
-            line.textContent = 'noon';
-            sub.textContent = 'dont skip lunch 🍱';
+          icon.className = 'fa-solid fa-cloud greetings-icon';
+          line.textContent = 'noon';
+          sub.textContent = 'did u eat yet?';
           } else if (hour >= 13 && hour < 17) {
-            icon.className = 'fa-solid fa-cloud greetings-icon';
-            line.textContent = 'good afternoon';
-            sub.textContent = 'stay hydrated ☕';
+          icon.className = 'fa-solid fa-cloud greetings-icon';
+          line.textContent = 'good afternoon';
+          sub.textContent = 'what u do...?';
           } else if (hour >= 17 && hour < 20) {
-            icon.className = 'fa-solid fa-cloud-moon greetings-icon';
-            line.textContent = 'good evening';
-            sub.textContent = 'time to chill ✨';
+          icon.className = 'fa-solid fa-cloud-moon greetings-icon';
+          line.textContent = 'good evening';
+          sub.textContent = 'hm...';
           } else if (hour >= 20 && hour < 24) {
-            icon.className = 'fa-solid fa-moon greetings-icon';
-            line.textContent = 'gudnite';
-            sub.textContent = 'cuwit drim~';
+          icon.className = 'fa-solid fa-moon greetings-icon';
+          line.textContent = 'gudnite';
+          sub.textContent = 'cuwit drim~';
           } else {
-            icon.className = 'fa-solid fa-bed greetings-icon';
-            line.textContent = 'its midnight...';
-            sub.textContent = 'why u still didnt sleep??';
+          icon.className = 'fa-solid fa-bed greetings-icon';
+          line.textContent = 'its midnight...';
+          sub.textContent = 'why u still didnt sleep??';
           }
           
-          window.addEventListener('DOMContentLoaded', () => {
           setTimeout(() => {
-            toast.style.display = 'inline-flex'; 
-            void toast.offsetWidth;
-            toast.classList.add('greetings');
+          toast.style.display = 'inline-flex'; 
+          void toast.offsetWidth;
+          toast.classList.add('greetings');
           
-            setTimeout(() => {
-              toast.classList.remove('greetings');
-              toast.style.display = 'none';
-            }, 5000);
-          }, 2000); 
+          setTimeout(() => {
+          toast.classList.remove('greetings');
+          toast.style.display = 'none';
+          }, 5000);
+          }, 2000);
           });
         </script>
       </div>
