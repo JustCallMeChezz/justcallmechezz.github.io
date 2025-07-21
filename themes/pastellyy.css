@@ -11,7 +11,7 @@ body {
     linear-gradient(90deg,
       rgba(255, 230, 222, 0.2) 0% 12.5%, rgba(255, 255, 255, 0.2) 12.5% 37.5%, rgba(255, 230, 222, 0.2) 37.5% 62.5%, rgba(255, 255, 255, 0.2) 62.5% 87.5%, rgba(255, 230, 222, 0.2) 87.5% 100%);
   background-size: 160px 160px, 160px 160px;
-  color: #4a3626;
+  color: #6a443b;
   margin: 0;
   padding: 0;
   user-select: none;
@@ -319,7 +319,6 @@ container.fade-out {
 .details ul li {
   padding: 8px 0;
   border-bottom: 1px solid #fbc8af;
-  color: #5d4037;
 }
 
 .details p a {
@@ -353,7 +352,6 @@ container.fade-out {
 .interest ul li {
   padding: 8px 0;
   border-bottom: 1px solid #fbc8af;
-  color: #5d4037;
 }
 
 .interest p a {
@@ -885,8 +883,8 @@ container.fade-out {
   width: 100%;
   height: 100%;
   background: rgba(0, 0, 0, 0.2);
-  backdrop-filter: blur(8px);
-  -webkit-backdrop-filter: blur(8px);
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -1059,6 +1057,47 @@ container.fade-out {
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
+}
+
+footer {
+  font-family: 'Short Stack', system-ui, sans-serif;
+  text-align: center;
+  color: #d49d9d;
+  position: fixed;
+  font-size: 0.8em;
+  bottom: 2px;
+  width: 100%;
+  left: 0;
+  z-index: -2;
+}
+
+footer i {
+  color: #fbd5d5;
+  animation: heartbeat 1.5s ease-in-out infinite;
+}
+
+@keyframes heartbeat {
+
+  0%,
+  50%,
+  100% {
+    transform: scale(1);
+  }
+
+  25%,
+  75% {
+    transform: scale(1.2);
+  }
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
 }
 
 /* dh tu jer... */
