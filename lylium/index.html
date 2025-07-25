@@ -253,9 +253,17 @@
       <audio id="bubble-sound" src="/lyzz/sounds/getout.mp3" preload="auto"></audio>
       <script>
          const apiConfigurations = [
-           { url: 'https://api.kastg.xyz/api/ai/chatgpt', model: 'gpt-4o-mini', requiresModel: true },
-           { url: 'https://api.kastg.xyz/api/ai/llama', model: 'llama-3.1-8b-turbo', requiresModel: true }
-         ];
+  {
+    url: 'https://api.kastg.xyz/api/ai/fast-llamaV3-large',
+    model: 'fast-llamaV3-large',
+    requiresModel: false
+  },
+  {
+    url: 'https://api.kastg.xyz/api/ai/llama',
+    model: 'llama-3.1-8b-turbo',
+    requiresModel: true
+  }
+];
          
          let conversationHistory = "You are Lylium, an AI assistant created by Lily aka sleepychezz, shes lylium developer that love aesthetic, soft and friendlyy, but shes introvert. only talk about ur dev if got asked, mostly just being informative. always respond as an ai chatbot style, like chatgpt.";
          
