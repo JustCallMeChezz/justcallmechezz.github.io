@@ -922,5 +922,122 @@ container.fade-out {
  display: none;
 }
 
+@keyframes slideUpThenDown {
+  0% {
+    transform: translate(-50%, 100%);
+    opacity: 0;
+  }
+
+  10%,
+  80% {
+    transform: translate(-50%, 0%);
+    opacity: 1;
+  }
+
+  100% {
+    transform: translate(-50%, 100%);
+    opacity: 0;
+  }
+}
+
+.greetings {
+  position: fixed;
+  bottom: 12px;
+  left: 50%;
+  transform: translate(-50%, 100%);
+  min-width: 200px;
+  max-width: 90%;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  gap: 12px;
+  padding: 10px 16px;
+  background: rgba(255, 255, 255, 0.04);
+  backdrop-filter: blur(30px) saturate(180%);
+  -webkit-backdrop-filter: blur(30px) saturate(180%);
+  border-radius: 999px;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  box-shadow:
+    0 6px 12px rgba(0, 0, 0, 0.04),
+    0 1px 2px rgba(255, 255, 255, 0.2),
+    inset 0 1px 1px rgba(255, 255, 255, 0.1);
+  font-family: 'Short Stack', cursive;
+  z-index: 999;
+  white-space: nowrap;
+  pointer-events: none;
+  animation: slideUpThenDown 5s ease-in-out both;
+}
+
+.greetings-icon {
+  font-size: 22px;
+  color: #e8c3ff;
+  border-radius: 50%;
+  padding: 8px;
+}
+
+.greetings-text {
+  flex-grow: 1;
+  overflow: hidden;
+}
+
+.greetings-line {
+  font-size: 0.9rem;
+  margin: 0;
+  color: #a279c9;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.greetings-sub {
+  font-size: 0.7rem;
+  margin: 0;
+  color: #9275b4;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+footer {
+  font-family: 'Short Stack', system-ui, sans-serif;
+  text-align: center;
+  color: #cba6f7;
+  position: fixed;
+  font-size: 0.8em;
+  font-weight: bold;
+  bottom: 8px;
+  width: 100%;
+  left: 0;
+  z-index: -2;
+}
+
+footer i {
+  color: #f3c6ff;
+  animation: heartbeat 1.5s ease-in-out infinite;
+}
+
+@keyframes heartbeat {
+  0%,
+  50%,
+  100% {
+    transform: scale(1);
+  }
+
+  25%,
+  75% {
+    transform: scale(1.2);
+  }
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
 /* dh tu jer... */
 /* created by lily/sleepychezz... dont use this code without my permission!! */
