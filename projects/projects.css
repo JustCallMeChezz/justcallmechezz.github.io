@@ -77,6 +77,11 @@ a {
   transition: box-shadow 0.3s ease, background-color 0.3s ease;
 }
 
+#search-bar::placeholder {
+  color: #f5a1a1;
+  opacity: 1;
+}
+
 #search-bar:focus {
   background-color: #fff8f8;
   box-shadow: 0 4px 12px rgba(213, 119, 125, 0.2);
