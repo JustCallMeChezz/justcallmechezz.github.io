@@ -1,109 +1,191 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>my projects ♡</title>
-  <meta name="theme-color" content="#d1767c"/>
-  <link href="https://fonts.googleapis.com/css2?family=Baloo+2&family=Nunito:wght@400;600&family=Pacifico&family=Quicksand:wght@400;600&family=Short+Stack&display=swap" rel="stylesheet">
-  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet"/>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css"/>
-  <link rel="stylesheet" href="/projects/projects.css"/>
-</head>
-<body>
-  <h1>ଘ‧˚꒰．My Projects．꒱˚꒦꒷</h1>
-
-  <div class="search-container">
-    <div class="search-wrapper">
-      <i class="fas fa-search"></i>
-      <input type="text" id="search-bar" placeholder="Search projects..." onkeyup="filterProjects()"/>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>My Projects</title>
+    <meta name="theme-color" content="#d1767c"/>
+    <link href="https://fonts.googleapis.com/css2?family=Baloo+2&family=Nunito:wght@400;600&family=Pacifico&family=Quicksand:wght@400;600&family=Short+Stack&display=swap" rel="stylesheet">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css"/>
+    <link href="https://fonts.googleapis.com/css2?family=Lilita+One&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/projects/projects.css"/>
+  </head>
+  <body>
+    <h1>
+      ଘ‧˚꒰．<span class="waves">My Projects</span>．꒱˚꒦꒷
+      <span id="by-lily">by lilyy ♥︎</span>
+    </h1>
+    <div class="search-container" data-aos="zoom-in" data-aos-delay="50">
+      <div class="search-wrapper">
+        <i class="fas fa-search"></i>
+        <input type="text" id="search-bar" placeholder="Search projects..." onkeyup="filterProjects()"/>
+      </div>
     </div>
-  </div>
-
-  <div class="project-list">
-    <a href="https://justcallmechezz.github.io" class="project" data-aos="fade-up">
-      <div class="project-icon"><i class="fas fa-heart"></i></div>
-      <div class="project-content">
-        <h2>About me</h2>
-        <p>just some info about me...</p>
-        <div class="language-info">
-          <span class="language-icon"><i class="fab fa-js-square"></i></span>
-          <span>JS</span>
+    <div class="pinned-title">
+      <span class="pinned-text" data-aos="zoom-in-left" data-aos-delay="100">pinned</span>
+      <span class="pinned-icon" data-aos="zoom-out" data-aos-delay="50"><i class="fas fa-thumbtack"></i></span>
+    </div>
+    <div class="project-list">
+      <a href="https://justcallmechezz.github.io" class="project" data-aos="fade-up" data-aos-delay="50">
+        <div class="project-icon"><i class="fas fa-heart"></i></div>
+        <div class="project-content">
+          <h2>About me</h2>
+          <p>just some info about me...</p>
+          <div class="language-info">
+            <span class="language-icon"><i class="fab fa-js-square"></i></span>
+            <span>JS</span>
+          </div>
         </div>
-      </div>
-    </a>
-
-    <a href="https://justcallmechezz.github.io/lylium" class="project" data-aos="fade-up" data-aos-delay="50">
-      <div class="project-icon"><i class="fa-solid fa-code"></i></div>
-      <div class="project-content">
-        <h2>Lylium</h2>
-        <p>ai chatbot</p>
-        <div class="language-info">
-          <span class="language-icon"><i class="fab fa-js-square"></i></span>
-          <span>JS</span>
+      </a>
+      <a href="https://justcallmechezz.github.io/lylium" class="project" data-aos="fade-up" data-aos-delay="100">
+        <div class="project-icon"><i class="fa-solid fa-code"></i></div>
+        <div class="project-content">
+          <h2>Lylium</h2>
+          <p>ai assistant... </p>
+          <div class="language-info">
+            <span class="language-icon"><i class="fab fa-js-square"></i></span>
+            <span>JS</span>
+            <span class="language-icon"><i class="fas fa-heart"></i></span>
+            <span>Lylium</span>
+          </div>
         </div>
-      </div>
-    </a>
-
-    <a href="https://justcallmechezz.github.io/raining-cheese" class="project" data-aos="fade-up" data-aos-delay="100">
-      <div class="project-icon"><i class="fas fa-cheese"></i></div>
-      <div class="project-content">
-        <h2>Raining Cheese</h2>
-        <p>cheese falling randomly .-.</p>
-        <div class="language-info">
-          <span class="language-icon"><i class="fab fa-js-square"></i></span>
-          <span>JS</span>
+      </a>
+      <a href="https://justcallmechezz.github.io/raining-cheese" class="project" data-aos="fade-up" data-aos-delay="150">
+        <div class="project-icon"><i class="fas fa-cheese"></i></div>
+        <div class="project-content">
+          <h2>Raining Cheese</h2>
+          <p>cheese falling randomly .-.</p>
+          <div class="language-info">
+            <span class="language-icon"><i class="fab fa-js-square"></i></span>
+            <span>JS</span>
+          </div>
         </div>
+      </a>
+    </div>
+    <div class="year-title">
+      <span class="year-big" data-aos="flip-left" data-aos-delay="50">20</span>
+      <div class="year-sub">
+        <span class="year-small" data-aos="flip-right" data-aos-delay="50">25</span>
+        <span class="year-pill" data-aos="zoom-in" data-aos-delay="50">Projects</span>
       </div>
-    </a>
-
-    <a href="https://justcallmechezz.github.io/music-player" class="project" data-aos="fade-up" data-aos-delay="150">
-      <div class="project-icon"><i class="fas fa-music"></i></div>
-      <div class="project-content">
-        <h2>Music Player</h2>
-        <p>plays local music files</p>
-        <div class="language-info">
-          <span class="language-icon"><i class="fab fa-js-square"></i></span>
-          <span>JS</span>
+    </div>
+    <div class="project-list">
+      <a href="https://justcallmechezz.github.io/lylium" class="project" data-aos="fade-up" data-aos-delay="100">
+        <div class="project-icon"><i class="fa-solid fa-code"></i></div>
+        <div class="project-content">
+          <h2>Lylium</h2>
+          <p>ai assistant... </p>
+          <div class="language-info">
+            <span class="language-icon"><i class="fab fa-js-square"></i></span>
+            <span>JS</span>
+            <span class="language-icon"><i class="fas fa-heart"></i></span>
+            <span>Lylium</span>
+          </div>
         </div>
-      </div>
-    </a>
-
-    <a href="https://justcallmechezz.github.io/replygen" class="project" data-aos="fade-up" data-aos-delay="200">
-      <div class="project-icon"><i class="fas fa-comment-dots"></i></div>
-      <div class="project-content">
-        <h2>Replygen</h2>
-        <p>chat reply suggestion generator</p>
-        <div class="language-info">
-          <span class="language-icon"><i class="fab fa-js-square"></i></span>
-          <span>JS</span>
+      </a>
+      <a href="https://justcallmechezz.github.io/music-player" class="project" data-aos="fade-up" data-aos-delay="150">
+        <div class="project-icon"><i class="fas fa-music"></i></div>
+        <div class="project-content">
+          <h2>Music Player</h2>
+          <p>plays local music files</p>
+          <div class="language-info">
+            <span class="language-icon"><i class="fab fa-js-square"></i></span>
+            <span>JS</span>
+          </div>
         </div>
-      </div>
-    </a>
-
-    <a href="https://justcallmechezz.github.io/qrispy" class="project" data-aos="fade-up" data-aos-delay="250">
-      <div class="project-icon"><i class="fas fa-qrcode"></i></div>
-      <div class="project-content">
-        <h2>QRispy</h2>
-        <p>make QR from clean links</p>
-        <div class="language-info">
-          <span class="language-icon"><i class="fab fa-js-square"></i></span>
-          <span>JS</span>
+      </a>
+      <a href="https://justcallmechezz.github.io/replygen" class="project" data-aos="fade-up" data-aos-delay="200">
+        <div class="project-icon"><i class="fas fa-comment-dots"></i></div>
+        <div class="project-content">
+          <h2>Replygen</h2>
+          <p>chat reply suggestion generator</p>
+          <div class="language-info">
+            <span class="language-icon"><i class="fab fa-js-square"></i></span>
+            <span>JS</span>
+          </div>
         </div>
+      </a>
+      <a href="https://justcallmechezz.github.io/qrispy" class="project" data-aos="fade-up" data-aos-delay="250">
+        <div class="project-icon"><i class="fas fa-qrcode"></i></div>
+        <div class="project-content">
+          <h2>QRispy</h2>
+          <p>make QR from clean links</p>
+          <div class="language-info">
+            <span class="language-icon"><i class="fab fa-js-square"></i></span>
+            <span>JS</span>
+          </div>
+        </div>
+      </a>
+    </div>
+    <div class="year-title">
+      <span class="year-big" data-aos="flip-left" data-aos-delay="50">20</span>
+      <div class="year-sub">
+        <span class="year-small" data-aos="flip-right" data-aos-delay="50">24</span>
+        <span class="year-pill" data-aos="zoom-in" data-aos-delay="50">Projects</span>
       </div>
-    </a>
-  </div>
-
-  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-  <script>
-    AOS.init();
-    function filterProjects() {
-      const search = document.getElementById('search-bar').value.toLowerCase();
-      document.querySelectorAll('.project').forEach(p => {
-        const match = p.innerText.toLowerCase().includes(search);
-        p.style.display = match ? '' : 'none';
-      });
-    }
-  </script>
-</body>
+    </div>
+    <div class="project-list">
+      <a href="https://justcallmechezz.github.io" class="project" data-aos="fade-up" data-aos-delay="50">
+        <div class="project-icon"><i class="fas fa-heart"></i></div>
+        <div class="project-content">
+          <h2>About me</h2>
+          <p>just some info about me...</p>
+          <div class="language-info">
+            <span class="language-icon"><i class="fab fa-js-square"></i></span>
+            <span>JS</span>
+          </div>
+        </div>
+      </a>
+      <a href="https://justcallmechezz.github.io/raining-cheese" class="project" data-aos="fade-up" data-aos-delay="100">
+        <div class="project-icon"><i class="fas fa-cheese"></i></div>
+        <div class="project-content">
+          <h2>Raining Cheese</h2>
+          <p>cheese falling randomly .-.</p>
+          <div class="language-info">
+            <span class="language-icon"><i class="fab fa-js-square"></i></span>
+            <span>JS</span>
+          </div>
+        </div>
+      </a>
+    </div>
+    <span class="wavyy">~~~~~~~~~~~</span>
+    <div class="visit">
+      <div class="visit-label visits">
+        <i class="fas fa-heart"></i>
+        <span>visits</span>
+      </div>
+      <div id="visit-count" class="visit-count">...</div>
+    </div>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+      AOS.init();
+      function filterProjects() {
+        const search = document.getElementById('search-bar').value.toLowerCase();
+        document.querySelectorAll('.project').forEach(p => {
+          const match = p.innerText.toLowerCase().includes(search);
+          p.style.display = match ? '' : 'none';
+        });
+      }
+    </script>
+    <script>
+      fetch("https://api.allorigins.win/raw?url=" + encodeURIComponent("https://hits.sh/github.com/JustCallMeChezz/justcallmechezz.github.io./projects.svg") + "&" + Date.now())
+        .then(res => res.text())
+        .then(svg => {
+          const match = svg.match(/<title>hits: ([\d,]+)<\/title>/); 
+          if (match) {
+            let raw = match[1].replace(/,/g, ""); 
+            let count = parseInt(raw);
+            let formatted = count >= 1000 ? (count / 1000).toFixed(1).replace(/\.0$/, '') + 'k' : count;
+            document.getElementById("visit-count").textContent = formatted;
+          } else {
+            document.getElementById("visit-count").textContent = "???";
+          }
+        })
+        .catch(err => {
+          document.getElementById("visit-count").textContent = "idk...";
+          console.error(err);
+        });
+    </script>
+  </body>
 </html>
