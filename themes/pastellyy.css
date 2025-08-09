@@ -3,15 +3,29 @@ html {
   -webkit-tap-highlight-color: transparent;
 }
 
+:root {
+  --bg-main: #fdf4f2;
+  --title: #a46a57;
+  --text: #7a5a4d;
+  --underline: #f7bca9;
+  --blush: #f5c4b9;
+  --soft-blush: #f8d6cf;
+  --rose-beige: #d8ada3;
+  --border: rgba(255, 226, 218, 0.55);
+  --bg-grad1: rgba(255, 226, 218, 0.18);
+  --bg-grad2: rgba(255, 248, 245, 0.18);
+  --shadows: rgba(200, 160, 150, 0.22);
+}
+
 body {
   font-family: 'Short Stack', cursive;
   background-image:
     linear-gradient(0deg,
-      rgba(255, 230, 222, 0.2) 0% 12.5%, rgba(255, 255, 255, 0.2) 12.5% 37.5%, rgba(255, 230, 222, 0.2) 37.5% 62.5%, rgba(255, 255, 255, 0.2) 62.5% 87.5%, rgba(255, 230, 222, 0.2) 87.5% 100%),
+      var(--bg-grad1) 0% 12.5%, var(--bg-grad2) 12.5% 37.5%, var(--bg-grad1) 37.5% 62.5%, var(--bg-grad2) 62.5% 87.5%, var(--bg-grad1) 87.5% 100%),
     linear-gradient(90deg,
-      rgba(255, 230, 222, 0.2) 0% 12.5%, rgba(255, 255, 255, 0.2) 12.5% 37.5%, rgba(255, 230, 222, 0.2) 37.5% 62.5%, rgba(255, 255, 255, 0.2) 62.5% 87.5%, rgba(255, 230, 222, 0.2) 87.5% 100%);
+      var(--bg-grad1) 0% 12.5%, var(--bg-grad2) 12.5% 37.5%, var(--bg-grad1) 37.5% 62.5%, var(--bg-grad2) 62.5% 87.5%, var(--bg-grad1) 87.5% 100%);
   background-size: 160px 160px, 160px 160px;
-  color: #6a443b;
+  color: var(--text);
   margin: 0;
   padding: 0;
   user-select: none;
@@ -25,11 +39,11 @@ body {
 .container {
   max-width: 800px;
   margin: 50px auto;
-  background-color: #fef6f7;
+  background-color: var(--bg-main);
   padding: 30px;
   border-radius: 24px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-  border: 5px solid rgba(255, 230, 222, 0.6);
+  box-shadow: 0 4px 12px var(--shadows);
+  border: 5px solid var(--border);
   overflow: hidden;
 }
 
@@ -47,8 +61,9 @@ body {
 
 .github-stats h3 {
   font-size: 1.5em;
-  color: #b07255;
-  border-bottom: 2px solid #fbc8af;
+  color: var(--title);
+  text-decoration: underline 3px wavy var(--soft-blush);
+	text-underline-offset: 10px;
   display: inline-block;
   padding-bottom: 5px;
   margin-bottom: 10px;
@@ -60,29 +75,29 @@ body {
   padding: 2px auto;
   background-image:
     linear-gradient(0deg,
-      rgba(255, 230, 222, 0.2) 0% 12.5%, rgba(255, 255, 255, 0.2) 12.5% 37.5%, rgba(255, 230, 222, 0.2) 37.5% 62.5%, rgba(255, 255, 255, 0.2) 62.5% 87.5%, rgba(255, 230, 222, 0.2) 87.5% 100%),
+      var(--bg-grad1) 0% 12.5%, var(--bg-grad2) 12.5% 37.5%, var(--bg-grad1) 37.5% 62.5%, var(--bg-grad2) 62.5% 87.5%, var(--bg-grad1) 87.5% 100%),
     linear-gradient(90deg,
-      rgba(255, 230, 222, 0.2) 0% 12.5%, rgba(255, 255, 255, 0.2) 12.5% 37.5%, rgba(255, 230, 222, 0.2) 37.5% 62.5%, rgba(255, 255, 255, 0.2) 62.5% 87.5%, rgba(255, 230, 222, 0.2) 87.5% 100%);
+      var(--bg-grad1) 0% 12.5%, var(--bg-grad2) 12.5% 37.5%, var(--bg-grad1) 37.5% 62.5%, var(--bg-grad2) 62.5% 87.5%, var(--bg-grad1) 87.5% 100%);
   background-size: 160px 160px, 160px 160px;
   border-radius: 50px;
-  border: 5px solid rgba(255, 230, 222, 0.6);
+  border: 5px solid var(--border);
 }
 
 .catchthecheese {
   padding: 8px;
   border: none;
   border-radius: 32px;
-  background-color: #fbd5d5;
+  background-color: var(--soft-blush);
   color: white;
   cursor: pointer;
   font-family: 'Short Stack', cursive;
   transition: transform 0.2s ease;
-  box-shadow: 0 2px 4px #fbd5d5;
+  box-shadow: 0 2px 4px var(--soft-blush);
 }
 
 .catchthecheese:hover {
   transform: scale(1.05);
-  box-shadow: 0 6px 8px #fbd5d5;
+  box-shadow: 0 6px 8px var(--soft-blush);
 }
 
 .cute-bouncyy {
@@ -160,7 +175,7 @@ body {
 }
 
 .blush:active {
-  text-shadow: 0 0 10px #ffbea9, 0 0 20px #ffbea9, 0 0 30px #ffbea9, 0 0 40px #ffbea9;
+  text-shadow: 0 0 10px var(--blush), 0 0 20px var(--blush), 0 0 30px var(--blush), 0 0 40px var(--blush);
 }
 
 body.leBlurIn {
@@ -212,7 +227,7 @@ header {
 
 header h1 {
   font-size: 2.5em;
-  color: #b07255;
+  color: var(--title);
 }
 
 .profile {
@@ -224,7 +239,7 @@ header h1 {
   width: 150px;
   height: 150px;
   object-fit: cover;
-  border: 4px solid #fbc8af;
+  border: 4px solid var(--underline);
   opacity: 1;
   transition: opacity 1s ease-in-out;
 }
@@ -257,7 +272,7 @@ container.fade-out {
 .profile h2 {
   margin-top: 10px;
   font-size: 1.8em;
-  color: #b07255;
+  color: var(--title);
 }
 
 .profile p {
@@ -300,7 +315,7 @@ container.fade-out {
 
 .projectss {
 	font-family: 'Lilita One', cursive;
-	color: #d49d9d;
+	color: var(--rose-beige);
 	display: inline-flex;
 	text-decoration: none;
 	transition: transform 0.15s ease;
@@ -316,8 +331,9 @@ container.fade-out {
 
 .details h3 {
   font-size: 1.5em;
-  color: #b07255;
-  border-bottom: 2px solid #fbc8af;
+  color: var(--title);
+  text-decoration: underline 3px wavy var(--soft-blush);
+	text-underline-offset: 10px;
   display: inline-block;
   padding-bottom: 5px;
   margin-bottom: 10px;
@@ -330,11 +346,11 @@ container.fade-out {
 
 .details ul li {
   padding: 8px 0;
-  border-bottom: 1px solid #fbc8af;
+  border-bottom: 1px solid var(--underline);
 }
 
 .details p a {
-  color: #b07255;
+  color: var(--title);
   text-decoration: none;
 }
 
@@ -349,8 +365,9 @@ container.fade-out {
 
 .interest h3 {
   font-size: 1.5em;
-  color: #b07255;
-  border-bottom: 2px solid #fbc8af;
+  color: var(--title);
+  text-decoration: underline 3px wavy var(--soft-blush);
+	text-underline-offset: 10px;
   display: inline-block;
   padding-bottom: 5px;
   margin-bottom: 10px;
@@ -363,11 +380,11 @@ container.fade-out {
 
 .interest ul li {
   padding: 8px 0;
-  border-bottom: 1px solid #fbc8af;
+  border-bottom: 1px solid var(--underline);
 }
 
 .interest p a {
-  color: #b07255;
+  color: var(--title);
   text-decoration: none;
 }
 
@@ -391,8 +408,9 @@ container.fade-out {
 
 .connections h3 {
   font-size: 1.5em;
-  color: #b07255;
-  border-bottom: 2px solid #fbc8af;
+  color: var(--title);
+  text-decoration: underline 3px wavy var(--soft-blush);
+	text-underline-offset: 10px;
   display: inline-block;
   padding-bottom: 5px;
   margin-bottom: 10px;
@@ -405,12 +423,11 @@ container.fade-out {
 
 .connections ul li {
   padding: 8px 0;
-  border-bottom: 1px solid #fbc8af;
-  color: #5d4037;
+  border-bottom: 1px solid var(--underline);
 }
 
 .connections p a {
-  color: #b07255;
+  color: var(--title);
   text-decoration: none;
 }
 
@@ -427,7 +444,7 @@ container.fade-out {
   width: 150px;
   height: 150px;
   object-fit: cover;
-  border: 4px solid #fbc8af;
+  border: 4px solid var(--underline);
 }
 
 .social a {
@@ -438,7 +455,7 @@ container.fade-out {
 .social-media h2 {
   margin-top: 10px;
   font-size: 1.8em;
-  color: #b07255;
+  color: var(--title);
 }
 
 .social-media p {
@@ -463,7 +480,7 @@ container.fade-out {
 .games h2 {
   margin-top: 10px;
   font-size: 1.8em;
-  color: #b07255;
+  color: var(--title);
 }
 
 .games p {
@@ -627,8 +644,9 @@ container.fade-out {
 
 .sleepyy {
   font-family: 'Roboto', sans-serif;
+  font-weight: bold;
   text-align: center;
-  color: #fbc0af;
+  color: var(--underline);
 }
 
 .vibration {
@@ -759,10 +777,10 @@ container.fade-out {
   font-family: 'Short Stack', system-ui, sans-serif;
   font-size: 14px;
   padding: 10px 14px;
-  background: #fbd5d5;
-  color: #d49d9d;
+  background: var(--soft-blush);
+  color: var(--rose-beige);
   border-radius: 12px;
-  box-shadow: 0 2px 4px #fbd5d5;
+  box-shadow: 0 2px 4px var(--soft-blush);
   max-width: 300px;
   margin: auto;
   text-align: center;
@@ -800,7 +818,7 @@ container.fade-out {
 .typing-dots span {
   width: 6px;
   height: 6px;
-  background-color: #d7a8a0;
+  background-color: var(--rose-beige);
   border-radius: 50%;
   animation: jump 0.6s infinite;
 }
@@ -841,7 +859,7 @@ container.fade-out {
 }
 
 .pill-label {
-  background: #d49d9d;
+  background: var(--rose-beige);
   padding: 0 8px;
   border-top-left-radius: 16px;
   border-bottom-left-radius: 16px;
@@ -850,19 +868,19 @@ container.fade-out {
   align-items: center;
   gap: 6px;
   color: white;
-  box-shadow: 0 2px 4px #fbd5d5;
+  box-shadow: 0 2px 4px var(--soft-blush);
 }
 
 .pill-count {
-  background: #fbd5d5;
+  background: var(--soft-blush);
   padding: 0 10px;
   border-top-right-radius: 16px;
   border-bottom-right-radius: 16px;
   height: 100%;
   display: flex;
   align-items: center;
-  color: #d49d9d;
-  box-shadow: 0 2px 4px #fbd5d5;
+  color: var(--rose-beige);
+  box-shadow: 0 2px 4px var(--soft-blush);
 }
 
 .status-count {
@@ -874,18 +892,18 @@ container.fade-out {
   position: fixed;
   bottom: 20px;
   left: 20px;
-  background: #fbd5d5;
+  background: var(--soft-blush);
   font-size: 1.2em;
   padding: 10px 16px;
   border: none;
   border-radius: 999px;
-  box-shadow: 0 2px 6px #fbd5d5;
+  box-shadow: 0 2px 6px var(--soft-blush);
   cursor: pointer;
   z-index: 1000;
 }
 
 #lylium-btn i {
-  color: #d49d9d;
+  color: var(--rose-beige);
 }
 
 #lylium-modal {
@@ -894,9 +912,9 @@ container.fade-out {
   left: 0;
   width: 100%;
   height: 100%;
-  background: rgba(0, 0, 0, 0.2);
-  backdrop-filter: blur(6px);
-  -webkit-backdrop-filter: blur(6px);
+  background: var(--shadows);
+  backdrop-filter: blur(2px);
+  -webkit-backdrop-filter: blur(2px);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -919,7 +937,7 @@ container.fade-out {
   border-radius: 24px;
   overflow: hidden;
   margin: 10px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 4px 12px var(--shadows);
 }
 
 .lylium-content iframe {
@@ -982,7 +1000,7 @@ container.fade-out {
   display: inline-block;
   width: 8px;
   height: 8px;
-  background: #fbd5d5;
+  background: var(--soft-blush);
   border-radius: 50%;
   margin: 0 4px;
   opacity: 0.5;
@@ -1031,7 +1049,7 @@ container.fade-out {
   border-radius: 999px;
   border: 1px solid rgba(255, 255, 255, 0.15);
   box-shadow:
-    0 6px 12px rgba(0, 0, 0, 0.04),
+    0 6px 12px var(--shadows),
     0 1px 2px rgba(255, 255, 255, 0.2),
     inset 0 1px 1px rgba(255, 255, 255, 0.1);
   font-family: 'Short Stack', cursive;
@@ -1043,7 +1061,7 @@ container.fade-out {
 
 .greetings-icon {
   font-size: 22px;
-  color: #fbd5d5;
+  color: var(--soft-blush);
   border-radius: 50%;
   padding: 8px;
 }
@@ -1056,7 +1074,7 @@ container.fade-out {
 .greetings-line {
   font-size: 0.9rem;
   margin: 0;
-  color: #b07255;
+  color: var(--title);
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
@@ -1065,7 +1083,7 @@ container.fade-out {
 .greetings-sub {
   font-size: 0.7rem;
   margin: 0;
-  color: #856857;
+  color: var(--rose-beige);
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
@@ -1074,18 +1092,18 @@ container.fade-out {
 footer {
   font-family: 'Short Stack', system-ui, sans-serif;
   text-align: center;
-  color: #d49d9d;
+  color: var(--rose-beige);
   position: fixed;
   font-size: 0.8em;
-  font-weight: bold;
   bottom: 8px;
   width: 100%;
   left: 0;
   z-index: -2;
+  font-weight: bold;
 }
 
 footer i {
-  color: #fbd5d5;
+  color: var(--soft-blush);
   animation: heartbeat 1.5s ease-in-out infinite;
 }
 
