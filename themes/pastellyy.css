@@ -4,17 +4,17 @@ html {
 }
 
 :root {
-  --bg-main: #fdf4f2;
-  --title: #a46a57;
-  --text: #7a5a4d;
-  --underline: #f7bca9;
-  --blush: #f5c4b9;
-  --soft-blush: #f8d6cf;
-  --rose-beige: #d8ada3;
-  --border: rgba(255, 226, 218, 0.55);
-  --bg-grad1: rgba(255, 226, 218, 0.18);
-  --bg-grad2: rgba(255, 248, 245, 0.18);
-  --shadows: rgba(200, 160, 150, 0.22);
+  --bg-main: #fdf3f2;
+  --title: #b37c6e;
+  --text: #875f54;
+  --underline: #f8c2b2;
+  --blush: #facfc8;
+  --soft-blush: #fcdfda;
+  --rose-beige: #dfb3aa;
+  --border: rgba(255, 228, 222, 0.5);
+  --bg-grad1: rgba(255, 228, 222, 0.28);
+  --bg-grad2: rgba(255, 248, 245, 0.28);
+  --shadows: rgba(210, 175, 165, 0.08);
 }
 
 body {
@@ -966,9 +966,8 @@ container.fade-out {
 }
 
 .sliderr {
-  position: relative;
-  overflow: hidden;
-  margin-bottom: 20px;
+  max-width: 300px;
+  margin: 0 auto 20px;
 }
 
 .slider {
