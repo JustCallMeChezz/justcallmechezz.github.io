@@ -808,8 +808,9 @@ container.fade-out {
 }
 
 #quote-box.loaded {
-  max-height: 200px;
+  max-height: 500px; 
   padding-top: 6px;
+  padding-bottom: 6px;
 }
 
 .typing-dots {
