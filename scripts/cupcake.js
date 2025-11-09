@@ -44,7 +44,7 @@ document.addEventListener('DOMContentLoaded', () => {
             <a href="https://www.tiktok.com/@sleepychezz"><img src="icons/tiktok.png" alt="tt" style="width: 40px; height: 40px;"></a>
             <a href="https://discord.gg/CSc32EpttY"><img src="icons/discord.png" alt="dsc" style="width: 40px; height: 40px;"></a>
             <a href="https://github.com/JustCallMeChezz"><img src="icons/github.png" alt="git" style="width: 40px; height: 40px;"></a>
-            <a href="https://instagram.com/chezzy_lily"><img src="icons/instagram.png" alt="ig" style="width: 40px; height: 40px;"></a>
+            <a href="https://instagram.com/sleepychezz"><img src="icons/instagram.png" alt="ig" style="width: 40px; height: 40px;"></a>
         </p>
         </div>
         </div>
