@@ -1,195 +1,76 @@
 <!DOCTYPE html>
 <html lang="en">
-   <head>
-      <meta charset="UTF-8">
-      <meta name="viewport" content="width=device-width, initial-scale=1.0">
-      <meta name="theme-color" content="#AE00FF">
-      <title>Age Guesser</title>
-      <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
-      <style>
-         body {
-         font-family: Arial, sans-serif;
-         text-align: center;
-         background-image: url('some-stuff/wallpaper.jpg');
-         background-size: cover;
-         background-position: center;
-         background-attachment: fixed;
-         margin: 0;
-         padding: 20px;
-         -webkit-tap-highlight-color: transparent;
-         }
-         .container {
-         max-width: 800px;
-         width: 60%;
-         margin: 0 auto;
-         background-color: rgba(0, 0, 0, 0.1);
-         padding: 30px;
-         border-radius: 20px;
-         box-shadow: 0 0 30px 20px rgba(0, 0, 0, 0.1);
-         border: 1px solid silver;
-         backdrop-filter: blur(10px);
-         border: 5px solid rgba(255, 255, 255, 0.1);
-         position: fixed;
-         top: 45%;
-         left: 50%;
-         transform: translate(-50%, -50%);
-         overflow: hidden;
-         }
-         h1 {
-         margin-bottom: 40px;
-         color: #fff;
-         font-size: 2.2em;
-         font-weight: bold;
-         }
-         input {
-         width: calc(100% - 30px);
-         padding: 15px;
-         margin-bottom: 10px;
-         border-radius: 25px;
-         font-size: 16px;
-         border: none;
-         outline: none;
-         }
-         input:hover, input:focus {
-         color: #a020f0;
-         border: 2px solid #d8b3ff;
-         transition: 0.6s;
-         }
-         button {
-         background: #a020f0;
-         color: #fff;
-         padding: 15px 30px;
-         text-decoration: none;
-         border-radius: 25px;
-         border: 2px solid #a020f0;
-         font-weight: bold;
-         margin-top: 2px;
-         margin-bottom: 8px;
-         transition: 0.3s;
-         cursor: pointer;
-         }
-         button:hover {
-         background: #8000ff;
-         box-shadow: 0 0 40px #ff00ff, 0 0 80px #d020f0;
-         }
-         button:active {
-         transform: scale(0.95);
-         transition: transform 0.1s ease;
-         }
-         #output {
-         margin-top: 20px;
-         font-size: 18px;
-         color: #fff;
-         }
-         .loader {
-         margin: 20px auto;
-         border: 4px solid #f3f3f3;
-         border-top: 4px solid #ff00ff;
-         border-radius: 50%;
-         width: 40px;
-         height: 40px;
-         animation: spin 1s linear infinite;
-         display: none;
-         }
-         footer {
-         text-align: center;
-         color: #d8b3ff;
-         position: fixed;
-         font-size: 0.8em;
-         bottom: 0;
-         width: 100%;
-         left: 0;
-         }
-         footer i {
-         color: #ff00ff;
-         animation: heartbeat 1.5s ease-in-out infinite;
-         }
-         @keyframes heartbeat {
-         0%, 50%, 100% {
-         transform: scale(1);
-         }
-         25%, 75% {
-         transform: scale(1.2);
-         }
-         }
-         @keyframes spin {
-         0% {
-         transform: rotate(0deg);
-         }
-         100% {
-         transform: rotate(360deg);
-         }
-         }
-      </style>
-   </head>
-   <body>
-      <div class="container">
-         <h1>Age Guesser</h1>
-         <div id="inputContainer">
-            <input type="number" id="ageInput" placeholder="Enter ur age" />
-            <button id="guessBtn">Guess My Age</button>
-         </div>
-         <div id="output"></div>
-         <div class="loader" id="loader"></div>
+  <head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <meta name="theme-color" content="#f2e1cd"/>
+    <title>age guesser</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Chewy&family=Gaegu:wght@400;700&display=swap"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css"/>
+    <style>
+      :root{--cream:#fbf3e8;--milk:#fffaf2;--latte:#f2e1cd;--oat:#e6cdb0;--caramel:#b9784a;--cocoa:#58392b;--mocha:#80594a;--butter:#faebc9;--d:Chewy,Gaegu,system-ui,sans-serif}
+      *{box-sizing:border-box}
+      body{min-height:100dvh;margin:0;padding:1.2rem;display:flex;flex-direction:column;align-items:center;text-align:center;font:clamp(1.2rem,1.12rem + .3vw,1.38rem)/1.45 Gaegu,"Patrick Hand",system-ui,sans-serif;color:var(--cocoa);background:linear-gradient(90deg,rgba(214,168,124,.2) 50%,transparent 50%) 0 0/44px 44px,linear-gradient(rgba(214,168,124,.2) 50%,transparent 50%) 0 0/44px 44px var(--cream);-webkit-tap-highlight-color:transparent}
+      .container{width:min(100%,520px);margin:auto;padding:2rem 1.5rem;background:var(--milk);border:2px solid var(--oat);border-radius:30px;box-shadow:0 6px 0 var(--oat)}
+      h1{margin:0 0 1.5rem;font:400 clamp(2.4rem,10vw,3.4rem)/1.1 var(--d);text-shadow:3px 3px 0 var(--butter)}
+      input{width:100%;margin-bottom:1rem;padding:.5rem 1.2rem;font:inherit;text-align:center;color:var(--cocoa);background:#fff;border:2px solid var(--oat);border-radius:999px;box-shadow:0 4px 0 var(--oat);outline:0;transition:border-color .2s}
+      input::placeholder{color:var(--mocha);opacity:.7}
+      input:focus{border-color:var(--caramel)}
+      button{padding:.4rem 1.6rem;font:1.35rem var(--d);color:var(--cocoa);background:var(--butter);border:2px solid var(--cocoa);border-radius:999px;box-shadow:0 5px 0 var(--cocoa);cursor:pointer;transition:transform .15s,box-shadow .15s,background-color .2s}
+      button:hover{background:#fbe4a0;transform:translateY(-2px);box-shadow:0 7px 0 var(--cocoa)}
+      button:active{transform:translateY(4px);box-shadow:0 1px 0 var(--cocoa)}
+      #output{margin-top:1rem;color:var(--mocha)}
+      #output img{display:block;max-width:100%;margin:1.2rem auto;border-radius:20px}
+      #output p{margin:0;font-size:.9em}
+      .loader{display:none;width:2.6rem;height:2.6rem;margin:1.2rem auto;border:4px solid var(--latte);border-top-color:var(--caramel);border-radius:50%;animation:spin 1s linear infinite}
+      footer{margin-top:1.5rem;font-size:.85em;color:var(--mocha)}
+      footer p{margin:0}
+      footer i{color:var(--caramel);animation:beat 1.5s ease-in-out infinite}
+      @keyframes beat{0%,50%,100%{scale:1}25%,75%{scale:1.2}}
+      @keyframes spin{to{rotate:360deg}}
+      @media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h1>age guesser</h1>
+      <div id="inputContainer">
+        <input type="number" id="ageInput" placeholder="enter ur age"/>
+        <button id="guessBtn">guess my age</button>
       </div>
-      <footer>
-         <p>this useless thing was made with <i class="fas fa-heart"></i> by sleepychezz.</p>
-      </footer>
-      <audio id="bgm" src="bgm.mp3" loop></audio>
-      <script>
-         const btn = document.getElementById("guessBtn");
-         const output = document.getElementById("output");
-         const loader = document.getElementById("loader");
-         const bgm = document.getElementById("bgm");
-         const inputContainer = document.getElementById("inputContainer");
-         
-         btn.addEventListener("click", () => {
-             const age = document.getElementById("ageInput").value;
-         
-             if (!age || age <= 0) {
-                 output.textContent = "Please enter a valid age.";
-                 return;
-             }
-         
-             bgm.play();
-             loader.style.display = "block";
-             output.textContent = "";
-             inputContainer.style.display = "none";
-         
-             const steps = [
-                 "starting system",
-                 "connecting to server",
-                 "preparing data",
-                 "checking input",
-                 "analyzing data",
-                 "thinking",
-                 "eating some snack cuz me hungry",
-                 "continue thinking",
-                 "searching for answer",
-                 "guessing ur age",
-                 "preparing output",
-             ];
-         
-             let index = 0;
-             let dotCount = 0;
-         
-             const interval = setInterval(() => {
-                 if (index < steps.length) {
-                     dotCount = (dotCount + 1) % 4;
-                     const dots = ".".repeat(dotCount);
-                     output.textContent = steps[index] + dots;
-         
-                     if (dotCount === 3) index++;
-                 } else {
-                     clearInterval(interval);
-                     output.textContent = `Your age: ${age}`;
-                     loader.style.display = "none";
-                     output.innerHTML = `Your age: ${age}<br><img src="some-stuff/uiiaa.gif" alt="Gif" style="margin-top: 20px;"/><br><br><a>u just wasted 22 seconds of ur life...</a>`;
-                     bgm.pause();
-                     bgm.currentTime = 0;
-                 }
-             }, 500);
-         });
-      </script>
-   </body>
+      <div id="output"></div>
+      <div class="loader" id="loader"></div>
+    </div>
+    <footer>
+      <p>a really useless (useful) tool...</p>
+      <p>made kinda... with <i class="fas fa-heart"></i> by sleepychezz.</p>
+    </footer>
+    <audio id="bgm" src="bgm.mp3" loop></audio>
+    <script>
+      const $=id=>document.getElementById(id),out=$("output"),loader=$("loader"),bgm=$("bgm"),box=$("inputContainer")
+      const steps=["starting system","connecting to server","preparing data","checking input","analyzing data","thinking","eating some snack cuz me hungry","continue thinking","searching for answer","guessing ur age","preparing output"]
+      $("guessBtn").onclick=()=>{
+        const age=$("ageInput").value
+        if(!age||age<=0)return out.textContent="hey... pls enter a valid age."
+        bgm.play().catch(()=>{})
+        loader.style.display="block"
+        box.style.display="none"
+        out.textContent=""
+        let i=0,d=0
+        const t=setInterval(()=>{
+          if(i<steps.length){
+            d=(d+1)%4
+            out.textContent=steps[i]+".".repeat(d)
+            if(d==3)i++
+            return
+          }
+          clearInterval(t)
+          loader.style.display="none"
+          out.innerHTML=`your age: ${age}<img src="some-stuff/uiiaa.gif" alt="gif"><p>btw... u just wasted 22 seconds of ur life...</p>`
+          bgm.pause()
+          bgm.currentTime=0
+        },500)
+      }
+    </script>
+  </body>
 </html>
